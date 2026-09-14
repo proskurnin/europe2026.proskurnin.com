@@ -21,7 +21,7 @@ function formatDeadline(value:string){return new Intl.DateTimeFormat('ru-RU',{da
 
 export default function FlightCountdown(){
  const [flight,setFlight]=useState<FlightStatus>(fallback),[now,setNow]=useState(Date.now()),[loading,setLoading]=useState(true),[error,setError]=useState(false);
- const refresh=async()=>{setLoading(true);try{const response=await window.fetch('/api/ut785.json',{cache:'no-store'});if(!response.ok)throw Error('unavailable');const data=await response.json();if(!data?.departure||Number.isNaN(Date.parse(data.departure)))throw Error('invalid');setFlight(data);setError(false)}catch{setError(true)}finally{setLoading(false)}};
+ const refresh=async()=>{setLoading(true);try{const response=await window.fetch('/api/ut785.json',{cache:'no-store'});if(!response.ok)throw Error('unavailable');const data=await response.json() as FlightStatus;if(!data?.departure||Number.isNaN(Date.parse(data.departure)))throw Error('invalid');setFlight(data);setError(false)}catch{setError(true)}finally{setLoading(false)}};
  useEffect(()=>{refresh();const schedule=window.setInterval(refresh,5*60*1000);const timer=window.setInterval(()=>setNow(Date.now()),1000);return()=>{window.clearInterval(schedule);window.clearInterval(timer)}},[]);
  const remaining=useMemo(()=>Math.max(0,Date.parse(flight.departure)-now),[flight.departure,now]);
  const parts={days:Math.floor(remaining/86400000),hours:Math.floor(remaining/3600000)%24,minutes:Math.floor(remaining/60000)%60,seconds:Math.floor(remaining/1000)%60};
