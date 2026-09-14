@@ -38,7 +38,7 @@ export function itinerary(plan:Trip,date:string,visits=plan.visits):{stops:Stop[
  const stops=(days[date]||[]).filter(s=>!s.visit||visits.find(v=>v.id===`visit-${date}-${s.visit}`)?.status!=='skip').map(s=>{
   const place=plan.places.find(p=>p.id===s.place),v=visits.find(v=>v.id===`visit-${date}-${s.visit}`);
   const first=v&&!seenVisits.has(v.id);if(v)seenVisits.add(v.id);
-  return {...s,visit:v?s.visit:undefined,title:s.place==='galleria'?'Галерея Виктора Эммануила II':s.title||place?.title||s.place||'',time:s.time||(first?v?.start:undefined),leave:v?.end||v?.start,location:place?{lat:place.lat,lng:place.lng}:undefined};
+  return {...s,visit:v?s.visit:undefined,title:s.place==='galleria'?'Галерея Виктора Эммануила II':s.place==='trocadero'?'Площадь Трокадеро':s.title||place?.title||s.place||'',time:s.time||(first?v?.start:undefined),leave:v?.end||v?.start,location:place?{lat:place.lat,lng:place.lng}:undefined};
  });
  const legs=stops.slice(1).map((to,i)=>({id:`${date}:${stops[i].id}:${to.id}`,from:stops[i],to,mode:(!to.query&&!to.location)||(!stops[i].query&&!stops[i].location)?'unknown' as Mode:to.mode||'walk',note:to.note}));
  return {stops,legs};
