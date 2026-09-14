@@ -1,0 +1,20 @@
+[Unit]
+Description=Europe 2026 live UT785 schedule monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/europe-flight-status
+ExecStart=/usr/local/bin/node /opt/europe-flight-status/ut785-status.mjs
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/europe-flight-status
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,46 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+
+const [input,output]=process.argv.slice(2);
+if(!input||!output)throw Error('Usage: node --experimental-strip-types scripts/refresh-plan-2026-09-15.mts input.json output.json');
+const plan=JSON.parse(readFileSync(input,'utf8'));
+const day=(date:string)=>{const result=plan.days.find((item:any)=>item.date===date);if(!result)throw Error('Day not found: '+date);return result};
+const expense=(id:string)=>{const result=plan.expenses.find((item:any)=>item.id===id);if(!result)throw Error('Expense not found: '+id);return result};
+const transfer=(id:string)=>{const result=plan.transfers.find((item:any)=>item.id===id);if(!result)throw Error('Transfer not found: '+id);return result};
+
+plan.version='2026-09-15-1';
+plan.importedAt='2026-09-15T00:20:00+03:00';
+day('2026-09-18').night='Stylish City Center Retreat · бронь подтверждена';
+day('2026-09-18').sourceText='Прилёт UT 785 в 01:25, затем трансфер. Забронированы апартаменты Stylish City Center Retreat Near Republic Square: две спальни, 2 взрослых и 3 детей, ночи 17–19 сентября. Цена 112 000 AMD, оплата не подтверждена. До вылета нужно получить инструкции ночного заселения около 03:00.';
+day('2026-09-19').night='8th floor – Milano view · бронь подтверждена';
+day('2026-09-19').sourceText='Вечером Wizz Air W4 6456 в Милан. Подтверждена бронь 8th floor – Milano view: две спальни, ночи 19–21 сентября, €403,82 с городским налогом. Приезд после полуночи требует письменного подтверждения доступа; оплата пока не подтверждена.';
+day('2026-09-20').night='8th floor – Milano view · ночь 2 из 2';
+day('2026-09-21').night='Venice Villa House · выбрать и подтвердить';
+day('2026-09-22').night='FEEL – Palazzo Ortelli · бронь подтверждена';
+day('2026-09-22').sourceText='Переезд из Венеции в Бергамо. Забронирован FEEL – Palazzo Ortelli: ориентир €144,45, оплата не подтверждена. Хранение рюкзаков до заселения согласовать отдельно; утром нужен трансфер в BGY к рейсу FR 5551.';
+day('2026-10-02').night='Стамбул · жильё не выбрано';
+
+const pegasus=transfer('pegasus');
+pegasus.departure='2026-10-02T13:20:00+02:00';
+pegasus.status='booked';
+expense('unknown-pegasus').amount=31945;
+expense('unknown-pegasus').currency='RUB';
+expense('unknown-pegasus').status='paid';
+expense('unknown-pegasus').note='Pegasus PC 1012 CGN → SAW: куплено на пятерых, включая сборы и дополнительные услуги.';
+Object.assign(expense('unknown-yerevan'),{title:'Stylish City Center Retreat · 2 ночи',amount:112000,currency:'AMD',status:'planned',note:'Бронь подтверждена; оплата не подтверждена. Ночное заселение согласовать.'});
+Object.assign(expense('unknown-milan'),{title:'8th floor – Milano view · 2 ночи',amount:403.82,currency:'EUR',status:'planned',note:'Бронь подтверждена; включая €38 городского налога. Ночной доступ и оплату уточнить.'});
+Object.assign(expense('unknown-venice'),{title:'Venice Villa House · 1 ночь',amount:137,currency:'EUR',status:'planned',note:'Выбранный ориентир; бронь и хранение рюкзаков ещё подтвердить.'});
+Object.assign(expense('unknown-bgy'),{title:'FEEL – Palazzo Ortelli · 1 ночь',amount:144.45,currency:'EUR',status:'planned',note:'Бронь подтверждена; оплата не подтверждена.'});
+const flightVisit=plan.visits.find((v:any)=>v.id==='visit-2026-10-02-saw');
+const yerevanStay=plan.visits.find((v:any)=>v.id==='visit-2026-09-18-rooftop');
+Object.assign(yerevanStay,{title:'Stylish City Center Retreat · ночное заселение',description:day('2026-09-18').sourceText,status:'booked'});
+const yerevanPlace=plan.places.find((p:any)=>p.id==='rooftop');
+Object.assign(yerevanPlace,{title:'Stylish City Center Retreat',lat:plan.cities.yerevan[1],lng:plan.cities.yerevan[2],precision:'Указан город; точный адрес жилья не опубликован.'});
+const milanStay=plan.visits.find((v:any)=>v.id==='visit-2026-09-20-event-3');
+Object.assign(milanStay,{title:'8th floor – Milano view · заселение и сон',description:day('2026-09-19').sourceText,status:'booked'});
+Object.assign(flightVisit,{title:'Pegasus PC 1012 · Кёльн/Бонн → Стамбул SAW',start:'13:20',end:null,status:'booked',description:'Купленный рейс Pegasus PC 1012, 2 октября в 13:20 по времени Кёльна. Стоимость на пятерых — 31 945 ₽. Время прибытия уточнить по билету.'});
+const airportTransfer=plan.visits.find((v:any)=>v.id==='visit-2026-10-02-event-1');
+Object.assign(airportTransfer,{start:null,end:null,description:'Трансфер из Дормагена в аэропорт Кёльн/Бонн к рейсу PC 1012 в 13:20. Время выезда пересчитать с учётом нового времени вылета; расписание поезда ещё не подтверждено.'});
+day('2026-10-02').sourceText='Рейс Pegasus PC 1012 CGN → SAW куплен на пятерых: 2 октября, вылет в 13:20 по времени Кёльна, 31 945 ₽. Время прибытия и трансферы уточняются. Жильё в Стамбуле ещё не выбрано.';
+plan.issues=plan.issues.map((s:string)=>s.startsWith('Милан:')?'Милан: подтверждена бронь 8th floor – Milano view на 19–21 сентября. Получить инструкции ночного доступа и уточнить оплату.':s.startsWith('Pegasus:')?'Pegasus PC 1012: вылет 2 октября в 13:20 подтверждён. Уточнить время прибытия и пересчитать трансфер в CGN.':s);
+plan.checks.find((c:any)=>c.id==='check-3').text='Купить поезда Милан → Венеция и Венеция → Бергамо. Подтвердить Venice Villa House и хранение рюкзаков. Бронь FEEL – Palazzo Ortelli в Бергамо подтверждена; уточнить оплату и ранний трансфер в BGY.';
+writeFileSync(output,JSON.stringify(plan,null,2));
