@@ -27,11 +27,11 @@ export function useTripWeather(plan:Trip){
 const fullDate=(date:string)=>new Date(date+'T12:00:00Z').toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
 const temp=(n:number)=>(Math.round(n)>0?'+':'')+Math.round(n)+'°';
 export function DateWeather({plan,day,weather}:{plan:Trip;day:Trip['days'][number];weather:ReturnType<typeof useTripWeather>}){
- return <span className="date-weather">{dayWeatherTargets(plan,day).map(t=>{
+ return <span className="date-weather">{dayWeatherTargets(plan,day).slice(0,1).map(t=>{
   const result=weather.results[t.key],r=result?.reading,condition=r?weatherCondition(r.code):null,Icon=condition?.Icon||CloudOff;
   const label=!result?'Загрузка…':!r?'Нет данных':result.kind==='forecast'?'Прогноз':result.kind==='archive'?'Архив':'Историческая';
   const description=`${t.name}: ${condition?.label||label}${r?`, максимум ${temp(r.max)}, минимум ${temp(r.min)}. ${label}${result?.kind!=='forecast'?' за '+fullDate(r.date):''}`:''}`;
-  return <span className="date-weather-city" key={t.key} title={description} aria-label={description}><span className="date-weather-name">{t.name}</span><span className="date-weather-reading"><Icon size={19} aria-hidden="true"/>{r?<strong>{temp(r.max)} <em>/ {temp(r.min)}</em></strong>:<strong>—</strong>}</span><span className="date-weather-kind">{label}{r&&result?.kind==='reference'?` · ${r.date.slice(0,4)}`:''}</span></span>;
+  return <span className="date-weather-city" key={t.key} title={description} aria-label={description}><span className="date-weather-reading"><Icon size={12} aria-hidden="true"/><strong>{r?temp(r.max):'—'}</strong></span>{r&&result?.kind!=='forecast'&&<span className="date-weather-kind">{result?.kind==='archive'?'арх.':'ист.'}</span>}</span>;
  })}</span>;
 }
 export default function DayWeather({plan,day,weather}:{plan:Trip;day:Trip['days'][number];weather:ReturnType<typeof useTripWeather>}){
