@@ -172,3 +172,25 @@ footer{flex-wrap:wrap;gap:12px;padding-bottom:30px}footer>span:last-child{displa
 .day-strip .day-strip-weather>svg{flex:none;width:12px;height:12px}
 .day-strip .day-strip-weather>span{font-size:12px;line-height:15px;letter-spacing:0;color:inherit}
 @media(max-width:760px){.day-strip .day-strip-weather{top:12px}}
+
+/* Video journal */
+.video-nav-link{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-size:14px;padding:0 2px;align-self:stretch;color:#325e50;flex:none}
+.video-nav-link:hover{color:#183f32}.video-nav-link:focus-visible,.video-back:focus-visible{outline:2px solid #325e50;outline-offset:4px}
+.video-page{min-height:100vh}.video-page header{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.video-back{display:inline-flex;align-items:center;gap:8px;font-size:14px}
+.video-page-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:32px 4vw 28px;color:#325e50}
+.video-page-heading small{font-size:12px;letter-spacing:1.4px}.video-page-heading h1{font:42px/1.12 Georgia,serif;margin:8px 0 12px}.video-page-heading p{font-size:16px;color:#58665a}
+.video-workspace{display:grid;grid-template-columns:320px minmax(0,1fr);gap:32px;margin:0 4vw 60px;align-items:start}
+.video-editor{padding:24px;background:#fff;border:1px solid #d5d8d0;border-radius:8px;position:sticky;top:20px;min-width:0}
+.video-editor h2,.video-collection-heading h2{font:27px/1.2 Georgia,serif;color:#325e50}
+.video-editor form{display:flex;flex-direction:column;gap:18px;margin-top:22px}.video-editor label{display:block;font-size:14px;line-height:1.5}.video-editor input,.video-editor select{display:block;margin-top:7px;width:100%;min-width:0;font-size:16px;min-height:44px;border:1px solid #d5d8d0;border-radius:6px;background:#fff;padding:9px 11px;color:#263d32}
+.video-editor input:read-only{background:#f1f3ee}.video-editor input:focus-visible,.video-editor select:focus-visible{outline:2px solid #325e50;outline-offset:2px}
+.video-optional{color:#747d72;font-size:12px;margin-left:4px}.video-field-hint{font-size:12px;line-height:1.55;color:#697465;margin-top:-11px}.video-storage-note{font-size:13px;color:#697465;margin-top:24px;line-height:1.65}
+.video-form-actions{display:flex;gap:8px;flex-wrap:wrap}.video-form-actions .primary{background:#325e50;color:white;min-height:42px;font-size:14px}
+.video-collection{min-width:0}.video-collection-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 20px}
+.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.video-card{border:1px solid #d5d8d0;border-radius:8px;overflow:hidden;background:white;min-width:0}.video-card iframe{display:block;width:100%;aspect-ratio:16/9;min-height:200px;border:0;background:#182b24}
+.video-card-body{padding:18px}.video-day{font-size:12px;color:#677563;margin-bottom:8px}.video-card h3{font:23px/1.25 Georgia,serif;overflow-wrap:anywhere;color:#263d32}.video-card-actions{display:flex;align-items:center;gap:5px;margin-top:18px}.video-card-actions>a{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#325e50;margin-right:auto}.video-card-actions button{flex:none}
+.video-empty{padding:54px 28px;text-align:center;border:1px dashed #c6cebf;border-radius:8px;background:#f3f5ef;color:#61745e}.video-empty>svg{margin:0 auto 20px}.video-empty h3{font:28px/1.2 Georgia,serif;color:#325e50;margin-bottom:12px}.video-empty p{font-size:16px;max-width:390px;margin:auto}
+.video-loading{padding:30px 0;color:#697465;font-size:16px}.video-error{color:#8b392d;background:#fff0e8;border:1px solid #e9c3b4;padding:12px 14px;border-radius:6px;font-size:14px;margin-bottom:12px}.video-error button{margin-top:12px}.video-success{color:#325e50;background:#e9f1e5;padding:12px 14px;margin-bottom:18px;border-radius:6px;font-size:14px}.video-playback-note{margin-top:20px;font-size:13px;color:#697465}
+@media(max-width:1150px){.video-grid{grid-template-columns:1fr}.video-workspace{grid-template-columns:300px minmax(0,1fr)}}
+@media(max-width:760px){.video-workspace{grid-template-columns:1fr;gap:28px}.video-editor{position:static}.video-page-heading{margin-top:26px}.video-page-heading h1{font-size:34px}.video-page-heading>svg{width:28px;flex:none}.video-nav-link{font-size:13px}.video-page header{padding:16px 4vw}.video-page .brand b{font-size:21px}.video-back{font-size:13px}}

@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { youtubeId, validateVideoInput } from '../lib/videos.ts';
+const id = 'M7lc1UVf-VE';
+for (const url of [`https://www.youtube.com/watch?v=${id}&t=20`, `https://youtu.be/${id}?si=abc`, `https://youtube.com/shorts/${id}`, `https://m.youtube.com/live/${id}`, `https://www.youtube-nocookie.com/embed/${id}`]) assert.equal(youtubeId(url), id);
+for (const url of ['javascript:alert(1)', `https://youtube.com.evil.test/watch?v=${id}`, `https://youtube.com@evil.test/watch?v=${id}`, 'https://youtube.com/playlist?list=abc', 'https://youtu.be/short', `https://evil.test/${id}`, `https://youtube.com/watch?v=${id}%22%3E`, `https://youtube.com:444/watch?v=${id}`]) assert.equal(youtubeId(url), null, url);
+assert.deepEqual(validateVideoInput({url:`https://youtu.be/${id}`,title:'  Ереван  ',dayId:'day-1'},['day-1']),{videoId:id,title:'Ереван',dayId:'day-1'});
+assert.equal(validateVideoInput({url:`https://youtu.be/${id}`},[]).title,'Видеоотчёт о поездке');
+assert.throws(()=>validateVideoInput({url:`https://youtu.be/${id}`,dayId:'missing'},['day-1']));
+assert.throws(()=>validateVideoInput({url:`https://youtu.be/${id}`,title:'a'.repeat(161)},[]));
+console.log('YouTube URL validation and video input checks passed.');

@@ -11,6 +11,7 @@ import TripMap from './trip-map';
 import TravelDoodles from './travel-doodles';
 import DayWeather,{useTripWeather,MiniDayWeather} from './day-weather';
 import FlightCountdown from './flight-countdown';
+import Link from 'next/link';
 import initial from '@/data/plan.json';
 import photoData from '@/data/photos.json';
 import referenceData from '@/data/references.json';
@@ -51,7 +52,7 @@ export default function Home(){
  const detailRef=place&&refs[place.id];
  return <main className={presentation?'trip presenting':'trip'}>
  <header><a className="brand" href="#" onClick={e=>{e.preventDefault();setTab('route');chooseDay('all')}}><Compass/><b>Европа <em>2026</em></b></a><span className="family-label">Семейное путешествие <span>•</span> 17.09 — 04.10</span><div className="header-actions"><button className="icon-button" title="Печатная версия маршрута" aria-label="Печатная версия маршрута" onClick={()=>window.print()}><Printer size={19}/></button><button onClick={()=>{setPresentation(true);setTab('route');showStep(0)}}><Play size={16}/>Начать путешествие</button></div></header>
- <Tabs value={tab} onValueChange={v=>setTab(String(v))}><div className="topbar"><TabsList variant="line"><TabsTrigger value="route"><Map/>Маршрут</TabsTrigger><TabsTrigger value="schedule"><CalendarDays/>По дням</TabsTrigger><TabsTrigger value="budget"><Wallet/>Бюджет</TabsTrigger><TabsTrigger value="checklist"><Flag/>Подготовка</TabsTrigger><TabsTrigger value="favorites"><Heart/>Избранное</TabsTrigger><TabsTrigger value="settings"><Settings/>Мой план</TabsTrigger></TabsList><span className="import-date">Импорт {dateLabel(plan.importedAt.slice(0,10))} · {plan.sourceTabs.length} вкладка</span></div>
+ <Tabs value={tab} onValueChange={v=>setTab(String(v))}><div className="topbar"><TabsList variant="line"><TabsTrigger value="route"><Map/>Маршрут</TabsTrigger><TabsTrigger value="schedule"><CalendarDays/>По дням</TabsTrigger><TabsTrigger value="budget"><Wallet/>Бюджет</TabsTrigger><TabsTrigger value="checklist"><Flag/>Подготовка</TabsTrigger><TabsTrigger value="favorites"><Heart/>Избранное</TabsTrigger><TabsTrigger value="settings"><Settings/>Мой план</TabsTrigger><Link href="/videos" className="video-nav-link"><Play size={17}/>Видеоотчёт</Link></TabsList><span className="import-date">Импорт {dateLabel(plan.importedAt.slice(0,10))} · {plan.sourceTabs.length} вкладка</span></div>
  {message&&<div className="notice" role="status">{message}<button onClick={()=>setMessage('')} aria-label="Скрыть сообщение"><X size={16}/></button></div>}
  <div className="intro"><div><small>СОБИРАЕМ РЮКЗАКИ И ВПЕЧАТЛЕНИЯ</small><h1>{tab==='route'?'Европа, мы едем!':tab==='schedule'?'Каждый день — своя история.':tab==='budget'?'Путешествие в цифрах.':tab==='checklist'?'Всё важное до старта.':tab==='favorites'?'То, что хочется запомнить.':'План меняется. История остаётся.'}</h1></div><div className="trip-stats"><div><b>18</b><span>дней вместе</span></div><div><b>6</b><span>стран</span></div><div><Backpack/><span>5 рюкзаков</span></div></div></div>
  {tab==='route'&&<FlightCountdown/>}
