@@ -28,6 +28,7 @@ npm run dev
 node --experimental-strip-types scripts/check.mts
 node --experimental-strip-types scripts/weather-check.mts
 EUROPE_STATIC=1 npm run build
+node scripts/prepare-apache-export.mjs
 ```
 
 Статический сайт находится в `dist/client`. Проверяйте наличие `index.html` перед публикацией. На сервер следует переносить весь результат одной сборки; смешивать модули разных сборок нельзя. Сохраните серверный `maps-config.json` при переключении выпуска.
