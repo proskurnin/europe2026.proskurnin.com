@@ -1,8 +1,52 @@
 {
- "nemo":{"checkedAt":"2026-09-07","url":"https://tickets.nemosciencemuseum.nl/en/tickets","ticket":"https://tickets.nemosciencemuseum.nl/en/tickets","price":"21,50 € с 4 лет; 0–3 года бесплатно. Семья: 4 × 21,50 € = 86 €.","booking":"Бронировать временной слот после выбора поезда.","hours":"Часы на 29 сентября уточнить перед покупкой."},
- "chocolate":{"checkedAt":"2026-09-07","url":"https://www.schokoladenmuseum.de/besuch-planen/","ticket":"https://www.schokoladenmuseum.de/besuch-planen/","price":"Немецкая версия: 45 € за семью в будни; английская: 35 €. До оплаты сверить в корзине.","booking":"Нужен временной слот; оплата не подтверждена.","hours":"Актуальные часы на дату — на официальном сайте."},
- "duomo":{"checkedAt":"2026-09-07","url":"https://www.duomomilano.it/en/access-updates-for-the-milan-duomo-monumental-complex/","ticket":"https://www.duomomilano.it/","price":"Публикация 2025 года: Combo Lift 26 € / льготный 13 €. Не подтверждает тариф на дату поездки и возрастные условия для всей семьи.","booking":"Выбрать конкретный билет и время, проверить детские тарифы.","hours":"Часы и доступность террас на 20 сентября уточнить."},
- "san-marco":{"checkedAt":"2026-09-07","url":"https://tickets.basilicasanmarco.it/en/support/prices","ticket":"https://tickets.basilicasanmarco.it/en/support/prices","price":"Базилика 10 €, варианты с музеем/алтарём 20 €, полный 30 €. Страница содержит неоднозначные скидки; семейный итог уточняется.","booking":"Именные билеты; временной слот заранее.","hours":"Часы для выбранного билета проверить на официальном сайте."},
- "disney":{"checkedAt":"2026-09-07","url":"https://www.disneylandparis.com/en-ie/seasons/halloween","ticket":"https://www.disneylandparis.com/","price":"В плане 80–105 € на человека — оценка, не цена на дату. Итог для 5 гостей неизвестен.","booking":"Билеты на 26 сентября после подтверждения дороги и состава группы.","hours":"Halloween: 26 сентября — 1 ноября 2026. Часы парка и вечернее шоу проверить в приложении."},
- "remise":{"checkedAt":null,"url":"https://remise.de/duesseldorf/short-facts","ticket":null,"price":"В плане вход свободный; сведения ожидают повторной проверки.","booking":"Встреча с другом семьи пока не подтверждена.","hours":"Уточнить часы работы на официальном сайте."}
+  "nemo": {
+    "checkedAt": "2026-09-07",
+    "url": "https://tickets.nemosciencemuseum.nl/en/tickets",
+    "ticket": "https://tickets.nemosciencemuseum.nl/en/tickets",
+    "price": "21,50 € с 4 лет; 0–3 года бесплатно. Семья: 4 × 21,50 € = 86 €.",
+    "booking": "Бронировать временной слот после выбора поезда.",
+    "hours": "Часы на 29 сентября уточнить перед покупкой."
+  },
+  "chocolate": {
+    "checkedAt": null,
+    "url": "https://www.schokoladenmuseum.de/besuch-planen/",
+    "ticket": "https://www.schokoladenmuseum.de/besuch-planen/",
+    "price": "Семейный билет 45 € на двух взрослых и собственных детей до 18 лет. Для Ирины Николаевны проверить отдельный билет.",
+    "booking": "Посещение перенесено на 24 сентября. Слот не куплен; подтвердить состав группы.",
+    "hours": "Актуальные часы на дату — на официальном сайте.",
+    "sourceLabel": "ИЗ АКТУАЛЬНОГО ПЛАНА · 17.09.2026"
+  },
+  "duomo": {
+    "checkedAt": "2026-09-07",
+    "url": "https://www.duomomilano.it/en/access-updates-for-the-milan-duomo-monumental-complex/",
+    "ticket": "https://www.duomomilano.it/",
+    "price": "Публикация 2025 года: Combo Lift 26 € / льготный 13 €. Не подтверждает тариф на дату поездки и возрастные условия для всей семьи.",
+    "booking": "Выбрать конкретный билет и время, проверить детские тарифы.",
+    "hours": "Часы и доступность террас на 20 сентября уточнить."
+  },
+  "san-marco": {
+    "checkedAt": "2026-09-07",
+    "url": "https://tickets.basilicasanmarco.it/en/support/prices",
+    "ticket": "https://tickets.basilicasanmarco.it/en/support/prices",
+    "price": "Базилика 10 €, варианты с музеем/алтарём 20 €, полный 30 €. Страница содержит неоднозначные скидки; семейный итог уточняется.",
+    "booking": "Именные билеты; временной слот заранее.",
+    "hours": "Часы для выбранного билета проверить на официальном сайте."
+  },
+  "disney": {
+    "checkedAt": null,
+    "url": "https://www.disneylandparis.com/en-ie/seasons/halloween",
+    "ticket": "https://www.disneylandparis.com/",
+    "price": "Билеты на 26 сентября куплены: один день, два парка. Стоимость доступна участникам в бюджете и описании посещения.",
+    "booking": "26 сентября: 1 день / 2 парка. Получить все 9 входных билетов со штрихкодами и сохранить офлайн.",
+    "hours": "Часы парков и вечернее шоу проверить в официальном приложении.",
+    "sourceLabel": "ИЗ АКТУАЛЬНОГО ПЛАНА · 17.09.2026"
+  },
+  "remise": {
+    "checkedAt": null,
+    "url": "https://remise.de/duesseldorf/short-facts",
+    "ticket": null,
+    "price": "В плане вход свободный; сведения ожидают повторной проверки.",
+    "booking": "25 сентября, 10:00. Предложить встречу Антону; подтверждения пока нет.",
+    "hours": "Уточнить часы работы на официальном сайте."
+  }
 }

@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtempSync,rmSync} from 'node:fs';
+import {mkdtempSync,rmSync,readFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {openDB,invite} from './core.mjs';
 import {createApp} from './app.mjs';
 
 test('Roles, sessions, invitations, protected data and owner-only writes',async()=>{
+ const sourcePlan=JSON.parse(readFileSync('data/plan.json','utf8'));
  const dir=mkdtempSync(join(tmpdir(),'europe-auth-test-')),dbPath=join(dir,'test.sqlite');
  const db=openDB(dbPath);db.prepare("INSERT INTO users(id,email,name,role,created_at) VALUES('owner','owner@example.test','Owner','owner',?)").run(new Date().toISOString());
  const ownerToken=invite(db,'owner');db.close();
@@ -17,7 +18,7 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
   for(const [path,method,body]of [['/api/trip/state','PATCH',{kind:'check',id:'x',value:true}],['/api/trip/videos','POST',{}],['/api/account/users','POST',{}]])assert.equal((await request(path,{method,body})).status,401);
   r=await request('/api/account/activate',{method:'POST',body:{token:ownerToken,password:'Owner secure phrase 2026'}});assert.equal(r.status,200);const owner=r.cookie;
   assert.equal((await request('/api/account/activate',{method:'POST',body:{token:ownerToken,password:'Another secure phrase'}})).status,400);
-  r=await request('/api/trip/plan',{cookie:owner});assert.equal(r.data.plan.expenses.length,22);assert.equal(r.data.plan.checks.length,10);const checkId=r.data.plan.checks[0].id,visitId=r.data.plan.visits[0].id,dayId=r.data.plan.days[0].id;
+  r=await request('/api/trip/plan',{cookie:owner});assert.equal(r.data.plan.expenses.length,sourcePlan.expenses.length);assert.equal(r.data.plan.checks.length,sourcePlan.checks.length);const checkId=r.data.plan.checks[0].id,visitId=r.data.plan.visits[0].id,dayId=r.data.plan.days[0].id;
   assert.equal((await request('/api/account/users',{method:'POST',cookie:owner,site:'https://evil.example',body:{email:'evil@example.test',role:'owner'}})).status,403);
   assert.equal((await request('/api/account/users',{method:'POST',cookie:owner,body:{email:'evil@example.test',role:'owner'}})).status,400);
   const cookies={};const ids={};
@@ -27,7 +28,7 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
    r=await request('/api/account/activate',{method:'POST',body:{token:t,password:'Member secure phrase 2026'}});assert.equal(r.status,200);cookies[role]=r.cookie;ids[role]=r.data.user.id;
    for(const [path,method,body]of [['/api/trip/state','PATCH',{kind:'check',id:checkId,value:true}],['/api/trip/videos','POST',{url:'https://youtu.be/M7lc1UVf-VE',title:'Test'}],['/api/account/users','POST',{email:'x@y.test',role:'participant'}],['/api/trip/import-marks','POST',{checks:{}}]])assert.equal((await request(path,{method,body,cookie:r.cookie})).status,403);
   }
-  assert.equal((await request('/api/trip/plan',{cookie:cookies.participant})).data.plan.expenses.length,22);
+  assert.equal((await request('/api/trip/plan',{cookie:cookies.participant})).data.plan.expenses.length,sourcePlan.expenses.length);
   assert.equal((await request('/api/trip/plan',{cookie:cookies.viewer})).data.plan.expenses.length,0);
   r=await request('/api/trip/import-marks',{method:'POST',cookie:owner,body:{checks:{[checkId]:true},visits:{[visitId]:{status:'visited'}}}});assert.equal(r.status,200);assert.equal(r.data.checks[checkId],true);
   assert.equal((await request('/api/trip/import-marks',{method:'POST',cookie:owner,body:{checks:{}}})).status,409);

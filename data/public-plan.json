@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": "2026-09-15-1",
-  "importedAt": "2026-09-15T00:20:00+03:00",
+  "version": "2026-09-17-1",
+  "importedAt": "2026-09-17T00:57:45+03:00",
   "sourceDocument": "",
   "sourceTabs": [],
   "family": {
@@ -95,6 +95,7 @@
       "country": "Армения",
       "night": "В полёте",
       "story": "Время для дороги, отдыха и встреч с близкими.",
+      "routeLinks": [],
       "sourceText": ""
     },
     {
@@ -103,8 +104,22 @@
       "title": "Ереван",
       "city": "yerevan",
       "country": "Армения",
-      "night": "Stylish City Center Retreat · бронь подтверждена",
-      "story": "Розовый туф, террасы Каскада и первый вечер у фонтанов.",
+      "night": "Stylish City Center Retreat · бронь подтверждена; ночной доступ уточнить",
+      "story": "Основное: заселение, отдых, площадь Республики, Каскад. По силам: Северный проспект и вечерние фонтаны. На такси из аэропорта ориентировочно 25–40 минут без пограничного контроля; пеший день около 5–6 км, с едой и отдыхом. Участок к Каскаду допускает такси. Вечером возвращаемся в Stylish. Время фонтанов не гарантировано.",
+      "routeLinks": [
+        {
+          "text": "1. Трансфер из аэропорта",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Zvartnots%20International%20Airport&destination=Amiryan%204%2F2%20Yerevan&travelmode=driving"
+        },
+        {
+          "text": "2. Прогулка до Каскада",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Amiryan%204%2F2%20Yerevan&destination=Cascade%20Tamanyan%2010%20Yerevan&travelmode=walking&waypoints=Republic%20Square%20Yerevan%7CKaras%20Mashtots%2020%20Yerevan"
+        },
+        {
+          "text": "3. Вечер и возвращение",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Cascade%20Tamanyan%2010%20Yerevan&destination=Amiryan%204%2F2%20Yerevan&travelmode=walking&waypoints=Northern%20Avenue%20Yerevan%7CYerevan%20Tavern%20Amiryan%205%20Yerevan%7CRepublic%20Square%20Yerevan"
+        }
+      ],
       "sourceText": ""
     },
     {
@@ -113,8 +128,22 @@
       "title": "Ереван → Милан",
       "city": "yerevan",
       "country": "Армения",
-      "night": "8th floor – Milano view · бронь подтверждена",
-      "story": "Розовый туф, террасы Каскада и первый вечер у фонтанов.",
+      "night": "8th floor – Milano view · две ночи 19–21 сентября",
+      "story": "Основное: выселение, Вернисаж и выезд в EVN. ГУМ и Английский парк — только при запасе сил. До выезда согласовать хранение рюкзаков: прежняя квартира после checkout не является доступной базой автоматически. Последний участок от фактического места получения вещей; автомобиль к EVN планировать с запасом 45–60 минут. При переносе места хранения обновить начальную точку.",
+      "routeLinks": [
+        {
+          "text": "1. Основная прогулка",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Amiryan%204%2F2%20Yerevan&destination=Yerevan%20Tavern%20Amiryan%205%20Yerevan&travelmode=walking&waypoints=Republic%20Square%20Yerevan%7CVernissage%20Aram%20Street%20Yerevan"
+        },
+        {
+          "text": "2. Необязательный круг",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Yerevan%20Tavern%20Amiryan%205%20Yerevan&destination=Amiryan%204%2F2%20Yerevan&travelmode=walking&waypoints=GUM%20Market%20Khorenatsi%2035%20Yerevan%7CEnglish%20Park%20Yerevan"
+        },
+        {
+          "text": "3. Выезд в аэропорт",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Amiryan%204%2F2%20Yerevan&destination=Zvartnots%20International%20Airport&travelmode=driving"
+        }
+      ],
       "sourceText": ""
     },
     {
@@ -123,8 +152,42 @@
       "title": "Милан",
       "city": "milan",
       "country": "Италия",
-      "night": "8th floor – Milano view · ночь 2 из 2",
-      "story": "Готические шпили, итальянская пицца и отдых в зелени Семпионе.",
+      "night": "8th floor – Milano view · ранний заезд оплачен",
+      "story": "Основное: Дуомо, Apple, центральная прогулка; матч — только Роман и Артур, после покупки билетов и подтверждения начала. Не добавлять музей стадиона автоматически. Santa Maria delle Grazie и Семпионе — резерв вместо части прогулки; «Тайная вечеря» только с отдельным билетом на время. Пеший центр около 4–5 км. До стадиона заложить 60–75 минут, обратно 60–90 с выходом толпы. Ночью после автобуса и такси возможен приезд около 04:00 или позже: начало прогулки сдвигать по сну, а не сокращать отдых детей.",
+      "routeLinks": [
+        {
+          "text": "1. Ночной автобус: MXP → Centrale",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Malpensa%20Airport%20Terminal%201&destination=Milano%20Centrale%20Piazza%20Duca%20d'Aosta%201&travelmode=transit"
+        },
+        {
+          "text": "2. Ночью: вокзал → квартира",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Milano%20Centrale%20Piazza%20Duca%20d'Aosta%201&destination=Corso%20Concordia%206%20Milano&travelmode=driving"
+        },
+        {
+          "text": "3. Пешком: квартира → Дуомо → Apple",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Corso%20Concordia%206%20Milano&destination=Apple%20Piazza%20Liberty%20Milano&travelmode=walking&waypoints=Piazza%20San%20Babila%20Milano%7CDuomo%20di%20Milano%7CSorbillo%20Largo%20Corsia%20dei%20Servi%2011%20Milano"
+        },
+        {
+          "text": "4. Пешком: Apple → замок",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Apple%20Piazza%20Liberty%20Milano&destination=Castello%20Sforzesco%20Milano&travelmode=walking&waypoints=Galleria%20Vittorio%20Emanuele%20II%20Milano%7CPiazza%20della%20Scala%20Milano"
+        },
+        {
+          "text": "5. Роман и Артур: к стадиону",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Castello%20Sforzesco%20Milano&destination=San%20Siro%20Stadium%20Milano&travelmode=transit"
+        },
+        {
+          "text": "6. Анна с детьми: домой",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Castello%20Sforzesco%20Milano&destination=Corso%20Concordia%206%20Milano&travelmode=transit"
+        },
+        {
+          "text": "7. После матча: домой",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=San%20Siro%20Stadium%20Milano&destination=Corso%20Concordia%206%20Milano&travelmode=transit"
+        },
+        {
+          "text": "8. Резерв: Santa Maria delle Grazie",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Castello%20Sforzesco%20Milano&destination=Santa%20Maria%20delle%20Grazie%20Milano&travelmode=walking"
+        }
+      ],
       "sourceText": ""
     },
     {
@@ -133,18 +196,86 @@
       "title": "Венеция",
       "city": "venice",
       "country": "Италия",
-      "night": "Venice Villa House · выбрать и подтвердить",
-      "story": "Смотрим на город с воды, оставляя время просто заблудиться среди каналов.",
+      "night": "Venice Villa House, Mestre · выбрано, ещё не забронировано",
+      "story": "Основное: переезд, Сан-Марко, прогулка по каналам и Риальто. Дворец дожей — необязательный, сокращает время прогулки. Villa House пока только выбран: заезд и хранение не считать подтверждёнными. Если рюкзаки в KiPoint, забирать до закрытия, затем идти к жилью. На Mestre ↔ Santa Lucia 25–40 минут с ожиданием; на вапоретто №1 около часа плюс очередь. Карта может предложить другой транспорт: для прогулки по Большому каналу нужен именно №1. Риальто → вокзал около 35–50 минут с детьми. Последний пеший участок к жилью — по ссылке Mestre → жильё.",
+      "routeLinks": [
+        {
+          "text": "1. Квартира → Milano Centrale",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Corso%20Concordia%206%20Milano&destination=Milano%20Centrale%20Piazza%20Duca%20d'Aosta%201&travelmode=driving"
+        },
+        {
+          "text": "2. Поезд до Mestre",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Milano%20Centrale%20Piazza%20Duca%20d'Aosta%201&destination=Venezia%20Mestre%20railway%20station&travelmode=transit"
+        },
+        {
+          "text": "3. Mestre → выбранное жильё",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Venezia%20Mestre%20railway%20station&destination=Via%20Podgora%2058%20Mestre&travelmode=walking"
+        },
+        {
+          "text": "4. Mestre → Santa Lucia",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Venezia%20Mestre%20railway%20station&destination=Venezia%20Santa%20Lucia%20railway%20station&travelmode=transit"
+        },
+        {
+          "text": "5. Вапоретто к Сан-Марко",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Venezia%20Santa%20Lucia%20railway%20station&destination=Piazza%20San%20Marco%20Venezia&travelmode=transit"
+        },
+        {
+          "text": "6. Центр пешком",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Piazza%20San%20Marco%20Venezia&destination=Ponte%20di%20Rialto%20Venezia&travelmode=walking&waypoints=Dal%20Moro's%20Venice%7CPalazzo%20Ducale%20Venezia%7CPonte%20della%20Paglia%20Venezia"
+        },
+        {
+          "text": "7. Риальто → Santa Lucia",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Ponte%20di%20Rialto%20Venezia&destination=Venezia%20Santa%20Lucia%20railway%20station&travelmode=walking"
+        },
+        {
+          "text": "8. Обратно до Mestre",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Venezia%20Santa%20Lucia%20railway%20station&destination=Venezia%20Mestre%20railway%20station&travelmode=transit"
+        }
+      ],
       "sourceText": ""
     },
     {
       "id": "day-2026-09-22",
       "date": "2026-09-22",
-      "title": "Венеция → Бергамо",
+      "title": "Mestre → Бергамо",
       "city": "bergamo",
       "country": "Италия",
-      "night": "FEEL – Palazzo Ortelli · бронь подтверждена",
-      "story": "Время для дороги, отдыха и встреч с близкими.",
+      "night": "FEEL – Palazzo Ortelli, Бергамо · бронь подтверждена",
+      "story": "Основное: поезд, заселение FEEL, компактная прогулка Città Alta и ранний сон. На поезд с пересадкой резервировать 3–4 часа, точный рейс ещё выбрать. От вокзала к FEEL 20–30 минут пешком. Подъём и очередь на фуникулёр — отдельный запас 20–30 минут. Старый город около 2–3 км, 2–2,5 часа с паузами. Базилику, собор и капеллу смотреть внутри только при открытых дверях; Campanone необязателен. Повторную поездку в Венецию утром не включаем в основной день: она сокращает Бергамо и сон перед рейсом.",
+      "routeLinks": [
+        {
+          "text": "1. Жильё → Mestre",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Via%20Podgora%2058%20Mestre&destination=Venezia%20Mestre%20railway%20station&travelmode=walking"
+        },
+        {
+          "text": "2. Поезд: Mestre → Бергамо",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Venezia%20Mestre%20railway%20station&destination=Bergamo%20railway%20station&travelmode=transit"
+        },
+        {
+          "text": "3. Вокзал → FEEL",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Bergamo%20railway%20station&destination=Via%20Luigi%20Magrini%2010%20Bergamo&travelmode=walking"
+        },
+        {
+          "text": "4. Такси к фуникулёру",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Via%20Luigi%20Magrini%2010%20Bergamo&destination=Funicolare%20Citta%20Alta%20Viale%20Vittorio%20Emanuele%20II%2064%20Bergamo&travelmode=driving"
+        },
+        {
+          "text": "5. Подъём фуникулёром",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Funicolare%20Citta%20Alta%20Viale%20Vittorio%20Emanuele%20II%2064%20Bergamo&destination=Piazza%20Mercato%20delle%20Scarpe%20Bergamo&travelmode=transit"
+        },
+        {
+          "text": "6. Старый город, часть 1",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Piazza%20Mercato%20delle%20Scarpe%20Bergamo&destination=Piazza%20Vecchia%20Bergamo&travelmode=walking&waypoints=Porta%20San%20Giacomo%20Bergamo%7CPiazza%20Duomo%20Bergamo"
+        },
+        {
+          "text": "7. Старый город, часть 2",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Piazza%20Vecchia%20Bergamo&destination=Piazza%20Mercato%20delle%20Scarpe%20Bergamo&travelmode=walking&waypoints=Via%20Bartolomeo%20Colleoni%20Bergamo%7CPiazza%20Mascheroni%20Bergamo"
+        },
+        {
+          "text": "8. После спуска: такси домой",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Funicolare%20Citta%20Alta%20Viale%20Vittorio%20Emanuele%20II%2064%20Bergamo&destination=Via%20Luigi%20Magrini%2010%20Bergamo&travelmode=driving"
+        }
+      ],
       "sourceText": ""
     },
     {
@@ -154,27 +285,69 @@
       "city": "dormagen",
       "country": "Германия",
       "night": "У родственников · Дормаген",
-      "story": "Время для дороги, отдыха и встреч с близкими.",
+      "story": "Основное: аэропорт BGY к 05:40, перелёт, дорога в Дормаген и отдых. Такси FEEL → BGY заказать накануне, заложить 20–30 минут. После прилёта CGN → дом планировать 1,5–2 часа с выходом из аэропорта, ожиданием и последним участком. Цонс — резерв; обратный путь тем же транспортом, отправление проверить перед прогулкой. На карте нет воздушного сегмента: перелёт указан ниже отдельным пунктом.",
+      "routeLinks": [
+        {
+          "text": "1. FEEL → аэропорт BGY",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Via%20Luigi%20Magrini%2010%20Bergamo&destination=Bergamo%20Airport&travelmode=driving"
+        },
+        {
+          "text": "2. CGN → Dormagen",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Cologne%20Bonn%20Airport&destination=Dormagen%20Bahnhof&travelmode=transit"
+        }
+      ],
       "sourceText": ""
     },
     {
       "id": "day-2026-09-24",
       "date": "2026-09-24",
-      "title": "Дюссельдорф",
-      "city": "dusseldorf",
+      "title": "Кёльн · собор и встреча с Ириной",
+      "city": "cologne",
       "country": "Германия",
       "night": "У родственников · Дормаген",
-      "story": "Время для дороги, отдыха и встреч с близкими.",
+      "story": "Основное: собор, музей шоколада и встреча с Ириной Николаевной. Apple и Ray-Ban — необязательные остановки после обеда. От дома до Köln Hbf ориентировочно 50–75 минут с подходом к станции Dormagen и ожиданием; выбрать поезд в DB Navigator. В поезде Dormagen → Köln Hbf обычно около 20–30 минут, от вокзала до собора 5–10 минут. К музею идти 25–30 минут по набережной. В аэропорт CGN в этот день не едем.",
+      "routeLinks": [
+        {
+          "text": "2. Собор → музей",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=K%C3%B6ln%20Hauptbahnhof&destination=Schokoladenmuseum%20K%C3%B6ln&travelmode=walking&waypoints=Cologne%20Cathedral"
+        },
+        {
+          "text": "3. Магазины → вокзал",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Schokoladenmuseum%20K%C3%B6ln&destination=K%C3%B6ln%20Hauptbahnhof&travelmode=walking&waypoints=Apple%20Schildergasse%20K%C3%B6ln%7CRay%20Ban%20Schildergasse%2050%20K%C3%B6ln"
+        }
+      ],
       "sourceText": ""
     },
     {
       "id": "day-2026-09-25",
       "date": "2026-09-25",
-      "title": "Кёльн → Франция",
-      "city": "cologne",
+      "title": "Дюссельдорф → Париж",
+      "city": "dusseldorf",
       "country": "Германия",
-      "night": "Транспорт и ночёвка не определены",
-      "story": "Время для дороги, отдыха и встреч с близкими.",
+      "night": "Ночной BlaBlaCar Bus в Париж · билеты оплачены",
+      "story": "Основное: Classic Remise, центр, Apple по необходимости и купленный автобус в Париж. Ирина Николаевна уже с нами после встречи в Кёльне. Антону Божанову предложить встречу в Classic Remise в пятницу вместо четверга; подтверждения пока нет. От дома до Düsseldorf Hbf планово 50–75 минут с ожиданием; выбрать поезд с прибытием около 09:15. До Remise ещё 25–40 минут. Все рюкзаки на Францию берём утром, возвращение домой не планируем.",
+      "routeLinks": [
+        {
+          "text": "2. Вокзал → Classic Remise",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=D%C3%BCsseldorf%20Hauptbahnhof&destination=Classic%20Remise%20D%C3%BCsseldorf&travelmode=transit"
+        },
+        {
+          "text": "3. Remise → Burgplatz",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Classic%20Remise%20D%C3%BCsseldorf&destination=Burgplatz%2011%20D%C3%BCsseldorf&travelmode=transit"
+        },
+        {
+          "text": "4. Прогулка и магазины",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Burgplatz%2011%20D%C3%BCsseldorf&destination=Schadowstra%C3%9Fe%2063%20D%C3%BCsseldorf&travelmode=walking&waypoints=Oststra%C3%9Fe%20123%20D%C3%BCsseldorf%7CK%C3%B6nigsallee%202%20D%C3%BCsseldorf%7CSchadowstra%C3%9Fe%2053%20D%C3%BCsseldorf"
+        },
+        {
+          "text": "5. Магазины → Hbf",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Schadowstra%C3%9Fe%2063%20D%C3%BCsseldorf&destination=D%C3%BCsseldorf%20Hauptbahnhof&travelmode=walking"
+        },
+        {
+          "text": "6. Hbf → автобус ZOB",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=D%C3%BCsseldorf%20Hauptbahnhof&destination=51.2228889%2C6.7955556&travelmode=walking"
+        }
+      ],
       "sourceText": ""
     },
     {
@@ -183,18 +356,78 @@
       "title": "Диснейленд",
       "city": "disneyland",
       "country": "Франция",
-      "night": "Val d’Europe · отель не выбран",
-      "story": "Один день для большой семейной сказки. Темп выбираем по силам младшего.",
+      "night": "Disney 4 min, Шесси · бронь на 9 гостей подтверждена",
+      "story": "Основное: Disneyland и получение ключей в 17:00–19:00. Вечернее шоу — по силам. Высадка Bercy-Seine подтверждена: купленный BlaBlaCar Bus прибывает в 07:40. Весь путь от Bercy до парка 80–110 минут, с завтраком 2–2,5 часа. Квартира отмечена по координатам брони: точный адрес и вход запросить у хозяина. За ключами взрослому выйти из парка примерно в 16:15; дорога туда-обратно 40–70 минут плюс оформление и досмотр. Вечером вся группа повторяет участок Chessy → Val d’Europe → квартира; 20–35 минут без времени на выход толпы.",
+      "routeLinks": [
+        {
+          "text": "1. Bercy-Seine: к метро через парк",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Paris%20Bercy%20Seine%20bus%20station&destination=Bercy%20metro%20station%20Paris&travelmode=walking"
+        },
+        {
+          "text": "2. Bercy → Marne-la-Vallée–Chessy",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Bercy%20metro%20station%20Paris&destination=Marne-la-Vall%C3%A9e%20Chessy%20station&travelmode=transit"
+        },
+        {
+          "text": "3. Станция → вход Disney",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Marne-la-Vall%C3%A9e%20Chessy%20station&destination=Disneyland%20Paris%20entrance&travelmode=walking"
+        },
+        {
+          "text": "4. За ключами: Chessy → Val d’Europe",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Marne-la-Vall%C3%A9e%20Chessy%20station&destination=Val%20d'Europe%20station&travelmode=transit"
+        },
+        {
+          "text": "5. Val d’Europe → пин квартиры",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Val%20d'Europe%20station&destination=48.8558167%2C2.7725500&travelmode=walking"
+        }
+      ],
       "sourceText": ""
     },
     {
       "id": "day-2026-09-27",
       "date": "2026-09-27",
-      "title": "Париж → Дормаген",
+      "title": "Париж → ночной автобус",
       "city": "paris",
       "country": "Франция",
-      "night": "У родственников · Дормаген",
-      "story": "Время для дороги, отдыха и встреч с близкими.",
+      "night": "Ночной автобус в Германию · ещё не куплен",
+      "story": "Обязательное: Нотр-Дам внутри, наружные пирамиды Лувра, Эйфелева башня снаружи. Дополнительное: Тюильри и Трокадеро — первые кандидаты на сокращение. Движение по центру идёт с востока на запад; возвращаемся к Châtelet только за рюкзаками. Камера хранения не выбрана: станция на карте — ориентир, не подтверждённый адрес хранения. После бронирования заменить её на вход в камеру в обоих участках. До Нотр-Дама от квартиры 95–130 минут с хранением; на пешие участки суммарно около 6–8 км. Подъём на башню и речной круиз требуют замены части программы. Конечная автобусная остановка зависит от билета: Pershing и Bercy — разные места; открыть только нужную ветку.",
+      "routeLinks": [
+        {
+          "text": "1. Квартира → Val d’Europe",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=48.8558167%2C2.7725500&destination=Val%20d'Europe%20station&travelmode=walking"
+        },
+        {
+          "text": "2. Val d’Europe → Châtelet–Les Halles",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Val%20d'Europe%20station&destination=Ch%C3%A2telet%20Les%20Halles%20station%20Paris&travelmode=transit"
+        },
+        {
+          "text": "3. Пешком: Нотр-Дам, обед, Лувр",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Ch%C3%A2telet%20Les%20Halles%20station%20Paris&destination=Louvre%20Pyramid%20Paris&travelmode=walking&waypoints=Notre%20Dame%20de%20Paris%7CPlace%20Saint%20Michel%20Paris%7CPont%20Neuf%20Paris"
+        },
+        {
+          "text": "4. Пешком: Тюильри → Concorde",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Louvre%20Pyramid%20Paris&destination=Concorde%20metro%20station%20Paris&travelmode=walking&waypoints=Jardin%20des%20Tuileries%20Paris"
+        },
+        {
+          "text": "5. Метро: Concorde → École Militaire",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Concorde%20metro%20station%20Paris&destination=Ecole%20Militaire%20metro%20station%20Paris&travelmode=transit"
+        },
+        {
+          "text": "6. Пешком: башня → Трокадеро",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Ecole%20Militaire%20metro%20station%20Paris&destination=Place%20du%20Trocadero%20Paris&travelmode=walking&waypoints=Eiffel%20Tower%20Paris"
+        },
+        {
+          "text": "7. За рюкзаками: к Châtelet",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Place%20du%20Trocadero%20Paris&destination=Ch%C3%A2telet%20Les%20Halles%20station%20Paris&travelmode=transit"
+        },
+        {
+          "text": "8. Основной выезд: Porte Maillot",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Ch%C3%A2telet%20Les%20Halles%20station%20Paris&destination=22%20Boulevard%20Pershing%20Paris&travelmode=transit"
+        },
+        {
+          "text": "9. Только для другого билета: Bercy",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Ch%C3%A2telet%20Les%20Halles%20station%20Paris&destination=Paris%20Bercy%20Seine%20bus%20station&travelmode=transit"
+        }
+      ],
       "sourceText": ""
     },
     {
@@ -204,7 +437,8 @@
       "city": "dormagen",
       "country": "Германия",
       "night": "У родственников · Дормаген",
-      "story": "Время для дороги, отдыха и встреч с близкими.",
+      "story": "Утром — возвращение после ночного автобуса, затем сон и отдых в Дормагене. Обратный автобус ещё не куплен.",
+      "routeLinks": [],
       "sourceText": ""
     },
     {
@@ -215,6 +449,7 @@
       "country": "Нидерланды",
       "night": "Амстердам · отель не выбран",
       "story": "Эксперименты, лодки и прогулки в городе каналов.",
+      "routeLinks": [],
       "sourceText": ""
     },
     {
@@ -225,6 +460,7 @@
       "country": "Нидерланды",
       "night": "У родственников · Дормаген",
       "story": "Эксперименты, лодки и прогулки в городе каналов.",
+      "routeLinks": [],
       "sourceText": ""
     },
     {
@@ -235,6 +471,7 @@
       "country": "Германия",
       "night": "У родственников · Дормаген",
       "story": "Время для дороги, отдыха и встреч с близкими.",
+      "routeLinks": [],
       "sourceText": ""
     },
     {
@@ -245,6 +482,7 @@
       "country": "Турция",
       "night": "Стамбул · жильё не выбрано",
       "story": "Купола над старым городом и паром между двумя континентами.",
+      "routeLinks": [],
       "sourceText": ""
     },
     {
@@ -255,6 +493,7 @@
       "country": "Турция",
       "night": "Султанахмет · жильё не выбрано",
       "story": "Купола над старым городом и паром между двумя континентами.",
+      "routeLinks": [],
       "sourceText": ""
     },
     {
@@ -265,6 +504,7 @@
       "country": "Турция",
       "night": "Дома · рейс не выбран",
       "story": "Купола над старым городом и паром между двумя континентами.",
+      "routeLinks": [],
       "sourceText": ""
     }
   ],
@@ -356,7 +596,7 @@
       "lng": 44.5136,
       "city": "yerevan",
       "category": "hotel",
-      "precision": "Указан город; точный адрес жилья не опубликован.",
+      "precision": "Показан город. Точный вход — по ссылке из плана.",
       "photo": null
     },
     {
@@ -541,7 +781,7 @@
     },
     {
       "id": "disney",
-      "title": "Disneyland Park",
+      "title": "Disneyland Paris · два парка",
       "lat": 48.8722,
       "lng": 2.7758,
       "city": "disneyland",
@@ -551,7 +791,7 @@
     },
     {
       "id": "trocadero",
-      "title": "Тюильри, Сена и Трокадеро",
+      "title": "Трокадеро",
       "lat": 48.8629,
       "lng": 2.287,
       "city": "paris",
@@ -758,6 +998,26 @@
       "category": "city",
       "precision": "Точка города, не адрес жилья",
       "photo": null
+    },
+    {
+      "id": "dusseldorf-zob",
+      "title": "Düsseldorf ZOB",
+      "city": "dusseldorf",
+      "category": "station",
+      "lat": 51.2228889,
+      "lng": 6.7955556,
+      "precision": "Координаты из плана; платформу или точный вход уточнить.",
+      "photo": null
+    },
+    {
+      "id": "chessy-flat",
+      "title": "Апартаменты Disney 4 min, Шесси",
+      "city": "disneyland",
+      "category": "hotel",
+      "lat": 48.8558167,
+      "lng": 2.77255,
+      "precision": "Координаты из плана; платформу или точный вход уточнить.",
+      "photo": null
     }
   ],
   "visits": [
@@ -765,13 +1025,14 @@
       "id": "visit-2026-09-17-main",
       "dayId": "day-2026-09-17",
       "placeId": "city-moscow",
-      "title": "Москва → Ереван",
+      "title": "Utair UT 785 · вылет из Внуково",
       "start": "20:50",
       "end": null,
       "category": "airport",
-      "description": "Вылет из Внуково 17 сентября в 20:50, прибытие в Ереван 18 сентября в 01:25 по местному времени. Рейс Utair UT 785 оплачен.",
+      "description": "Вылет из Москвы — посадочные талоны получены на всех пятерых. UT785: Внуково, терминал A → Ереван; вылет 20:50, выход 19, посадка до 20:30 (московское время). Выход сверить по табло в аэропорту. Плановый приезд во Внуково — к 17:50, к выходу — к 20:00; это наш запас времени, не время начала посадки из талона. Места: Роман — 4L; Лера — 4K; Анна — 5L; Ярослав — 5K; Артур — 6L. Роман и Лера в ряду 4, Анна и Ярослав в ряду 5, Артур в ряду 6; расположение окна/прохода по талонам не определяем. Тариф «Минимум»: каждому включена одна ручная кладь до 5 кг, не более 40 × 30 × 20 см. Летим только с рюкзаками. Посадочные сохранить офлайн; в PDF предусмотрена возможность распечатки в аэропорту. Источник: приложенные посадочные талоны [номер скрыт].",
       "status": "booked",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -782,22 +1043,58 @@
       "start": "01:25",
       "end": "03:00",
       "category": "airport",
-      "description": "Прилёт в «Аэропорт Звартноц (EVN)» 📍 Yerevan, Armenia рейсом Utair UT 785 из Москвы (Внуково, терминал A). Вылет — 17 сентября в 20:50, прилёт — 18 сентября в 01:25 по местному времени. После контроля — заранее заказанный минивэн или официальный трансфер; подтвердить детское кресло.",
+      "description": "01:25 – 03:00: Прилёт в «Аэропорт Звартноц (EVN)» 📍 Yerevan, Armenia рейсом Utair UT 785 из Москвы (Внуково, терминал A). Вылет — 17 сентября в 20:50, прилёт — 18 сентября в 01:25 по местному времени. После контроля — заранее заказанный минивэн или официальный трансфер; подтвердить детское кресло. До выхода к трансферу — покупаем местную SIM-карту для интернета в Ереване. Где купить: официальная стойка Ucom в зоне получения багажа либо в общем зале прилёта на 1-м этаже, после таможни. Обе точки работают 24/7, поэтому при ночном прилёте в 01:25 должны быть открыты. Держим паспорт под рукой; просим сотрудника активировать пакет и проверяем интернет до ухода. На оформление закладываем около 15–30 минут с учётом очереди; при задержке предупреждаем водителя. Источники: тариф Ucom uWelcome; точки Ucom и часы работы; тариф Viva TOURIST UNLIM; точки Viva; курс AMD/RUB.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Yerevan, Armenia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Zvarnots+International+Airport+Yerevan"
+        },
+        {
+          "text": "тариф Ucom uWelcome",
+          "url": "https://www.ucom.am/en/uwelcome"
+        },
+        {
+          "text": "точки Ucom и часы работы",
+          "url": "https://www.ucom.am/ucom-service-centers"
+        },
+        {
+          "text": "тариф Viva TOURIST UNLIM",
+          "url": "https://www.viva.am/ru/individual-customers/tariff-plans/tourist-tariff-plan"
+        },
+        {
+          "text": "точки Viva",
+          "url": "https://shop.viva.am/en/stores/"
+        },
+        {
+          "text": "курс AMD/RUB",
+          "url": "https://ppt.ru/currencies/amd"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-18-rooftop",
       "dayId": "day-2026-09-18",
       "placeId": "rooftop",
-      "title": "Stylish City Center Retreat · ночное заселение",
+      "title": "Stylish City Center Retreat · заселение",
       "start": "03:00",
       "end": "04:00",
       "category": "hotel",
-      "description": "Прилёт UT 785 в 01:25, затем трансфер. Забронированы апартаменты Stylish City Center Retreat Near Republic Square: две спальни, 2 взрослых и 3 детей, ночи 17–19 сентября. До вылета нужно получить инструкции ночного заселения около 03:00.",
+      "description": "03:00 – 04:00: Трансфер в отель Stylish City Center Retreat Near Republic Square. Адрес: 📍 4/2 Amiryan St, Yerevan. Бронь подтверждена: апартаменты с двумя спальнями на 2 взрослых и 3 детей. Предоплата не требуется; факт оплаты не подтверждён. Заезд с 14:00, выезд до 12:00. Бесплатная отмена до сент. Ночь до фактического приезда забронирована. Заселение около 03:00 и способ получения ключей необходимо письменно подтвердить: key-safe в PDF не указан. Страница Stylish в Booking. 17, 2026 — сент. 19, 2026; до вылета получить инструкции ночного заселения.",
       "status": "booked",
       "optional": false,
+      "links": [
+        {
+          "text": "4/2 Amiryan St, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=4%2F2+Amiryan+Street+Yerevan"
+        },
+        {
+          "text": "Страница Stylish в Booking",
+          "url": "https://www.booking.com/hotel/am/stylish-city-center-retreat-near-republic-square.html"
+        }
+      ],
       "source": ""
     },
     {
@@ -808,22 +1105,37 @@
       "start": "04:00",
       "end": "11:00",
       "category": "rest",
-      "description": "Сон и восстановление сил после перелета.",
+      "description": "04:00 – 11:00: Сон и восстановление сил после перелета.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
       "id": "visit-2026-09-18-event-4",
       "dayId": "day-2026-09-18",
       "placeId": "city-yerevan",
-      "title": "Завтрак в «Tumanyan Shaurma» 📍 Tumanyan St, 32 или любой кофейне на Северном проспекте (например, «Crumbs Brea",
+      "title": "Завтрак рядом со Stylish",
       "start": "11:00",
       "end": "12:30",
       "category": "food",
-      "description": "Завтрак в «Tumanyan Shaurma» 📍 Tumanyan St, 32 или любой кофейне на Северном проспекте (например, «Crumbs Bread Factory» 📍 Abovyan St, 1 или «Coffee House» 📍 Northern Ave, 15). Рекомендуется попробовать традиционный армянский запечённый брдуч с сыром и зеленью, свежую выпечку или сытный традиционный омлет, заказать свежесваренный кофе по-армянски (сурч) или свежевыжатый сок для детей, а также купить воду в дорогу.",
+      "description": "11:00 – 12:30: Основной вариант — завтрак рядом со Stylish на Amiryan Street / у площади Республики, чтобы не идти на север и обратно перед осмотром площади. Заведения ниже — альтернативы. Завтрак в «Tumanyan Shaurma» 📍 Tumanyan St, 32 или любой кофейне на Северном проспекте (например, «Crumbs Bread Factory» 📍 Abovyan St, 1 или «Coffee House» 📍 Northern Ave, 15). Рекомендуется попробовать традиционный армянский запечённый брдуч с сыром и зеленью, свежую выпечку или сытный традиционный омлет, заказать свежесваренный кофе по-армянски (сурч) или свежевыжатый сок для детей, а также купить воду в дорогу.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Tumanyan St, 32",
+          "url": "https://www.google.com/maps/search/?api=1&query=Tumanyan+Shaurma+Tumanyan+St+32+Yerevan"
+        },
+        {
+          "text": "Abovyan St, 1",
+          "url": "https://www.google.com/maps/search/?api=1&query=Crumbs+Bread+Factory+Abovyan+St+1+Yerevan"
+        },
+        {
+          "text": "Northern Ave, 15",
+          "url": "https://www.google.com/maps/search/?api=1&query=Coffee+House+Yerevan+Northern+Ave+15"
+        }
+      ],
       "source": ""
     },
     {
@@ -834,22 +1146,34 @@
       "start": "12:30",
       "end": "13:15",
       "category": "sight",
-      "description": "Площадь Республики 📍 Republic Square, Yerevan: короткий осмотр архитектурного ансамбля, спроектированного Александром Таманяном в форме подковы и овального партера. Комплекс включает пять монументальных зданий из розового и вулканического туфа: Музей истории Армении и Национальную галерею, Дом правительства с часовой башней, Центральный телеграф, Министерство иностранных дел и отель Marriott. Обратите внимание на национальные мотивы в каменной резьбе, украшающей аркады и фасады. 13:15–14:00: отдых и переход к обеду. На площадь вернёмся вечером; дневной осмотр можно сократить.",
+      "description": "12:30 – 13:15: Площадь Республики 📍 Republic Square, Yerevan: короткий осмотр архитектурного ансамбля, спроектированного Александром Таманяном в форме подковы и овального партера. Комплекс включает пять монументальных зданий из розового и вулканического туфа: Музей истории Армении и Национальную галерею, Дом правительства с часовой башней, Центральный телеграф, Министерство иностранных дел и отель Marriott. Обратите внимание на национальные мотивы в каменной резьбе, украшающей аркады и фасады. 13:15–14:00: отдых и переход к обеду. На площадь вернёмся вечером; дневной осмотр можно сократить.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Republic Square, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=Republic+Square+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-18-event-6",
       "dayId": "day-2026-09-18",
       "placeId": "city-yerevan",
-      "title": "Обед в ресторане «Карас» 📍 Mashtots Ave, 20 или другом семейном заведении поблизости (например, «Tavern Yereva",
+      "title": "Обед в Karas и дорога к Каскаду",
       "start": "14:00",
       "end": "15:30",
       "category": "food",
-      "description": "Обед в ресторане «Карас» 📍 Mashtots Ave, 20 или другом семейном заведении поблизости (например, «Tavern Yerevan» или «Lavash»); выбрать место по актуальному меню, отзывам и времени ожидания. Отличная возможность попробовать сытные блюда национальной кухни после насыщенной утренней прогулки: арису, толму в виноградных листьях, традиционный кюфта-суп или запечённый шашлык (хоровац) с поджаренными овощами. Для детей можно заказать мягкие лаваши с сыром, куриный суп с домашней лапшой, свежие салаты и натуральные компоты из местных ягод и фруктов. Маршрут «Карас» → «Каскад»: прогулка вверх по проспекту Маштоца и через парк Скульптур.",
+      "description": "14:00 – 15:30: Обед в ресторане «Карас» 📍 Mashtots Ave, 20 или другом семейном заведении поблизости (например, «Tavern Yerevan» или «Lavash»); выбрать место по актуальному меню, отзывам и времени ожидания. Отличная возможность попробовать сытные блюда национальной кухни после насыщенной утренней прогулки: арису, толму в виноградных листьях, традиционный кюфта-суп или запечённый шашлык (хоровац) с поджаренными овощами. Для детей можно заказать мягкие лаваши с сыром, куриный суп с домашней лапшой, свежие салаты и натуральные компоты из местных ягод и фруктов. Маршрут «Карас» → «Каскад»: прогулка вверх по проспекту Маштоца и через парк Скульптур.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Mashtots Ave, 20",
+          "url": "https://www.google.com/maps/search/?api=1&query=Karas+Mashtots+Ave+20+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -860,9 +1184,15 @@
       "start": "15:30",
       "end": "17:30",
       "category": "sight",
-      "description": "«Каскад» 📍 10 Tamanyan St, Yerevan. Монументальный архитектурно-скульптурный комплекс, откуда открывается потрясающий панорамный вид на Ереван и гору Арарат. Прогулку рекомендуется начать с расположенного у подножия парка скульптур Центрa искусств Гафесчяна, где собраны оригинальные работы мировых мастеров современного искусства, включая знаменитого «Черного кота» Фернандо Ботеро. При открытых эскалаторах поднимайтесь внутри комплекса через галереи современного искусства: это позволит комфортно преодолеть затяжной подъём с детьми и укрыться от жары или непогоды. Прогуляйтесь по разноуровневым террасам с цветущими клумбами, фонтанами и урбанистическими скульптурами. Объем пешей прогулки и спуск по внешним каменным ступеням выбирайте по погоде и физическим силам детей; при необходимости спуститься можно также на внутреннем эскалаторе. Маршрут «Каскад» → «Северный проспект»: приятная прогулка через центр города.",
+      "description": "15:30 – 17:30: «Каскад» 📍 10 Tamanyan St, Yerevan. Монументальный архитектурно-скульптурный комплекс, откуда открывается потрясающий панорамный вид на Ереван и гору Арарат. Прогулку рекомендуется начать с расположенного у подножия парка скульптур Центрa искусств Гафесчяна, где собраны оригинальные работы мировых мастеров современного искусства, включая знаменитого «Черного кота» Фернандо Ботеро. При открытых эскалаторах поднимайтесь внутри комплекса через галереи современного искусства: это позволит комфортно преодолеть затяжной подъём с детьми и укрыться от жары или непогоды. Прогуляйтесь по разноуровневым террасам с цветущими клумбами, фонтанами и урбанистическими скульптурами. Объем пешей прогулки и спуск по внешним каменным ступеням выбирайте по погоде и физическим силам детей; при необходимости спуститься можно также на внутреннем эскалаторе. Маршрут «Каскад» → «Северный проспект»: приятная прогулка через центр города.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "10 Tamanyan St, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=Cascade+Complex+10+Tamanyan+St+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -873,22 +1203,15 @@
       "start": "17:30",
       "end": "19:00",
       "category": "sight",
-      "description": "Прогулка по Северному проспекту 📍 Northern Ave, Yerevan — пешеходной улице, соединяющей площадь Республики и Оперный театр. Прогуляйтесь мимо современно оформленных зданий из туфа, многочисленных магазинов, уличных музыкантов и уютных кафе. Отличная возможность сделать перерыв на кофе, мороженое или свежевыжатый сок, дать детям немного отдохнуть после Каскада и прочувствовать вечерний ритм Еревана. Маршрут «Северный проспект» → «Площадь Республики»: Северный проспект — это пешеходная улица, напрямую соединяющая Оперный театр и площадь Республики. Чтобы попасть к началу шоу фонтанов, вам нужно просто пройти по Северному проспекту в сторону площади Республики. Это короткая и приятная пешая прогулка через центр города. Логистика: Пешком | ~5–10 мин пешком",
+      "description": "17:30 – 19:00: Прогулка по Северному проспекту 📍 Northern Ave, Yerevan — пешеходной улице, соединяющей площадь Республики и Оперный театр. Прогуляйтесь мимо современно оформленных зданий из туфа, многочисленных магазинов, уличных музыкантов и уютных кафе. Отличная возможность сделать перерыв на кофе, мороженое или свежевыжатый сок, дать детям немного отдохнуть после Каскада и прочувствовать вечерний ритм Еревана. Маршрут «Северный проспект» → «Площадь Республики»: Северный проспект — это пешеходная улица, напрямую соединяющая Оперный театр и площадь Республики. Чтобы попасть к началу шоу фонтанов, вам нужно просто пройти по Северному проспекту в сторону площади Республики. Это короткая и приятная пешая прогулка через центр города. Логистика: Пешком | ~5–10 мин пешком",
       "status": "planned",
-      "optional": false,
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-18-event-9",
-      "dayId": "day-2026-09-18",
-      "placeId": "city-yerevan",
-      "title": "Вечернее шоу Поющих и Танцующих фонтанов на Площади Республики 📍 Republic Square, Yerevan",
-      "start": "20:30",
-      "end": "21:30",
-      "category": "rest",
-      "description": "Вечернее шоу Поющих и Танцующих фонтанов на Площади Республики 📍 Republic Square, Yerevan. Точное начало шоу на день посещения уточнить у отеля или на месте. Время выше — резерв для просмотра, а не подтверждённое расписание; при позднем старте сократить просмотр по силам детей. Под созвучие мировой классической, эстрадной и армянской национальной музыки водяные струи, подсвеченные яркими разноцветными прожекторами, меняют высоту и ритм движения. Для удобства просмотра всей семьей и комфорта детей рекомендуется прийти за 15–20 минут до начала, чтобы занять удобные места возле бассейна со стороны Национального музея истории или уютных лавочек сквера. В прохладные сентябрьские вечера стоит взять с собой легкие кофты или ветровки.",
-      "status": "planned",
-      "optional": false,
+      "optional": true,
+      "links": [
+        {
+          "text": "Northern Ave, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=Northern+Ave+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -899,22 +1222,52 @@
       "start": "19:00",
       "end": "20:15",
       "category": "food",
-      "description": "Семейный ужин в центре Еревана. Отличным выбором станет ресторан «Tavern Yerevan» 📍 Amiryan St, 5 или «Lavash» 📍 Tumanyan St, 21. Рекомендуется заранее забронировать столик, чтобы избежать ожидания с детьми после насыщенного дня. Попробуйте сочный шашлык (хоровац), форель на мангале, традиционную долму и свежевыпеченный лаваш. Для детей подходят мягкие лепёшки с сыром, суп-спас на мацуне и натуральные компоты. Логистика: От Площади Республики до ресторанов — пешком ~5–10 мин / на такси ~3–5 мин. После ужина — к фонтанам, затем в апартаменты пешком или на такси (Яндекс Go).",
+      "description": "19:00 – 20:15: Семейный ужин в центре Еревана. Отличным выбором станет ресторан «Tavern Yerevan» 📍 Amiryan St, 5 или «Lavash» 📍 Tumanyan St, 21. Рекомендуется заранее забронировать столик, чтобы избежать ожидания с детьми после насыщенного дня. Попробуйте сочный шашлык (хоровац), форель на мангале, традиционную долму и свежевыпеченный лаваш. Для детей подходят мягкие лепёшки с сыром, суп-спас на мацуне и натуральные компоты. Логистика: От Площади Республики до ресторанов — пешком ~5–10 мин / на такси ~3–5 мин. После ужина — к фонтанам, затем в Stylish пешком: от площади Республики около 3–5 минут по Amiryan Street.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Amiryan St, 5",
+          "url": "https://www.google.com/maps/search/?api=1&query=Tavern+Yerevan+Amiryan+St+5+Yerevan"
+        },
+        {
+          "text": "Tumanyan St, 21",
+          "url": "https://www.google.com/maps/search/?api=1&query=Lavash+Restaurant+Tumanyan+St+21+Yerevan"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-18-event-9",
+      "dayId": "day-2026-09-18",
+      "placeId": "city-yerevan",
+      "title": "Вечернее шоу Поющих и Танцующих фонтанов на Площади Республики 📍 Republic Square, Yerevan",
+      "start": "20:30",
+      "end": "21:30",
+      "category": "rest",
+      "description": "После ужина, ориентировочно 20:30–21:30: Вечернее шоу Поющих и Танцующих фонтанов на Площади Республики 📍 Republic Square, Yerevan. Точное начало шоу на день посещения уточнить у отеля или на месте. Время выше — резерв для просмотра, а не подтверждённое расписание; при позднем старте сократить просмотр по силам детей. Под созвучие мировой классической, эстрадной и армянской национальной музыки водяные струи, подсвеченные яркими разноцветными прожекторами, меняют высоту и ритм движения. Для удобства просмотра всей семьей и комфорта детей рекомендуется прийти за 15–20 минут до начала, чтобы занять удобные места возле бассейна со стороны Национального музея истории или уютных лавочек сквера. В прохладные сентябрьские вечера стоит взять с собой легкие кофты или ветровки.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Republic Square, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=Republic+Square+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-19-event-1",
       "dayId": "day-2026-09-19",
       "placeId": "city-yerevan",
-      "title": "Завтрак в апартаментах или локальной кофейне, сбор рюкзаков",
+      "title": "Завтрак, сбор рюкзаков и выезд из Stylish",
       "start": "09:00",
       "end": "10:30",
       "category": "food",
-      "description": "Завтрак в апартаментах или локальной кофейне, сбор рюкзаков. Позднее выселение желательно для дневного отдыха, но требует подтверждения и может быть платным. Иначе сдать ключи по условиям брони и оставить рюкзаки на согласованное хранение.",
+      "description": "09:00 – 10:30: Завтрак в Stylish, сбор рюкзаков и сдача ключей до выхода на Вернисаж: прогулка заканчивается после стандартного выезда в 12:00. Позднее выселение желательно для дневного отдыха, но требует подтверждения и может быть платным. Иначе согласовать с хозяином формат выезда и хранение рюкзаков; стандартный выезд — до 12:00.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -925,9 +1278,15 @@
       "start": "10:30",
       "end": "13:00",
       "category": "sight",
-      "description": "Ярмарка ремёсел «Вернисаж» 📍 Aram St, Yerevan. Открытый рынок художественных промыслов и антиквариата, возникший в 1980-х годах во время движения за независимость. Интересные факты и на что обратить внимание: Обратите внимание на резные дудуки из абрикосового дерева, серебряные украшения с гранатовым мотивом, ковры ручной работы и картины местных художников. На ярмарке принято вежливо торговаться.",
+      "description": "10:30 – 13:00: Ярмарка ремёсел «Вернисаж» 📍 Aram St, Yerevan. Открытый рынок художественных промыслов и антиквариата, возникший в 1980-х годах во время движения за независимость. Интересные факты и на что обратить внимание: Обратите внимание на резные дудуки из абрикосового дерева, серебряные украшения с гранатовым мотивом, ковры ручной работы и картины местных художников. На ярмарке принято вежливо торговаться.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Aram St, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=Vernissage+Aram+St+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -938,9 +1297,15 @@
       "start": "13:00",
       "end": "14:30",
       "category": "food",
-      "description": "Обед в семейном ресторане «Tavern Yerevan» 📍 Amiryan St, 5 рядом с площадью Республики. Попробуйте форель на мангале, хинкали или кюфту.",
+      "description": "13:00 – 14:30: Обед в семейном ресторане «Tavern Yerevan» 📍 Amiryan St, 5 рядом с площадью Республики. Попробуйте форель на мангале, хинкали или кюфту.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Amiryan St, 5",
+          "url": "https://www.google.com/maps/search/?api=1&query=Tavern+Yerevan+Amiryan+St+5+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -951,9 +1316,15 @@
       "start": "14:30",
       "end": "16:30",
       "category": "sight",
-      "description": "По силам, вместо дневного отдыха — продовольственный «Рынок ГУМ» (Ташир) 📍 35 Movses Khorenatsi St, Yerevan. Главный колоритный продуктовый крытый рынок Еревана. Интересные факты и на что обратить внимание: Оцените эффектно разложенные пирамиды сухофруктов с фаршированными орехами, фаршированные персики (алани) и свежайший лаваш. Продавцы активно предлагают дегустации.",
+      "description": "14:30 – 16:30: По силам, вместо дневного отдыха — продовольственный «Рынок ГУМ» (Ташир) 📍 35 Movses Khorenatsi St, Yerevan. Главный колоритный продуктовый крытый рынок Еревана. Интересные факты и на что обратить внимание: Оцените эффектно разложенные пирамиды сухофруктов с фаршированными орехами, фаршированные персики (алани) и свежайший лаваш. Продавцы активно предлагают дегустации.",
       "status": "planned",
       "optional": true,
+      "links": [
+        {
+          "text": "35 Movses Khorenatsi St, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=GUM+Market+35+Movses+Khorenatsi+St+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -962,11 +1333,17 @@
       "placeId": "english-park",
       "title": "Английский парк",
       "start": "16:30",
-      "end": "18:15",
+      "end": "18:00",
       "category": "rest",
-      "description": "Отдых в Английском парке 📍 Italy St, Yerevan. Один из старейших парков Еревана, заложенный в 1860-х годах. При подтверждённом позднем выселении предпочтителен отдых в номере. 18:15–19:00: забрать рюкзаки, вода и перекус, встреча с водителем.",
+      "description": "16:30 – 18:00: Отдых в Английском парке 📍 Italy St, Yerevan. Один из старейших парков Еревана, заложенный в 1860-х годах. При подтверждённом позднем выселении предпочтителен отдых в номере. 18:00–18:30: вернуться из Английского парка к Stylish, 4/2 Amiryan Street, за рюкзаками, если хранение согласовано; вода и встреча с водителем у подтверждённого входа. Без хранения рюкзаки весь день с нами.",
       "status": "planned",
-      "optional": false,
+      "optional": true,
+      "links": [
+        {
+          "text": "Italy St, Yerevan",
+          "url": "https://www.google.com/maps/search/?api=1&query=English+Park+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -974,12 +1351,18 @@
       "dayId": "day-2026-09-19",
       "placeId": "evn",
       "title": "Аэропорт Звартноц",
-      "start": "19:00",
+      "start": "18:30",
       "end": "19:30",
       "category": "airport",
-      "description": "Поездка в «Аэропорт Звартноц (EVN)» 📍 Yerevan, Armenia.",
+      "description": "18:30 – 19:30: Поездка от Stylish в «Аэропорт Звартноц (EVN)» 📍 Yerevan, Armenia.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Yerevan, Armenia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Zvarnots+International+Airport+Yerevan"
+        }
+      ],
       "source": ""
     },
     {
@@ -990,9 +1373,10 @@
       "start": "19:30",
       "end": "22:35",
       "category": "rest",
-      "description": "Регистрация, досмотр и вылет рейсом Wizz Air W4 6456 в Милан (MXP) в 22:35. Без багажа, только ручная кладь до 10 кг на человека.",
+      "description": "19:30 – 22:35: Регистрация, досмотр и вылет рейсом Wizz Air W4 6456 в Милан (MXP) в 22:35. Без багажа, только ручная кладь до 10 кг на человека.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1003,9 +1387,10 @@
       "start": "01:10",
       "end": "02:00",
       "category": "airport",
-      "description": "Прилёт рейса Wizz Air W4 6456 в аэропорт Милан-Мальпенса (MXP). Прохождение паспортного контроля.",
+      "description": "01:10 – 02:00: Прилёт рейса Wizz Air W4 6456 в аэропорт Милан-Мальпенса (MXP). Прохождение паспортного контроля.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1016,35 +1401,65 @@
       "start": "02:00",
       "end": "03:30",
       "category": "station",
-      "description": "Ночной трансфер до вокзала «Milano Centrale» 📍 Piazza Duca d'Aosta 1, Milano. Terravision после прилёта в 01:10 не подходит: последнее отправление указано в 01:10. По расписанию аэропорта Autostradale работает до 02:40; у Malpensa Shuttle есть 02:10 и 03:40. Планировать 02:40 с проверкой рейса на нужную дату, резерв — 03:40. На 02:10 не рассчитывать при задержке или очереди на паспортном контроле. Билет одного перевозчика не даёт права ехать другим. На сайтах выберите маршрут «Milan Malpensa Airport» — «Milan Central Station», чтобы увидеть актуальное расписание и приобрести билеты онлайн. Заранее проверить условия проезда следующим рейсом. После Centrale нужен отдельный путь до жилья: пешком при близком адресе либо такси на пять пассажиров. При автобусе 03:40 заселение и подъём сдвинуть позже.",
+      "description": "02:00 – 03:30: Ночной трансфер до вокзала «Milano Centrale» 📍 Piazza Duca d'Aosta 1, Milano. Terravision после прилёта в 01:10 не подходит: последнее отправление указано в 01:10. По расписанию аэропорта Autostradale работает до 02:40; у Malpensa Shuttle есть 02:10 и 03:40. Планировать 02:40 с проверкой рейса на нужную дату, резерв — 03:40. На 02:10 не рассчитывать при задержке или очереди на паспортном контроле. Билет одного перевозчика не даёт права ехать другим. На сайтах выберите маршрут «Milan Malpensa Airport» — «Milan Central Station», чтобы увидеть актуальное расписание и приобрести билеты онлайн. Заранее проверить условия проезда следующим рейсом. После Milano Centrale — такси на 5 пассажиров до 8th floor - Milano view, Corso Concordia, 6. Это не жильё у вокзала: ночной пеший переход с детьми не планируем. На поиск машины и дорогу заложить 20–30 минут; при прямом трансфере из MXP ехать сразу к квартире, без Centrale. При автобусе 03:40 заселение и подъём сдвинуть позже.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Piazza Duca d'Aosta 1, Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Milano+Centrale+Piazza+Duca+d%27Aosta+1+Milano"
+        },
+        {
+          "text": "Corso Concordia, 6",
+          "url": "https://www.google.com/maps/search/?api=1&query=Corso+Concordia+6+Milano"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-20-event-3",
       "dayId": "day-2026-09-20",
       "placeId": "city-milan",
-      "title": "8th floor – Milano view · заселение и сон",
+      "title": "8th floor – Milano view · ночное заселение",
       "start": "03:30",
       "end": "10:00",
       "category": "hotel",
-      "description": "Вечером Wizz Air W4 6456 в Милан. Приезд после полуночи требует письменного подтверждения доступа; оплата пока не подтверждена.",
+      "description": "03:30 – 10:00: Заселение в новую локацию (уточнить возможность раннего/позднего заселения) и ночной сон. Подтверждённая Бронь : 8th floor - Milano view, Corso Concordia, 6, 20129 Milano;  Две спальни, 2 взрослых и 3 детей, без питания. Забронированы две ночи: сент. 19, 2026 — сент. 21, 2026. Заезд 15:00–00:00, выезд до 11:00. Для приезда около 03:30–04:00 сохранить инструкции получения ключей и ночного доступа. В условиях указаны банковский перевод до приезда и подписание договора аренды; уточнить выполнение и инструкции, оплата PDF не подтверждена. Бесплатная отмена до сент. В описании указано, что верхние этажи доступны только по лестнице: уточнить этаж квартиры и наличие лифта. Первую ночь сохранить для ночного приезда, вторую — для ночёвки после прогулки и матча.",
       "status": "booked",
       "optional": false,
+      "links": [
+        {
+          "text": "Corso Concordia, 6, 20129 Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Corso+Concordia+6+Milano"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-20-event-4",
       "dayId": "day-2026-09-20",
       "placeId": "city-milan",
-      "title": "Поздний завтрак",
+      "title": "Завтрак и прогулка к Дуомо",
       "start": "10:00",
       "end": "12:00",
-      "category": "rest",
-      "description": "Поздний завтрак. Рекомендуемые варианты: Princi (Piazza della Scala) 📍 Piazza della Scala, 10, Milano. Культовое миланское место. Интересные факты и на что обратить внимание: Знаменитая фокачча, пицца и лучшая свежая выпечка в городе. Атмосфера энергичного, настоящего Милана. Логистика: Пешком от собора Дуомо ~5–7 мин. Macha Café (Centro) 📍 Viale Piave, 33, Milano. Современный формат для комфортного бранча. Интересные факты и на что обратить внимание: Авокадо-тосты, боулы, сырники и смузи — отличный вариант для спокойного завтрака с детьми. Логистика: Метро до станции San Babila или прогулка из центра.",
+      "category": "food",
+      "description": "10:00 – 11:15: Завтрак в квартире или рядом с Corso Concordia, 6. 11:15–12:00: пешком через Corso Monforte и San Babila к Дуомо; плановый запас 30–40 минут с детьми. Резерв: M4 Tricolore → San Babila, затем пешком к собору. Движемся от жилья к центру без возврата. Заведения ниже — альтернативы, дополнительный крюк ради завтрака не обязателен: Princi (Piazza della Scala) 📍 Piazza della Scala, 10, Milano. Культовое миланское место. Интересные факты и на что обратить внимание: Знаменитая фокачча, пицца и лучшая свежая выпечка в городе. Атмосфера энергичного, настоящего Милана. Логистика: Пешком от собора Дуомо ~5–7 мин. Macha Café (Centro) 📍 Viale Piave, 33, Milano. Современный формат для комфортного бранча. Интересные факты и на что обратить внимание: Авокадо-тосты, боулы, сырники и смузи — отличный вариант для спокойного завтрака с детьми. Логистика: от квартиры это отдельный заход в сторону Viale Piave; для последовательного пути к Дуомо предпочтительнее завтрак у дома.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Corso Concordia, 6",
+          "url": "https://www.google.com/maps/search/?api=1&query=Corso+Concordia+6+Milano"
+        },
+        {
+          "text": "Piazza della Scala, 10, Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Princi+Piazza+della+Scala+Milano"
+        },
+        {
+          "text": "Viale Piave, 33, Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Macha+Cafe+Milano"
+        }
+      ],
       "source": ""
     },
     {
@@ -1055,9 +1470,19 @@
       "start": "12:00",
       "end": "14:00",
       "category": "sight",
-      "description": "Миланский собор «Дуомо» 📍 Piazza del Duomo, Milano. Шедевр пламенеющей готики, строившийся с 1386 по 1965 год. Интересные факты и на что обратить внимание: Поднимитесь на крышу собора среди 135 шпилей и 3 400 статуй, чтобы увидеть панорамную картину Милана и позолоченную статую Мадонны. Как покупать: Бронируйте заранее на официальном сайте duomomilano.it. Выберите раздел «Tickets» -> «Duomo Terrace», выберите дату, время и оплатите заказ онлайн.",
+      "description": "12:00 – 14:00: Миланский собор «Дуомо» 📍 Piazza del Duomo, Milano. Шедевр пламенеющей готики, строившийся с 1386 по 1965 год. Интересные факты и на что обратить внимание: Поднимитесь на крышу собора среди 135 шпилей и 3 400 статуй, чтобы увидеть панорамную картину Милана и позолоченную статую Мадонны. Как покупать: Бронируйте заранее на официальном сайте duomomilano.it. Выберите раздел «Tickets» -> «Duomo Terrace», выберите дату, время и оплатите заказ онлайн.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Piazza del Duomo, Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Duomo+di+Milano+Piazza+del+Duomo+Milano"
+        },
+        {
+          "text": "duomomilano.it",
+          "url": "https://www.duomomilano.it"
+        }
+      ],
       "source": ""
     },
     {
@@ -1068,74 +1493,277 @@
       "start": "14:00",
       "end": "15:30",
       "category": "food",
-      "description": "Обед в легендарной пиццерии Gino Sorbillo 📍 Largo Corsia dei Servi 11, Milano. Знаменитая неаполитанская пицца.",
+      "description": "14:00 – 15:30: Обед в легендарной пиццерии Gino Sorbillo 📍 Largo Corsia dei Servi 11, Milano. Знаменитая неаполитанская пицца.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Largo Corsia dei Servi 11, Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Gino+Sorbillo+Largo+Corsia+dei+Servi+11+Milano"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-20-apple",
+      "dayId": "day-2026-09-20",
+      "placeId": "city-milan",
+      "title": "Apple Piazza Liberty",
+      "start": "15:30",
+      "end": "16:15",
+      "category": "sight",
+      "description": "15:30 – 16:15: Apple Piazza Liberty — магазин Apple со стеклянным входом и водопадом. 📍 Piazza del Liberty, 1, Milano. От Sorbillo — ориентировочно 3–5 минут пешком; после магазина до галереи Виктора Эммануила II — около 5–7 минут. На осмотр и покупки — 30–45 минут. В опубликованном расписании магазин работает ежедневно 10:00–20:00; часы на день посещения перепроверить. Официальная страница Apple.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Piazza del Liberty, 1, Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Apple+Piazza+Liberty+Milano"
+        },
+        {
+          "text": "Официальная страница Apple",
+          "url": "https://www.apple.com/it/retail/piazzaliberty/"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-20-galleria",
       "dayId": "day-2026-09-20",
       "placeId": "galleria",
-      "title": "Галерея → Брера → Замок Сфорца",
-      "start": "15:30",
-      "end": "18:00",
+      "title": "Галерея → Ла Скала → замок Сфорца",
+      "start": "16:15",
+      "end": "17:25",
       "category": "sight",
-      "description": "Пешеходный экскурс по историческому ядру Милана: Пассаж «Галерея Виктора Эммануила II» 📍 Piazza del Duomo, Milano — величественный крытый торговый пассаж XIX века с монументальным стеклянным куполом, ажурными чугунными перекрытиями и роскошной лепниной; обязательно найдите на мозаичном полу центрального восьмиугольника герб Турина и по давней миланской традиции прокрутитесь трижды на пятке правой ноги на изображении быка для привлечения удачи. Далее пешеходный маршрут проходит через площадь Piazza della Scala мимо знаменитого оперного театра «Ла Скала» 📍 Via Filodrammatici, 2, Milano (осмотр неоклассического фасада со стороны площади и памятника Леонардо да Винчи) и уходит в колоритный артистический квартал «Брера» 📍 Via Brera, 28, Milano с его узкими мощёными улочками, худгалереями, антикварными лавками и уютными атмосферными кафе. Завершается насыщенная прогулка у грандиозного оборонительного комплекса «Замок Сфорца» 📍 Piazza Castello, Milano — суровой кирпичной фортеции XV века, зубчатые стены, прямоугольные башни и центральная башня Филарете которой вдохновляли итальянских зодчих при проектировании и возведении стен Кремля в Москве. Логистика: Полностью пешеходная прогулка от Соборной площади через галерею и Бреру к замку (около 1,8–2 км в неспешном темпе); свободный вход во внутренние дворы, на парадный плац и в окружающие крепостные скверы.",
+      "description": "16:15 – 17:25: Сокращённая прогулка по историческому ядру: Apple Piazza Liberty → Галерея Виктора Эммануила II → площадь Ла Скала → замок Сфорца (снаружи). Санта-Мария-делле-Грацие и парк Семпионе переносим в резерв: вечер занят матчем на Сан‑Сиро.",
       "status": "planned",
       "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-20-san-siro-transfer",
+      "dayId": "day-2026-09-20",
+      "placeId": "city-milan",
+      "title": "Роман и Артур: дорога к Сан-Сиро",
+      "start": "17:25",
+      "end": "18:20",
+      "category": "station",
+      "description": "17:25 – 18:20: Роман и Артур — переезд к стадиону «Сан‑Сиро» (Stadio Giuseppe Meazza) 📍 Piazzale Angelo Moratti, Milano. От замка: M1 от Cairoli до Lotto, затем M5 до San Siro Stadio; заложить время на пересадку и очередь. Идти к входу и сектору, указанным в билете на матч, а не к музейному Gate 6. Анна, Лера и Ярослав на футбол не идут: после общей прогулки — ужин и возвращение в квартиру Corso Concordia, 6; заранее разделить ключи/доступ к жилью. Для Анны с детьми: Cairoli → San Babila на M1 в сторону Sesto 1° Maggio FS, затем M4 в сторону Linate до Tricolore и пешком к Corso Concordia, 6; при усталости такси до двери. На возвращение с пересадкой заложить 35–45 минут.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Сан‑Сиро",
+          "url": "https://www.google.com/maps/search/?api=1&query=Stadio+Giuseppe+Meazza+San+Siro+Milan"
+        },
+        {
+          "text": "Corso Concordia, 6",
+          "url": "https://www.google.com/maps/search/?api=1&query=Corso+Concordia+6+Milano"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-20-stadium-dinner",
+      "dayId": "day-2026-09-20",
+      "placeId": "city-milan",
+      "title": "Ужин перед матчем",
+      "start": "18:20",
+      "end": "19:10",
+      "category": "food",
+      "description": "18:20 – 19:10: Роман и Артур — ранний ужин рядом со стадионом, вода и туалет до входа. Взять только рюкзаки допустимого размера; перед выездом сверить правила входа и запрещённые предметы в билете.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-20-stadium-entry",
+      "dayId": "day-2026-09-20",
+      "placeId": "city-milan",
+      "title": "Вход на стадион · билеты ещё не куплены",
+      "start": "19:15",
+      "end": "20:30",
+      "category": "sight",
+      "description": "19:15 – 20:30: Вход на матч и поиск мест. Нужны два билета на соседние места: Роман (взрослый) и Артур (13 лет). Билеты ещё не куплены: оформлять только на официальной странице AC Milan, выбирать соседние места в спокойном семейном секторе. Начало запуска зрителей и конкретный сектор проверить в электронных билетах.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "официальной странице AC Milan",
+          "url": "https://booking.acmilan.com/en"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-20-milan-lecce",
+      "dayId": "day-2026-09-20",
+      "placeId": "city-milan",
+      "title": "AC Milan — Lecce · Роман и Артур",
+      "start": "20:45",
+      "end": "22:45",
+      "category": "sight",
+      "description": "20:45 – около 22:45: Серия A — AC Milan vs Lecce на «Сан‑Сиро». Матч официально назначен на 20 сентября, 20:45 CEST; возможен перенос времени по регламенту, поэтому за 24–48 часов перепроверить билет и расписание. На матче только Роман и Артур; музей и тур в программу не включаем. Музей, Museum&Tour и Skywalk не бронируем: выбран только матч для Романа и Артура.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "AC Milan vs Lecce",
+          "url": "https://booking.acmilan.com/en"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-20-after-match",
+      "dayId": "day-2026-09-20",
+      "placeId": "city-milan",
+      "title": "Возвращение после матча",
+      "start": "22:45",
+      "end": null,
+      "category": "station",
+      "description": "После матча: Роман и Артур возвращаются в квартиру Corso Concordia, 6; Анна, Лера и Ярослав отдыхают дома. Заложить запас на выход из толпы и ожидание транспорта. Метро при работающих линиях: San Siro Stadio → Lotto на M5 в сторону Bignami, затем M1 в сторону Sesto 1° Maggio FS до San Babila; дальше пешком по Corso Monforte к Corso Concordia, 6. Так избегаем поздней третьей линии M4. Заложить 60–90 минут с выходом из толпы; последний поезд проверить в ATM. Такси на двоих до квартиры — резерв, посадка вне перекрытой зоны. Возвращение будет поздним: вещи и завтрак к раннему поезду в Венецию подготовить до футбола. Поезд ещё не подтверждён: при покупке учитывать позднее возвращение с матча.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Corso Concordia, 6",
+          "url": "https://www.google.com/maps/search/?api=1&query=Corso+Concordia+6+Milano"
+        },
+        {
+          "text": "San Siro Stadio → Lotto",
+          "url": "https://sansirostadium.com/"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-20-sempione",
       "dayId": "day-2026-09-20",
       "placeId": "sempione",
-      "title": "Парк Семпионе",
-      "start": "18:00",
-      "end": "20:00",
+      "title": "Парк Семпионе · только как замена части программы",
+      "start": null,
+      "end": null,
       "category": "rest",
-      "description": "Отдых в парке «Семпионе» 📍 Piazza Sempione, Milano. Обширный исторический пейзажный парк площадью около 386 000 кв. м, заложенный в конце XIX века (1888–1890 гг.) по проекту архитектора Эмилио Алеманья на месте бывшего военного плаца у северных стен замка Сфорца. Это идеальное место для неспешного отдыха и прогулки всей семьёй после насыщенной экскурсионной программы: здесь обустроены тенистые вековые аллеи, извилистые дорожки, живописный искусственный пруд с мостиками, где обитают водоплавающие птицы и черепахи, а также безопасные игровые площадки для детей. В глубине парка находится монументальная классицистическая Арка Мира (Arco della Pace), воздвигнутая в XIX веке по распоряжению Наполеона I, а также смотровая башня Торре-Бранка и миланский Аквариум. Вход на территорию парка свободный.",
+      "description": "Основное: Дуомо, Apple, центральная прогулка; матч — только Роман и Артур, после покупки билетов и подтверждения начала. Не добавлять музей стадиона автоматически. Santa Maria delle Grazie и Семпионе — резерв вместо части прогулки; «Тайная вечеря» только с отдельным билетом на время. Пеший центр около 4–5 км. До стадиона заложить 60–75 минут, обратно 60–90 с выходом толпы. Ночью после автобуса и такси возможен приезд около 04:00 или позже: начало прогулки сдвигать по сну, а не сокращать отдых детей.",
       "status": "planned",
-      "optional": false,
+      "optional": true,
+      "links": [],
       "source": ""
     },
     {
       "id": "visit-2026-09-21-event-1",
       "dayId": "day-2026-09-21",
-      "placeId": "city-venice",
-      "title": "Окончательный сбор рюкзаков, сдача ключей и выселение из отеля",
-      "start": "06:30",
-      "end": "07:30",
+      "placeId": "centrale",
+      "title": "Выселение и такси к Milano Centrale",
+      "start": "06:15",
+      "end": "07:05",
       "category": "hotel",
-      "description": "Окончательный сбор рюкзаков, сдача ключей и выселение из отеля. Пеший переход на центральный железнодорожный вокзал «Milano Centrale» 📍 Piazza Duca d'Aosta 1, Milano. Завтрак: Для экономии времени перед поездкой надежнее всего позавтракать прямо на вокзале, где с раннего утра работают проверенные кафе, такие как Motta и Autogrill. На платформу стоит прийти за 20–25 минут до отправления, чтобы спокойно найти нужный путь (binario).",
+      "description": "06:15 – 07:05 (подстроить под купленный поезд): Окончательный сбор рюкзаков, сдача ключей и выселение из отеля. От 8th floor - Milano view, Corso Concordia, 6, заранее заказать такси на пятерых: заложить 20–30 минут на подачу и дорогу, плюс запас до поезда. Ранний пеший переход с рюкзаками не планируем. Едем на центральный железнодорожный вокзал «Milano Centrale» 📍 Piazza Duca d'Aosta 1, Milano. Завтрак: Для экономии времени перед поездкой надежнее всего позавтракать прямо на вокзале, где с раннего утра работают проверенные кафе, такие как Motta и Autogrill. Покупка билетов: Заблаговременно приобретайте билеты онлайн на официальных сайтах Trenitalia или Italo, либо через их официальные мобильные приложения (Trenitalia: App Store / Google Play; Italo Treno: App Store / Google Play) — сравнить итог на двух взрослых и детей 13, 12 и 3 лет; билеты пока не куплены. Вечером накануне подготовить завтрак, воду и дневную сумку. Время ниже — плановые окна, а не подтверждённое расписание. На платформу стоит прийти за 20–25 минут до отправления, чтобы спокойно найти нужный путь (binario).",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Corso Concordia, 6",
+          "url": "https://www.google.com/maps/search/?api=1&query=Corso+Concordia+6+Milano"
+        },
+        {
+          "text": "Piazza Duca d'Aosta 1, Milano",
+          "url": "https://www.google.com/maps/search/?api=1&query=Milano+Centrale+Piazza+Duca+d%27Aosta+1+Milano"
+        },
+        {
+          "text": "Motta",
+          "url": "https://www.google.com/maps/search/?api=1&query=Motta+Milano+Centrale"
+        },
+        {
+          "text": "Autogrill",
+          "url": "https://www.google.com/maps/search/?api=1&query=Autogrill+Milano+Centrale"
+        },
+        {
+          "text": "Trenitalia",
+          "url": "https://www.trenitalia.com/"
+        },
+        {
+          "text": "Italo",
+          "url": "https://www.italotreno.it/"
+        },
+        {
+          "text": "App Store",
+          "url": "https://apps.apple.com/it/app/trenitalia/id331050847"
+        },
+        {
+          "text": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.lynxspa.trenitalia"
+        },
+        {
+          "text": "App Store",
+          "url": "https://apps.apple.com/it/app/italo-treno/id915239556"
+        },
+        {
+          "text": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.italotreno.app"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-21-event-2",
       "dayId": "day-2026-09-21",
       "placeId": "city-venice",
-      "title": "Поезд «Milano Centrale» → «Venezia Santa Lucia» 📍 Fondamenta Santa Lucia, Venezia",
+      "title": "Поезд Milano Centrale → Venezia Mestre",
       "start": "07:30",
-      "end": "10:15",
+      "end": "10:00",
       "category": "station",
-      "description": "Поезд «Milano Centrale» → «Venezia Santa Lucia» 📍 Fondamenta Santa Lucia, Venezia. Покупайте билеты заранее на официальных сайтах Trenitalia или Italo, либо через их мобильные приложения (Trenitalia: App Store / Google Play; Italo Treno: App Store / Google Play) для получения лучшей цены.",
+      "description": "Ориентировочно 07:30 – 10:00: Milano Centrale → Venezia Mestre, скоростной поезд Frecciarossa / Italo. Билет покупать до Mestre: здесь выходим к жилью на материке, до Santa Lucia в этом поезде не едем. Если билеты до Santa Lucia уже окажутся куплены, сначала проверить остановку в Mestre и правила тарифа; новый билет автоматически не покупать.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Italo.",
+          "url": "https://www.italotreno.it/"
+        },
+        {
+          "text": "Trenitalia",
+          "url": "https://www.trenitalia.com/"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-21-event-3",
       "dayId": "day-2026-09-21",
       "placeId": "city-venice",
-      "title": "Переход в отель у вокзала или «Piazzale Roma» (Piazzale Roma — главный транспортный хаб для автобусов и авто, ",
-      "start": "10:15",
-      "end": "11:00",
-      "category": "rest",
-      "description": "Переход в отель у вокзала или «Piazzale Roma» (Piazzale Roma — главный транспортный хаб для автобусов и авто, расположен в 5-7 минутах пешком от вокзала Santa Lucia через мост Конституции (Ponte della Costituzione)), сдача рюкзаков в камеру хранения. Отель пока не забронирован: переход условный. Выбрать жильё и подтвердить раннее хранение рюкзаков либо отдельную камеру хранения.",
+      "title": "Mestre: рюкзаки и переезд на остров",
+      "start": "10:00",
+      "end": "11:15",
+      "category": "station",
+      "description": "10:00 – 11:15: Venezia Mestre → Venice Villa House → Venezia Mestre → Venezia Santa Lucia. Выбранная база: Venice Villa House, Via Podgora, 58, 30171 Mestre; от основного выхода вокзала со стороны Piazzale Favretti / Via Piave ориентировочно 10–15 минут пешком в каждую сторону с детьми. Booking — даты и состав семьи; карта жилья; пеший маршрут от вокзала. Выбираем именно Apartment – Ground Floor: апартаменты целиком, 45 м², собственная ванная, две односпальные и одна двуспальная кровать плюс диван. В показанном тарифе отмена бесплатна до дня перед заселением; точный час и условия сохранить из брони. Заселение 14:00–23:00, выезд 08:00–11:00. Утром идём к хозяину только после подтверждения хранения пяти рюкзаков около 10:15; ранний доступ в апартаменты не предполагаем. После сдачи вещей возвращаемся на Mestre и берём Regionale до Santa Lucia: обычно около 10–12 минут в поезде, на ожидание и платформы заложить ещё 15–20 минут. Если хранение у хозяина не подтверждено, сразу оставляем вещи в KiPoint на вокзале Mestre, у платформы 1 с западной стороны; опубликованные часы 08:00–20:00, цену на пять рюкзаков проверить отдельно. Вечером забрать их до 19:30. Документы, лекарства, ценности, воду и вещи для Ярослава берём в небольшую дневную сумку. Для электричек проверить цену на четырёх платящих пассажиров и условия бесплатного проезда Ярослава без отдельного места; не закладывать неподтверждённую детскую скидку для старших. Источник: правила Regionale. Общий бюджет транспорта не считать окончательным до выбора билетов.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Booking — даты и состав семьи",
+          "url": "https://www.booking.com/hotel/it/venice-villa-house.html?checkin=2026-09-21&checkout=2026-09-22&group_adults=2&group_children=3&age=13&age=12&age=3&no_rooms=1&selected_currency=EUR"
+        },
+        {
+          "text": "карта жилья",
+          "url": "https://www.google.com/maps/search/?api=1&query=Venice+Villa+House+Via+Podgora+58+Mestre"
+        },
+        {
+          "text": "пеший маршрут от вокзала",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Venezia+Mestre+Station&destination=Via+Podgora+58+Mestre&travelmode=walking"
+        },
+        {
+          "text": "KiPoint",
+          "url": "https://www.veneziamestre.it/deposito-bagagli"
+        },
+        {
+          "text": "правила Regionale",
+          "url": "https://www.trenitalia.com/en/html/trenitalia/Info-regionale.html"
+        }
+      ],
       "source": ""
     },
     {
@@ -1143,12 +1771,30 @@
       "dayId": "day-2026-09-21",
       "placeId": "grand-canal",
       "title": "Вапоретто №1 · Гранд-канал",
-      "start": "11:00",
-      "end": "12:00",
+      "start": "11:15",
+      "end": "12:15",
       "category": "sight",
-      "description": "Водный трамвай вапоретто №1 по Гранд-каналу до «Площадь Сан-Марко» 📍 Piazza San Marco, Venezia. Проезд мимо величественных дворцов Палаццо Вендрамин-Калерджи, Ка-д’Оро, знаменитого моста Риальто и палаццо Ка-Реццонико. Маршрут проходит по всей главной водной артерии города, позволяя рассмотреть шедевры венецианской готики и барокко прямо с воды. Интересные факты и на что обратить внимание: Для наилучшего обзора постарайтесь занять места на открытой корме или носу вапоретто. Маршрут №1 — неспешный и неспешный, делающий остановки у каждого ключевого причала, что идеально подходит для обзорной водной прогулки с детьми. Перед оплатой подтвердить бесплатный детский проезд. При одной поездке суточный билет невыгоден. Источник: https://actv.avmspa.it/en/content/venice-urban-services-0 1. Официальное приложение AVM Venezia — самый удобный способ для покупки и активации билета: App Store / Google Play. Билет необходимо активировать онлайн перед посадкой. 2. Автоматы ACTV — расположены на крупных причалах, принимают карты и наличные. 3. Точки продаж Venezia Unica — авторизованные киоски и табачные лавки (ищите наклейку «Venezia Unica»). Важно: Обязательна валидация билета (приложите его к желтому считывателю) перед каждой посадкой на пристани, даже если у вас куплен проездной.",
+      "description": "11:15 – 12:15: Водный трамвай вапоретто №1 по Гранд-каналу до «Площадь Сан-Марко» 📍 Piazza San Marco, Venezia. Проезд мимо величественных дворцов Палаццо Вендрамин-Калерджи, Ка-д’Оро, знаменитого моста Риальто и палаццо Ка-Реццонико. Маршрут проходит по всей главной водной артерии города, позволяя рассмотреть шедевры венецианской готики и барокко прямо с воды. Интересные факты и на что обратить внимание: Для наилучшего обзора постарайтесь занять места на открытой корме или носу вапоретто. Маршрут №1 — неспешный, делающий остановки у каждого ключевого причала, что идеально подходит для обзорной водной прогулки с детьми. Дети младше 6 лет на городских линиях ACTV едут бесплатно. Источник: https://actv.avmspa.it/en/content/venice-urban-services-0 1. Официальное приложение AVM Venezia — самый удобный способ для покупки и активации билета: App Store / Google Play. Билет необходимо активировать онлайн перед посадкой. 2. Автоматы ACTV — расположены на крупных причалах, принимают карты и наличные. 3. Точки продаж Venezia Unica — авторизованные киоски и табачные лавки (ищите наклейку «Venezia Unica»). Важно: Обязательна валидация билета (приложите его к желтому считывателю) перед каждой посадкой на пристани, даже если у вас куплен проездной.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Piazza San Marco, Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Piazza+San+Marco+Venezia"
+        },
+        {
+          "text": "https://actv.avmspa.it/en/content/venice-urban-services-0",
+          "url": "https://actv.avmspa.it/en/content/venice-urban-services-0"
+        },
+        {
+          "text": "App Store",
+          "url": "https://apps.apple.com/it/app/avm-venezia-official-app/id1181290984"
+        },
+        {
+          "text": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=it.avm.venezia"
+        }
+      ],
       "source": ""
     },
     {
@@ -1156,25 +1802,41 @@
       "dayId": "day-2026-09-21",
       "placeId": "san-marco",
       "title": "Базилика Сан-Марко",
-      "start": "12:00",
+      "start": "12:15",
       "end": "14:00",
       "category": "sight",
-      "description": "«Площадь Сан-Марко» и «Базилика Сан-Марко» 📍 Piazza San Marco 328, Venezia. Главный кафедральный собор Венеции, освящённый в IX веке и перестроенный в XI веке в византийском стиле с куполами и роскошным декором. Интересные факты и на что обратить внимание: В интерьере базилики находится более 8 000 кв. м золотых мозаик, отражающих свет, а также драгоценный алтарь Pala d’Oro, украшенный тысячями драгоценных камней и эмалей. Обратите внимание на квадригу святого Марка на лоджии фасада и мраморные узорчатые полы. Перед покупкой выбрать состав посещения и проверить детские условия. Отдельно оплачиваются подъем на лоджию с музеем, доступ к золотому алтарю Pala d’Oro и вход в сокровищницу. На входе действует строгий дресс-код (плечи и колени должны быть закрыты) и запрещён вход с крупными рюкзаками. Для покупки билетов используйте официальный сайт tickets.basilicasanmarco.it. Бронируйте временной слот заранее, оплата производится банковской картой онлайн. QR-код с подтверждением бронирования нужно будет предъявить на входе (распечатка не обязательна).",
+      "description": "12:15 – 14:00: «Площадь Сан-Марко» и «Базилика Сан-Марко» 📍 Piazza San Marco 328, Venezia. Главный кафедральный собор Венеции, освящённый в IX веке и перестроенный в XI веке в византийском стиле с куполами и роскошным декором. Интересные факты и на что обратить внимание: В интерьере базилики находится более 8 000 кв. м золотых мозаик, отражающих свет, а также драгоценный алтарь Pala d’Oro, украшенный тысячями драгоценных камней и эмалей. Обратите внимание на квадригу святого Марка на лоджии фасада и мраморные узорчатые полы. Перед покупкой выбрать состав посещения и проверить детские условия. Отдельно оплачиваются подъем на лоджию с музеем, доступ к золотому алтарю Pala d’Oro и вход в сокровищницу. На входе действует строгий дресс-код (плечи и колени должны быть закрыты) и запрещён вход с крупными рюкзаками. Для покупки билетов используйте официальный сайт tickets.basilicasanmarco.it. Бронируйте временной слот заранее, оплата производится банковской картой онлайн. QR-код с подтверждением бронирования нужно будет предъявить на входе (распечатка не обязательна).",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Piazza San Marco 328, Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=St+Mark%27s+Basilica+Piazza+San+Marco+Venezia"
+        },
+        {
+          "text": "tickets.basilicasanmarco.it",
+          "url": "https://basilicasanmarco.skiperformance.com"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-21-event-6",
       "dayId": "day-2026-09-21",
       "placeId": "city-venice",
-      "title": "Быстрый обед в формате знакомства с традиционной венецианской гастрономией: сытный перекус в аутентичном баре ",
+      "title": "Обед в Венеции",
       "start": "14:00",
       "end": "15:00",
-      "category": "rest",
-      "description": "Быстрый обед в формате знакомства с традиционной венецианской гастрономией: сытный перекус в аутентичном баре чикеттерии (bacaro) с разнообразными закусками чикетти (cicchetti) — небольшими бутербродами с треской баккала контесса, морепродуктами или сыром рикотта. Для более плотного обеда с детьми отлично подойдёт свежеприготовленная горячая паста в формате To Go из специализированных заведений (например, 📍 Dal Moro's Fresh Pasta To Go по адресу Calle Casseleria, 5324, Venezia).",
+      "category": "food",
+      "description": "14:00 – 15:00: Быстрый обед в формате знакомства с традиционной венецианской гастрономией: сытный перекус в аутентичном баре чикеттерии (bacaro) с разнообразными закусками чикетти (cicchetti) — небольшими бутербродами с треской баккала контесса, морепродуктами или сыром рикотта. Для более плотного обеда с детьми отлично подойдёт свежеприготовленная горячая паста в формате To Go из специализированных заведений (например, 📍 Dal Moro's Fresh Pasta To Go по адресу Calle Casseleria, 5324, Venezia).",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Dal Moro's Fresh Pasta To Go",
+          "url": "https://www.google.com/maps/search/?api=1&query=Dal+Moro%27s+Fresh+Pasta+To+Go+Venezia"
+        }
+      ],
       "source": ""
     },
     {
@@ -1183,11 +1845,29 @@
       "placeId": "doge",
       "title": "Дворец дожей · по желанию",
       "start": "15:00",
-      "end": "17:30",
+      "end": "17:00",
       "category": "sight",
-      "description": "По силам — «Дворец дожей» (Palazzo Ducale) 📍 Piazza San Marco 1, Venezia и «Мост Вздохов» (Ponte dei Sospiri). Монументальная резиденция правителей Венецианской республики, выполненная в шедевральном стиле венецианской готики. Построена в XIV–XV веках и являлась центром политической жизни, местом заседаний Большого совета, Сената и верховного суда. Интересные факты и на что обратить внимание: Осмотрите парадную Лестницу Гигантов со статуями Марса и Нептуна, величественный Зал Большого Совета (Salone del Maggior Consiglio) — одно из самых больших помещений без промежуточных опор в Европе, где экспонируется грандиозное полотно Тинторетто «Рай». Пройдите по закрытому крытому Мосту Вздохов из резного белого мрамора, соединяющему зал суда Дворца с Новыми тюрьмами (Prigioni Nuove): именно здесь осуждённые бросали последний взгляд на Венецианскую лагуну. Логистика: Приобретайте билеты на официальном сайте palazzoducale.visitmuve.it или через veneziaunica.it. Процесс покупки: выберите дату и количество посетителей, оплатите заказ онлайн банковской картой. На электронную почту придёт электронный билет с QR-кодом; распечатайте его или просто предъявите код на экране смартфона на входе, чтобы пройти без очереди в кассу. При усталости заменить дворец отдыхом. Источник: https://palazzoducale.visitmuve.it/en/visitor-information/",
+      "description": "15:00 – 17:00: По силам — «Дворец дожей» (Palazzo Ducale) 📍 Piazza San Marco 1, Venezia и «Мост Вздохов» (Ponte dei Sospiri). Монументальная резиденция правителей Венецианской республики, выполненная в шедевральном стиле венецианской готики. Построена в XIV–XV веках и являлась центром политической жизни, местом заседаний Большого совета, Сената и верховного суда. Интересные факты и на что обратить внимание: Осмотрите парадную Лестницу Гигантов со статуями Марса и Нептуна, величественный Зал Большого Совета (Salone del Maggior Consiglio) — одно из самых больших помещений без промежуточных опор в Европе, где экспонируется грандиозное полотно Тинторетто «Рай». Пройдите по закрытому крытому Мосту Вздохов из резного белого мрамора, соединяющему зал суда Дворца с Новыми тюрьмами (Prigioni Nuove): именно здесь осуждённые бросали последний взгляд на Венецианскую лагуну. Логистика: Приобретайте билеты на официальном сайте palazzoducale.visitmuve.it или через veneziaunica.it. Процесс покупки: выберите дату и количество посетителей, оплатите заказ онлайн банковской картой. На электронную почту придёт электронный билет с QR-кодом; распечатайте его или просто предъявите код на экране смартфона на входе, чтобы пройти без очереди в кассу. При усталости заменить дворец отдыхом. Источник: https://palazzoducale.visitmuve.it/en/visitor-information/",
       "status": "planned",
       "optional": true,
+      "links": [
+        {
+          "text": "Piazza San Marco 1, Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Doge%27s+Palace+Piazza+San+Marco+1+Venezia"
+        },
+        {
+          "text": "palazzoducale.visitmuve.it",
+          "url": "https://palazzoducale.visitmuve.it"
+        },
+        {
+          "text": "veneziaunica.it",
+          "url": "https://www.veneziaunica.it"
+        },
+        {
+          "text": "https://palazzoducale.visitmuve.it/en/visitor-information/",
+          "url": "https://palazzoducale.visitmuve.it/en/visitor-information/"
+        }
+      ],
       "source": ""
     },
     {
@@ -1195,90 +1875,210 @@
       "dayId": "day-2026-09-21",
       "placeId": "rialto",
       "title": "Мерчерие и мост Риальто",
-      "start": "17:30",
-      "end": "20:30",
+      "start": "17:00",
+      "end": "18:15",
       "category": "sight",
-      "description": "Прогулка по одной из самых оживлённых и старинных артерий города — торговой улице Мерчерие (Mercerie). Она соединяет площади Сан-Марко и Риальто, изобилуя историческими лавками, бутиками венецианского стекла, сувенирными магазинами и мастерскими масок. Неспешный маршрут ведёт прямо к легендарному «Мосту Риальто» 📍 Sestiere San Polo, Venezia — старейшему каменному мосту через Гранд-канал, построенному в 1591 году по проекту Антонио де Понте. С аркад моста открывается канонический и незабываемый панорамный вид на оживлённое движение гондол и вапоретто по каналу. Вечерняя программа: После осмотра моста — спокойная прогулка по набережным у Риальто и ужин. Fondaco dei Tedeschi закрыт; посещение его террасы исключено. Атмосферный ужин всей семьёй в уютной трактир-остерии у самой воды с видом на проплывающие лодки и вечернюю подсветку дворцов. Возвращение в отель и ночёвка в Венеции. Отель в Венеции ещё не забронирован. Нужна ночь сент. 21, 2026 — сент. 22, 2026.",
+      "description": "17:00 – 18:15: Прогулка по одной из самых оживлённых и старинных артерий города — торговой улице Мерчерие (Mercerie). Она соединяет площади Сан-Марко и Риальто, изобилуя историческими лавками, бутиками венецианского стекла, сувенирными магазинами и мастерскими масок. Неспешный маршрут ведёт прямо к легендарному «Мосту Риальто» 📍 Sestiere San Polo, Venezia — старейшему каменному мосту через Гранд-канал, построенному в 1591 году по проекту Антонио де Понте. С аркад моста открывается канонический и незабываемый панорамный вид на оживлённое движение гондол и вапоретто по каналу. Возвращение к жилью: 18:15–19:00 — пешком от Риальто через Strada Nova к Santa Lucia, с запасом на мосты и остановки. Fondaco dei Tedeschi закрыт, террасу не планируем. Около 19:00 — Regionale до Mestre; цель — быть там до 19:30, забрать рюкзаки в KiPoint, если оставляли их там. Затем 10–15 минут пешком на Via Podgora, 58, заселение в Venice Villa House около 19:45–20:15 по согласованию с хозяином. Ужин рядом с жильём или из заранее купленных продуктов; после 21:00 — отдых. Если дети устали, сокращаем дворец и прогулку, а не запас до закрытия камеры хранения. Ночёвка в Mestre, Venice Villa House (бронь ещё не оформлена), сент. 21, 2026 — сент. 22, 2026.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Sestiere San Polo, Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Rialto+Bridge+Sestiere+San+Polo+Venezia"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-21-mestre-evening",
+      "dayId": "day-2026-09-21",
+      "placeId": "city-venice",
+      "title": "Возвращение в Mestre и заселение",
+      "start": "18:15",
+      "end": "20:15",
+      "category": "hotel",
+      "description": "17:00 – 18:15: Прогулка по одной из самых оживлённых и старинных артерий города — торговой улице Мерчерие (Mercerie). Она соединяет площади Сан-Марко и Риальто, изобилуя историческими лавками, бутиками венецианского стекла, сувенирными магазинами и мастерскими масок. Неспешный маршрут ведёт прямо к легендарному «Мосту Риальто» 📍 Sestiere San Polo, Venezia — старейшему каменному мосту через Гранд-канал, построенному в 1591 году по проекту Антонио де Понте. С аркад моста открывается канонический и незабываемый панорамный вид на оживлённое движение гондол и вапоретто по каналу. Возвращение к жилью: 18:15–19:00 — пешком от Риальто через Strada Nova к Santa Lucia, с запасом на мосты и остановки. Fondaco dei Tedeschi закрыт, террасу не планируем. Около 19:00 — Regionale до Mestre; цель — быть там до 19:30, забрать рюкзаки в KiPoint, если оставляли их там. Затем 10–15 минут пешком на Via Podgora, 58, заселение в Venice Villa House около 19:45–20:15 по согласованию с хозяином. Ужин рядом с жильём или из заранее купленных продуктов; после 21:00 — отдых. Если дети устали, сокращаем дворец и прогулку, а не запас до закрытия камеры хранения. Ночёвка в Mestre, Venice Villa House (бронь ещё не оформлена), сент. 21, 2026 — сент. 22, 2026.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Sestiere San Polo, Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Rialto+Bridge+Sestiere+San+Polo+Venezia"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-22-event-1",
       "dayId": "day-2026-09-22",
       "placeId": "city-bergamo",
-      "title": "Завтрак, выселение и оставление рюкзаков в камере хранения отеля",
+      "title": "Завтрак и выселение в Mestre",
       "start": "08:00",
       "end": "09:00",
       "category": "food",
-      "description": "Завтрак, выселение и оставление рюкзаков в камере хранения отеля. Рекомендации по завтраку в Венеции: Pasticceria Tonolo (район Дорсодуро): 📍 Calle San Pantalon, 3764, 30123 Venezia Caffè del Doge (рядом с Риальто): 📍 Calle dei Cinque, 609, 30125 Venezia Rosa Salva (район Сан-Марко): 📍 Sestiere di San Marco, 950, 30124 Venezia Torrefazione Cannaregio (район Каннареджо): 📍 Fondamenta dei Ormesini, 2804, 30121 Venezia Завтраки за столиками на туристических площадях значительно дороже. Если отель не включает завтрак, ищите ближайшую «Pasticceria» или «Bar» на Google Maps.",
+      "description": "08:00 – 09:00: Основной сценарий — завтрак в Venice Villa House из купленных накануне продуктов либо рядом по пути к вокзалу. Собрать все рюкзаки и сдать ключи около 09:00; выезд допустим с 08:00, крайний срок 11:00. На остров утром не возвращаемся: багаж сразу берём в Бергамо. Завтрак включённым в цену жилья не считаем. Сохранённые варианты кафе на острове: использовать во время основного дня в Венеции или только при выборе дополнительной утренней прогулки. Для завтрака перед поездом из Mestre специально сюда не ехать: Pasticceria Tonolo (район Дорсодуро): 📍 Calle San Pantalon, 3764, 30123 Venezia Caffè del Doge (рядом с Риальто): 📍 Calle dei Cinque, 609, 30125 Venezia Rosa Salva (район Сан-Марко): 📍 Sestiere di San Marco, 950, 30124 Venezia Torrefazione Cannaregio (район Каннареджо): 📍 Fondamenta dei Ormesini, 2804, 30121 Venezia Завтраки за столиками на туристических площадях значительно дороже. Если отель не включает завтрак, ищите ближайшую «Pasticceria» или «Bar» на Google Maps.",
       "status": "planned",
       "optional": false,
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-22-cannaregio",
-      "dayId": "day-2026-09-22",
-      "placeId": "cannaregio",
-      "title": "Каннареджо",
-      "start": "09:00",
-      "end": "11:30",
-      "category": "sight",
-      "description": "Спокойная прогулка по одному району Венеции. Основной вариант — Каннареджо; Дорсодуро — альтернатива, а не второй обязательный район: Район «Каннареджо» 📍 Cannaregio, Venezia: исторический район на севере города, известное место первого в мире еврейского гетто, основанного в 1516 году. Исследуйте живописные набережные Фондамента-деи-Ормезини и Фондамента-Мизерикордия, где утро начинается с аромата свежесваренного кофе из местных таверен и пекарен. Здесь можно увидеть повседневную жизнь венецианцев без шумных туристических групп. Район «Дорсодуро» 📍 Dorsoduro, Venezia: университетский и артистический квартал на юге островной части. Прогуляйтесь вдоль канала Squero di San Trovaso, чтобы посмотреть на одну из последних действующих мастерских по ремонту и изготовлению традиционных венецианских гондол. Маршрут позволяет насладиться спокойной атмосферой мостов, художественных галерей и тихих набережных до наступления дневной жары и пикового турпотока.",
-      "status": "planned",
-      "optional": false,
+      "links": [
+        {
+          "text": "Calle San Pantalon, 3764, 30123 Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Calle+San+Pantalon+3764+Venezia"
+        },
+        {
+          "text": "Calle dei Cinque, 609, 30125 Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Calle+dei+Cinque+609+Venezia"
+        },
+        {
+          "text": "Sestiere di San Marco, 950, 30124 Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Sestiere+di+San+Marco+950+Venezia"
+        },
+        {
+          "text": "Fondamenta dei Ormesini, 2804, 30121 Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Fondamenta+dei+Ormesini+2804+Venezia"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-22-event-3",
       "dayId": "day-2026-09-22",
       "placeId": "city-bergamo",
-      "title": "Забрать вещи из отеля, легкий перекус и проверка билетов на поезд",
-      "start": "11:30",
-      "end": "12:30",
-      "category": "rest",
-      "description": "Забрать вещи из отеля, легкий перекус и проверка билетов на поезд.",
-      "status": "planned",
-      "optional": false,
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-22-bergamo-station",
-      "dayId": "day-2026-09-22",
-      "placeId": "bergamo-station",
-      "title": "Венеция → Бергамо",
-      "start": "12:30",
-      "end": "16:00",
+      "title": "С рюкзаками к Venezia Mestre",
+      "start": "09:00",
+      "end": "10:00",
       "category": "station",
-      "description": "Поезд «Venezia Santa Lucia» → «Станция Bergamo» 📍 Piazza Guglielmo Marconi 1, Bergamo с 1 пересадкой в Милане или Брешиа.",
+      "description": "09:00 – 10:00: Основной сценарий — забираем все вещи, пешком от Venice Villa House до Venezia Mestre около 10–15 минут; запас на переходы и поиск платформы 20–25 минут. Купить перекус в дорогу. Целевой поезд около 10:00–10:30; утро и выселение привязать к фактически купленному отправлению. На платформу приходим заранее. При дополнительной прогулке этот блок переносится к отправлению около 12:00–12:30.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
       "id": "visit-2026-09-22-event-5",
       "dayId": "day-2026-09-22",
       "placeId": "city-bergamo",
-      "title": "Переезд от железнодорожного вокзала Бергамо (Stazione FS di Bergamo) до выбранного отеля, расположенного в неп",
-      "start": "16:00",
-      "end": "17:00",
-      "category": "station",
-      "description": "Переезд от железнодорожного вокзала Бергамо (Stazione FS di Bergamo) до выбранного отеля, расположенного в непосредственной близости от аэропорта Милан-Бергамо Орио-аль-Серио (BGY). Подробная логистика и варианты проезда: Городской экспресс-автобус ATB №1 (Line 1 Airport Bus) отправляется каждые 20 минут прямо от привокзальной площади, время в пути — около 15–20 минут. Билеты можно приобрести через официальное приложение ATB Mobile, в автоматах на остановках, в кассах ATB Point на вокзале или в авторизованных точках продаж (Tabaccheria) с символикой ATB.",
+      "title": "FEEL: заселение и дорога в Città Alta",
+      "start": "14:30",
+      "end": "16:25",
+      "category": "hotel",
+      "description": "После прибытия около 13:30–14:30: от вокзала Bergamo к Via Luigi Magrini, 10 — пешком через район Malpensata, с запасом 20–30 минут и проверкой выхода с вокзала по карте; при усталости такси на пятерых. Обед, затем к 15:00 заселение в забронированные FEEL - Palazzo Ortelli, Via Luigi Magrini, 10, Bergamo. Оставить рюкзаки и отдохнуть; хранение до 15:00 отдельно согласовать. Затем от FEEL к Città Alta: основной вариант с детьми — такси на пятерых к нижней станции городского фуникулёра; фуникулёр до Piazza Mercato delle Scarpe, пешком к Porta San Giacomo и Piazza Vecchia. Альтернатива — к вокзалу и линия 1 ATB к фуникулёру / Città Alta после проверки направления и расписания. Начало прогулки около 16:00–16:25 — ориентир, зависящий от заселения и очередей. При задержке сократить прогулку, сохранив ранний ужин и сон.",
+      "status": "booked",
+      "optional": false,
+      "links": [
+        {
+          "text": "Via Luigi Magrini, 10",
+          "url": "https://www.google.com/maps/search/?api=1&query=Via+Luigi+Magrini+10+Bergamo"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-22-san-giacomo",
+      "dayId": "day-2026-09-22",
+      "placeId": "city-bergamo",
+      "title": "Porta San Giacomo и стены",
+      "start": "16:25",
+      "end": "16:50",
+      "category": "sight",
+      "description": "16:25 – 16:50: Città Alta — Porta San Giacomo и короткая прогулка по венецианским стенам. 📍 Porta San Giacomo, Bergamo. Это главная панорама на нижний город; стены XVI века входят в объект Всемирного наследия ЮНЕСКО.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Porta San Giacomo, Bergamo",
+          "url": "https://www.google.com/maps/search/?api=1&query=Porta+San+Giacomo+Bergamo"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-22-piazza-vecchia",
+      "dayId": "day-2026-09-22",
+      "placeId": "city-bergamo",
+      "title": "Piazza Vecchia",
+      "start": "16:50",
+      "end": "17:25",
+      "category": "sight",
+      "description": "16:50 – 17:25: Piazza Vecchia — главная площадь старого города, Palazzo della Ragione, фонтан Contarini и башня Campanone. 📍 Piazza Vecchia, Bergamo. Подъём на Campanone — только если подойдём до закрытия и останутся силы: вид хорош, но не обязателен.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Piazza Vecchia, Bergamo",
+          "url": "https://www.google.com/maps/search/?api=1&query=Piazza+Vecchia+Bergamo"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-22-bergamo-duomo",
+      "dayId": "day-2026-09-22",
+      "placeId": "city-bergamo",
+      "title": "Базилика, капелла Коллеони и собор",
+      "start": "17:25",
+      "end": "17:55",
+      "category": "sight",
+      "description": "17:25 – 17:55: Piazza Duomo: Basilica di Santa Maria Maggiore, Cappella Colleoni и собор Святого Александра. 📍 Piazza Duomo, Bergamo. Приходим до вечернего закрытия; в капелле фотографии запрещены. Если время сократится, оставить базилику и капеллу, собор осмотреть снаружи.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Piazza Duomo, Bergamo",
+          "url": "https://www.google.com/maps/search/?api=1&query=Piazza+Duomo+Bergamo"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-22-via-colleoni",
+      "dayId": "day-2026-09-22",
+      "placeId": "city-bergamo",
+      "title": "Via Colleoni · прогулка и перекус",
+      "start": "17:55",
+      "end": "18:40",
+      "category": "sight",
+      "description": "17:55 – 18:40: Via Colleoni (Corsarola) от Piazza Vecchia к Piazza Mascheroni: узкие улицы, лавки и кафе. 📍 Via Bartolomeo Colleoni, Bergamo. Перекусить и попробовать polenta e osei — местный десерт; полноценный ужин оставить у отеля.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Via Bartolomeo Colleoni, Bergamo",
+          "url": "https://www.google.com/maps/search/?api=1&query=Via+Bartolomeo+Colleoni+Bergamo"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-22-feel-return",
+      "dayId": "day-2026-09-22",
+      "placeId": "city-bergamo",
+      "title": "Возвращение в FEEL",
+      "start": "18:40",
+      "end": "19:15",
+      "category": "station",
+      "description": "18:40 – 19:15: Возвращение из Città Alta в FEEL - Palazzo Ortelli, Via Luigi Magrini, 10. Это жильё в Бергамо, не у терминала BGY. Возвращение: от Piazza Mercato delle Scarpe спуститься на фуникулёре и взять такси к Via Luigi Magrini, 10; резерв — линия 1 ATB к вокзалу, затем пешком к квартире. Время ориентировочное.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Via Luigi Magrini, 10",
+          "url": "https://www.google.com/maps/search/?api=1&query=Via+Luigi+Magrini+10+Bergamo"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-22-event-6",
       "dayId": "day-2026-09-22",
       "placeId": "city-bergamo",
-      "title": "Заселение в отель, ранний ужин, проверка посадочных талонов Ryanair и подготовка ручной клади",
-      "start": "17:00",
-      "end": "20:00",
+      "title": "FEEL · ужин и подготовка к рейсу",
+      "start": "19:15",
+      "end": "20:15",
       "category": "food",
-      "description": "Заселение в отель, ранний ужин, проверка посадочных талонов Ryanair и подготовка ручной клади.",
+      "description": "19:15 – 20:15: Ранний ужин и отдых в FEEL - Palazzo Ortelli, проверка посадочных талонов Ryanair и подготовка рюкзаков. Бронь : одна спальня, 2 взрослых и 3 детей, без питания. Заезд 15:00–00:00, выезд 01:00–11:00. Согласовать возврат ключей около 05:00 и заказать транспорт на пятерых в аэропорт.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1286,25 +2086,74 @@
       "dayId": "day-2026-09-22",
       "placeId": "city-bergamo",
       "title": "Ранний отбой",
-      "start": "20:00",
+      "start": "20:15",
       "end": "21:00",
-      "category": "station",
-      "description": "Ранний отбой. Выезд в аэропорт в 05:00–05:15. Важно: Заложить запас времени на досмотр семьи из 5 человек.",
+      "category": "rest",
+      "description": "20:15 – 21:00: Ранний отбой. Выезд в аэропорт в 05:00–05:15. Важно: Заложить запас времени на досмотр семьи из 5 человек.",
       "status": "planned",
       "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-22-bergamo-station",
+      "dayId": "day-2026-09-22",
+      "placeId": "bergamo-station",
+      "title": "Venezia Mestre → Бергамо · время уточняется",
+      "start": null,
+      "end": null,
+      "category": "station",
+      "description": "Ориентировочно 10:00–10:30 → 13:30–14:30: Поезд «Venezia Mestre» → «Станция Bergamo» 📍 Piazza Guglielmo Marconi 1, Bergamo с пересадкой в Брешиа либо Milano Centrale. Выбирать фактическое соединение Trenitalia/Trenord, желательно с 30–45 минутами на пересадку для пятерых с ребёнком. Билет оформлять от Mestre; в Santa Lucia за поездом не возвращаемся. При покупке проверить, единый ли это маршрут и условия при опоздании. Если выбран дополнительный утренний островной маршрут, целевое прибытие в Bergamo — до 16:00.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Piazza Guglielmo Marconi 1, Bergamo",
+          "url": "https://www.google.com/maps/search/?api=1&query=Stazione+FS+di+Bergamo+Piazza+Guglielmo+Marconi+1+Bergamo"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-22-cannaregio",
+      "dayId": "day-2026-09-22",
+      "placeId": "cannaregio",
+      "title": "Каннареджо · альтернативное утро",
+      "start": null,
+      "end": null,
+      "category": "sight",
+      "description": "Дополнительный сценарий вместо спокойного утра в Mestre: около 07:15 выйти из жилья, 07:30–08:15 доехать через Mestre в Santa Lucia, до 10:00 погулять только по Каннареджо, затем вернуться в Mestre и к жилью до 11:00, забрать все вещи и сдать ключи. Он возможен только с подходящими поездами и согласованным доступом к вещам; если времени мало — отказаться от прогулки. Поезд в Бергамо тогда выбирать около 12:00–12:30 с прибытием не позднее 16:00. Это ещё две поездки Regionale на семью сверх основного плана. Каннареджо — предпочтительный район рядом с вокзалом; Дорсодуро ниже оставлен как альтернатива для основного дня при отказе от дворца, а не дополнительный обязательный маршрут: Район «Каннареджо» 📍 Cannaregio, Venezia: исторический район на севере города, известное место первого в мире еврейского гетто, основанного в 1516 году. Исследуйте живописные набережные Фондамента-деи-Ормезини и Фондамента-Мизерикордия, где утро начинается с аромата свежесваренного кофе из местных таверен и пекарен. Здесь можно увидеть повседневную жизнь венецианцев без шумных туристических групп. Район «Дорсодуро» 📍 Dorsoduro, Venezia: университетский и артистический квартал на юге островной части. Прогуляйтесь вдоль канала Squero di San Trovaso, чтобы посмотреть на одну из последних действующих мастерских по ремонту и изготовлению традиционных венецианских гондол. Маршрут позволяет насладиться спокойной атмосферой мостов, художественных галерей и тихих набережных до наступления дневной жары и пикового турпотока.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Cannaregio, Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Cannaregio+Venezia"
+        },
+        {
+          "text": "Dorsoduro, Venezia",
+          "url": "https://www.google.com/maps/search/?api=1&query=Dorsoduro+Venezia"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-23-event-1",
       "dayId": "day-2026-09-23",
-      "placeId": "city-dormagen",
-      "title": "Выезд из отеля в аэропорт Бергамо (BGY)",
+      "placeId": "bgy",
+      "title": "FEEL → аэропорт BGY",
       "start": "05:00",
       "end": "05:40",
       "category": "station",
-      "description": "Выезд из отеля в аэропорт Бергамо (BGY).",
+      "description": "05:00 – 05:40: Выезд из FEEL - Palazzo Ortelli (Via Luigi Magrini, 10, Bergamo) в аэропорт BGY. Заранее заказать автомобиль на пятерых или минивэн; прибытие к терминалу — не позднее 05:40. Airport Bus линии 1 от вокзала Bergamo — резерв после проверки первого рейса на день вылета: с подходом от FEEL и ожиданием он должен доставить к терминалу не позднее 05:40. Пока это не проверено, основной вариант — заказанная машина.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Via Luigi Magrini, 10, Bergamo",
+          "url": "https://www.google.com/maps/search/?api=1&query=Via+Luigi+Magrini+10+Bergamo"
+        }
+      ],
       "source": ""
     },
     {
@@ -1315,9 +2164,10 @@
       "start": "05:40",
       "end": "06:40",
       "category": "rest",
-      "description": "Проверка документов при необходимости, досмотр и переход к гейту. Летим только с рюкзаками. Онлайн-регистрацию завершить заранее: у Ryanair она закрывается за 2 часа до вылета, то есть в 05:40. Указанное агентом 06:40 не является сроком онлайн-регистрации. Отель перед вылетом: бронировать на одну ночь рядом с BGY, желательно с круглосуточной стойкой или самостоятельным заселением и подтверждённым трансфером до терминала. Ночь сент. 22, 2026 — сент. 23, 2026. Проверить реальный путь до терминала, переходы и ограждения; близость на карте не заменяет подтверждённый ранний трансфер на пятерых. Рюкзаки Ryanair: по одной небольшой личной вещи до 40×30×20 см на пассажира, под впереди стоящее кресло. Измерить наполненные рюкзаки; никаких других вещей в план перевозки не добавляем.",
+      "description": "05:40 – 06:40: Проверка документов при необходимости, досмотр и переход к гейту. Летим только с рюкзаками. Онлайн-регистрацию завершить заранее: у Ryanair она закрывается за 2 часа до вылета, то есть в 05:40. Указанное агентом 06:40 не является сроком онлайн-регистрации. Жильё перед вылетом: FEEL - Palazzo Ortelli в Бергамо, Бронь подтверждена. Ночь сент. 22, 2026 — сент. 23, 2026. Ранний трансфер из города на пятерых и возврат ключей согласовать заранее. Рюкзаки Ryanair: по одной небольшой личной вещи до 40×30×20 см на пассажира, под впереди стоящее кресло. Измерить наполненные рюкзаки; никаких других вещей в план перевозки не добавляем.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1328,9 +2178,15 @@
       "start": "07:40",
       "end": "09:05",
       "category": "airport",
-      "description": "Перелёт Ryanair FR 5551 из BGY в «Аэропорт Кёльн/Бонн (CGN)» 📍 Kennedystraße, Köln.",
+      "description": "07:40 – 09:05: Перелёт Ryanair FR 5551 из BGY в «Аэропорт Кёльн/Бонн (CGN)» 📍 Kennedystraße, Köln.",
       "status": "booked",
       "optional": false,
+      "links": [
+        {
+          "text": "Kennedystraße, Köln",
+          "url": "https://www.google.com/maps/search/?api=1&query=Cologne+Bonn+Airport+Kennedystra%C3%9Fe+K%C3%B6ln"
+        }
+      ],
       "source": ""
     },
     {
@@ -1341,9 +2197,10 @@
       "start": "09:05",
       "end": "10:00",
       "category": "rest",
-      "description": "Выход из терминала и переход к ж/д станции Köln/Bonn Flughafen.",
+      "description": "09:05 – 10:00: Выход из терминала и переход к ж/д станции Köln/Bonn Flughafen.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1354,22 +2211,33 @@
       "start": "10:00",
       "end": "11:15",
       "category": "station",
-      "description": "Поезд CGN → «Köln Hbf» 📍 Trankgasse 11, Köln → станция Dormagen. Расписание и билеты рекомендуем проверять в приложении DB Navigator. Базовая локация: Дормаген (частный адрес скрыт) 📍 Дормаген (частный адрес скрыт). От станции Dormagen до Дормаген (частный адрес скрыт): маршрут хорошо знаком и легко преодолевается пешком.",
+      "description": "10:00 – 11:15: Поезд CGN → «Köln Hbf» 📍 Trankgasse 11, Köln → станция Dormagen. Расписание и билеты рекомендуем проверять в приложении DB Navigator. Базовая локация: Дормаген (частный адрес скрыт) 📍 Дормаген (частный адрес скрыт). От станции Dormagen до Дормаген (частный адрес скрыт): маршрут хорошо знаком и легко преодолевается пешком.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Trankgasse 11, Köln",
+          "url": "https://www.google.com/maps/search/?api=1&query=K%C3%B6ln+Hauptbahnhof+Trankgasse+11+K%C3%B6ln"
+        },
+        {
+          "text": "DB Navigator",
+          "url": "https://www.bahn.de/service/mobile/db-navigator"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-23-event-6",
       "dayId": "day-2026-09-23",
       "placeId": "city-dormagen",
-      "title": "Прибытие в Дормаген, заселение у родственников (у родной тёти) на базе Дормаген (частный адрес скрыт), обед и ",
+      "title": "Прибытие к родственникам в Дормаген",
       "start": "11:15",
       "end": "13:00",
       "category": "rest",
-      "description": "Прибытие в Дормаген, заселение у родственников (у родной тёти) на базе Дормаген (частный адрес скрыт), обед и отдых после ночёвки перед ранним рейсом.",
+      "description": "11:15 – 13:00: Прибытие в Дормаген, заселение у родственников (у родной тёти) на базе Дормаген (частный адрес скрыт), обед и отдых после ночёвки перед ранним рейсом.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1380,9 +2248,10 @@
       "start": "13:00",
       "end": "18:00",
       "category": "rest",
-      "description": "Отдых, общение с семьёй и спокойная прогулка по окрестностям Дормагена. Зонс — только необязательный вариант при хорошем самочувствии; способ поездки согласовать с родственниками.",
+      "description": "13:00 – 18:00: Отдых, общение с семьёй и спокойная прогулка по окрестностям Дормагена. Зонс — только необязательный вариант при хорошем самочувствии; способ поездки согласовать с родственниками.",
       "status": "planned",
       "optional": true,
+      "links": [],
       "source": ""
     },
     {
@@ -1393,139 +2262,671 @@
       "start": "18:00",
       "end": "20:00",
       "category": "food",
-      "description": "Ужин дома с родственниками.",
+      "description": "18:00 – 20:00: Ужин дома с родственниками.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
-      "id": "visit-2026-09-24-remise",
+      "id": "visit-2026-09-24-irina",
       "dayId": "day-2026-09-24",
-      "placeId": "remise",
-      "title": "Classic Remise Düsseldorf",
-      "start": "10:00",
-      "end": "12:30",
-      "category": "sight",
-      "description": "Посещение Classic Remise; встреча с другом семьи ожидает подтверждения. Планируем встретиться у Classic Remise Düsseldorf 📍 Harffstraße 110a, 40591 Düsseldorf. Выставочный центр в историческом паровозном депо (1930 г.). Интересные факты и на что обратить внимание: Внутри размещены прозрачные стеклянные гаражи для хранения раритетных авто, мастерские по реставрации и коллекции суперкаров. Логистика: Поезд RE/S-Bahn из Дормагена до Düsseldorf Hbf, далее U79/U77 до Provinzialplatz и 8–10 минут пешком | время от дома уточнить с учётом ожидания пересадок | Вход свободный. Что посмотреть: Уникальные ретро-автомобили в антураже бывшего локомотивного депо. Можно рассматривать вблизи.",
+      "placeId": "city-cologne",
+      "title": "Встреча с Ириной Николаевной · время согласовать",
+      "start": "09:00",
+      "end": "10:00",
+      "category": "station",
+      "description": "Встреча с Ириной Николаевной — теперь в Кёльне. Предложить ей прибытие на Köln Hbf, Trankgasse 11, 50667 Köln; место встречи внутри вокзала и точное время согласовать после её билета. Это договорённость в работе, не подтверждённое прибытие. Оставить 30–45 минут; при необходимости сдвинуть музей и магазины. После встречи нас шестеро; вечером возвращаемся вместе в Дормаген. Её билет в автобус до Парижа уже куплен в заказе [номер скрыт]. Дальнейший перелёт Ирины Николаевны не считаем купленным без отдельного билета. Уточнение: Ирина Николаевна едет из города Франкфурт-на-Майне и может выехать в любое время. Предпочтительный вариант — прямой ICE Frankfurt (Main) Hbf → Köln Hbf с прибытием в 09:00–09:30; это желаемое окно встречи, а не подтверждённое расписание. Встретиться, позавтракать и к 10:00 перейти к собору. Наш выезд из дома в Дормагене планировать примерно за 75–90 минут до согласованной встречи, затем уточнить по выбранному поезду.",
       "status": "planned",
       "optional": false,
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-24-fortuna",
-      "dayId": "day-2026-09-24",
-      "placeId": "fortuna",
-      "title": "Фан-шоп Fortuna Düsseldorf",
-      "start": "13:00",
-      "end": "14:00",
-      "category": "sight",
-      "description": "Посещение фан-шопа футбольного клуба Fortuna Düsseldorf 📍 Burgplatz 11, 40213 Düsseldorf на площади Бургплац на берегу Рейна.",
-      "status": "planned",
-      "optional": false,
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-24-schumacher",
-      "dayId": "day-2026-09-24",
-      "placeId": "schumacher",
-      "title": "Brauerei Schumacher",
-      "start": "14:30",
-      "end": "16:30",
-      "category": "food",
-      "description": "Обед в традиционной пивоварне Brauerei Schumacher 📍 Oststraße 123, 40210 Düsseldorf. Старейшая пивоварня Альтбира (с 1838 года).",
-      "status": "planned",
-      "optional": false,
+      "links": [
+        {
+          "text": "Köln Hbf, Trankgasse 11, 50667 Köln",
+          "url": "https://www.google.com/maps/search/?api=1&query=K%C3%B6ln%20Hauptbahnhof"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-25-cathedral",
-      "dayId": "day-2026-09-25",
+      "dayId": "day-2026-09-24",
       "placeId": "cathedral",
       "title": "Кёльнский собор",
       "start": "10:00",
       "end": "12:00",
       "category": "sight",
-      "description": "Кёльнский собор 📍 Domkloster 4, 50667 Köln. Величайший готический собор Германии (157 м в высоту), строившийся с 1248 по 1880 год. Интересные факты и на что обратить внимание: Внутри находится золотой саркофаг Трех Царей (волхвов). Дресс-код: закрытые плечи и колени. Важно: Строгий дресс-код (плечи и колени должны быть закрыты).",
+      "description": "10:00 – 12:00: Кёльнский собор 📍 Domkloster 4, 50667 Köln. Величайший готический собор Германии (157 м в высоту), строившийся с 1248 по 1880 год. Интересные факты и на что обратить внимание: Внутри находится золотой саркофаг Трех Царей (волхвов). Дресс-код: закрытые плечи и колени. Важно: Строгий дресс-код (плечи и колени должны быть закрыты).",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Domkloster 4, 50667 Köln",
+          "url": "https://www.google.com/maps/search/?api=1&query=Kölner+Dom+Domkloster+4+Köln"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-25-chocolate",
-      "dayId": "day-2026-09-25",
+      "dayId": "day-2026-09-24",
       "placeId": "chocolate",
       "title": "Музей шоколада",
       "start": "12:30",
       "end": "14:30",
       "category": "sight",
-      "description": "Музей шоколада Imhoff-Schokoladenmuseum 📍 Am Schokoladenmuseum 1a, 50676 Köln. Расположен в здании-корабле на Рейне. Интересные факты и на что обратить внимание: Главный аттракцион — 3-метровый шоколадный фонтан, где каждому дают попробовать свежие вафли в шоколаде. Купить онлайн на выбранный временной слот. 14:30–18:00: отдых, еда, сбор рюкзаков и подготовка к выезду во Францию. Возвращаться ли в Дормаген или ехать прямо из Кёльна — решить после выбора транспорта. Заложить запас на путь к конкретной остановке/вокзалу.",
+      "description": "12:30 – 14:30: Музей шоколада Imhoff-Schokoladenmuseum 📍 Am Schokoladenmuseum 1a, 50676 Köln. Расположен в здании-корабле на Рейне. Интересные факты и на что обратить внимание: Главный аттракцион — 3-метровый шоколадный фонтан, где каждому дают попробовать свежие вафли в шоколаде. Ирина Николаевна присоединяется в этот день; если успевает к музею, её вход проверить и добавить отдельным билетом: семейный тариф не гарантирует включение третьего взрослого. Купить временной слот после подтверждения состава шести человек.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Am Schokoladenmuseum 1a, 50676 Köln",
+          "url": "https://www.google.com/maps/search/?api=1&query=Imhoff-Schokoladenmuseum+Am+Schokoladenmuseum+1a+Köln"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-24-lunch",
+      "dayId": "day-2026-09-24",
+      "placeId": "city-cologne",
+      "title": "Обед и отдых",
+      "start": "14:30",
+      "end": "15:30",
+      "category": "food",
+      "description": "14:30 – 15:30: Обед и отдых рядом с музеем или по пути к Schildergasse. Далее 15:30–17:30 — Apple/Ray-Ban по желанию; если встреча с Ириной Николаевной назначена на это время, магазины сокращаем.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-24-shopping",
+      "dayId": "day-2026-09-24",
+      "placeId": "city-cologne",
+      "title": "Apple и Ray-Ban · по желанию",
+      "start": "15:30",
+      "end": "17:30",
+      "category": "sight",
+      "description": "Apple в Кёльне — дополнительная остановка при запасе времени: Apple Schildergasse, 📍 Schildergasse 1–9, 50667 Köln, в центре города. Опубликованный график: пн–сб 10:00–20:00, вс закрыто. На покупку и Tax Free заложить 45–60 минут; не пытаться вместить магазин в короткий переход между собором и музеем. После музея и обеда — по силам и с учётом времени встречи с Ириной Николаевной; в этот день автобуса во Францию нет. Источник: Apple Schildergasse. Резерв по наличию: Apple Rhein Center, 📍 Aachener Straße 1253, 50858 Köln-Weiden;  Это отдельный заезд, в основную прогулку по центру его не включаем. До поездки подтвердить наличие и часы работы. Источник: Apple Rhein Center. Ray-Ban Köln — покупка очков: По желанию до поездки в Дюссельдорф: при отсутствии нужной модели проверить Apollo/Fielmann на следующий день. Schildergasse 50, 50667 Köln, на той же улице, что Apple. Официальный магазин; пн–сб 10:00–20:00, вс закрыто;  Заложить 30–45 минут на примерку и покупку после обеда; при усталости оставить покупку на Дюссельдорф. Нужная комплектация: Ray-Ban Meta Wayfarer Gen 2, Matte Black / Transitions Grey, размер 53 (L), RW4012 601S1Z 53–22, EAN 8056262721384. До оплаты уточнить оформление Tax Free для этой покупки и чистую сумму возврата: участие данного филиала пока не подтверждено. Страница магазина.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Schildergasse 1–9, 50667 Köln",
+          "url": "https://www.google.com/maps/search/?api=1&query=Apple%20Schildergasse%20Schildergasse%201%E2%80%939%2C%2050667%20K%C3%B6ln"
+        },
+        {
+          "text": "Apple Schildergasse",
+          "url": "https://www.apple.com/de/retail/schildergasse/"
+        },
+        {
+          "text": "Aachener Straße 1253, 50858 Köln-Weiden",
+          "url": "https://www.google.com/maps/search/?api=1&query=Apple%20Rhein%20Center%20Aachener%20Stra%C3%9Fe%201253%2C%2050858%20K%C3%B6ln-Weiden"
+        },
+        {
+          "text": "Apple Rhein Center",
+          "url": "https://www.apple.com/de/retail/rheincenter/"
+        },
+        {
+          "text": "Страница магазина",
+          "url": "https://stores.ray-ban.com/germany/koln/schildergasse-50"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-24-home",
+      "dayId": "day-2026-09-24",
+      "placeId": "city-cologne",
+      "title": "Возвращение в Дормаген",
+      "start": "17:30",
+      "end": "19:00",
+      "category": "station",
+      "description": "17:30 – 19:00: Возвращение в Дормаген. От Schildergasse до Köln Hbf ориентировочно 15–20 минут пешком, затем поезд до Dormagen и путь домой на Дормаген (частный адрес скрыт). От центра до двери заложить 60–90 минут с ожиданием. Вечером подготовить все рюкзаки на Францию: следующий день заканчивается посадкой на автобус в Дюссельдорфе.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-24-remise",
+      "dayId": "day-2026-09-25",
+      "placeId": "remise",
+      "title": "Classic Remise Düsseldorf",
+      "start": "10:00",
+      "end": "12:30",
+      "category": "sight",
+      "description": "10:00 – 12:30: Посещение Classic Remise; встреча с Антоном Божановым ожидает подтверждения. Планируем встретиться у Classic Remise Düsseldorf 📍 Harffstraße 110a, 40591 Düsseldorf. Выставочный центр в историческом паровозном депо (1930 г.). Интересные факты и на что обратить внимание: Внутри размещены прозрачные стеклянные гаражи для хранения раритетных авто, мастерские по реставрации и коллекции суперкаров. Логистика: Поезд RE/S-Bahn из Дормагена до Düsseldorf Hbf, далее U79/U77 до Provinzialplatz и 8–10 минут пешком | время от дома уточнить с учётом ожидания пересадок | Вход свободный. Что посмотреть: Уникальные ретро-автомобили в антураже бывшего локомотивного депо. Можно рассматривать вблизи.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-24-fortuna",
+      "dayId": "day-2026-09-25",
+      "placeId": "fortuna",
+      "title": "Фан-шоп Fortuna Düsseldorf",
+      "start": "13:15",
+      "end": "14:00",
+      "category": "sight",
+      "description": "13:15 – 14:00: Посещение фан-шопа футбольного клуба Fortuna Düsseldorf 📍 Burgplatz 11, 40213 Düsseldorf на площади Бургплац на берегу Рейна.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Burgplatz 11, 40213 Düsseldorf",
+          "url": "https://www.google.com/maps/search/?api=1&query=Fan-Shop+Fortuna+Düsseldorf+Burgplatz+11"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-24-schumacher",
+      "dayId": "day-2026-09-25",
+      "placeId": "schumacher",
+      "title": "Brauerei Schumacher",
+      "start": "14:30",
+      "end": "16:30",
+      "category": "food",
+      "description": "14:30 – 16:30: Обед в традиционной пивоварне Brauerei Schumacher 📍 Oststraße 123, 40210 Düsseldorf. Старейшая пивоварня Альтбира (с 1838 года).",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Oststraße 123, 40210 Düsseldorf",
+          "url": "https://www.google.com/maps/search/?api=1&query=Brauerei+Schumacher+Oststraße+123+Düsseldorf"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-25-apple",
+      "dayId": "day-2026-09-25",
+      "placeId": "city-dusseldorf",
+      "title": "Apple Düsseldorf · Tax Free",
+      "start": "16:30",
+      "end": "17:30",
+      "category": "sight",
+      "description": "После обеда, ориентировочно 16:30–17:30: Apple Düsseldorf — Kö-Bogen, 📍 Königsallee 2, 40212 Düsseldorf. Удобный основной вариант покупки после программы в центре; заложить около часа на выбор и оформление. Опубликованный график: пн–сб 10:00–20:00, вс закрыто; часы на день посещения и наличие модели уточнить заранее. Источник: Apple Düsseldorf. Покупка Apple с Tax Free: официальные Apple Store в Германии оформляют возврат НДС через Global Blue, с возможными ограничениями. До оплаты назвать модель, комплектацию и количество, сообщить о проживании в России и возвращении через Турцию; подтвердить возможность продажи и вывоза выбранной техники, выдачу Tax Free Form и чистую сумму возврата. Экспортные ограничения ЕС зависят от категории и стоимости товара; пересадка или остановка в Турции их не отменяет. Tax Free не является разрешением на вывоз. Источники: условия Apple Tax Free; разъяснения BAFA. Как покупать: взять загранпаспорт и подтверждение проживания вне ЕС (для России — внутренний паспорт с регистрацией). До оплаты попросить Global Blue Tax Free Form; оформлять покупку на того, кто предъявит товар таможне. Получить чек и отдельную форму, проверить ФИО, паспорт, адрес и сумму возврата; согласовать доступный способ выплаты и комиссии. При онлайн-заказе с самовывозом заранее отдельно подтвердить порядок Tax Free. Фраза сотруднику: “We live in Russia and will return via Turkey. Is this product eligible for export and Global Blue Tax Free? What is the net refund?” До подтверждения вывоза сохранить устройство в исходном состоянии, упаковку, чек и форму; практический вариант — не распаковывать и не активировать покупку до таможни. Сфотографировать документы и номер формы. Точную выгоду считать по сумме в форме. Источник: памятка Германии о возврате НДС.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Königsallee 2, 40212 Düsseldorf",
+          "url": "https://www.google.com/maps/search/?api=1&query=Apple%20D%C3%BCsseldorf%20K%C3%B6-Bogen%20K%C3%B6nigsallee%202%2C%2040212%20D%C3%BCsseldorf"
+        },
+        {
+          "text": "Apple Düsseldorf",
+          "url": "https://www.apple.com/de/retail/duesseldorf/"
+        },
+        {
+          "text": "условия Apple Tax Free",
+          "url": "https://www.apple.com/legal/sales-support/sales-policies/retail_de.html"
+        },
+        {
+          "text": "разъяснения BAFA",
+          "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Aussenwirtschaft/afk_merkblatt_russische_foederation.pdf?__blob=publicationFile&v=7"
+        },
+        {
+          "text": "памятка Германии о возврате НДС",
+          "url": "https://germania.diplo.de/ru-de/service/08-sonstigekonsularischedienstleistungen/2465032-2465032"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-25-rayban",
+      "dayId": "day-2026-09-25",
+      "placeId": "city-dusseldorf",
+      "title": "Ray-Ban Meta · Apollo / Fielmann",
+      "start": "17:30",
+      "end": "18:30",
+      "category": "sight",
+      "description": "После Apple, ориентировочно 17:30–18:30 — покупка Ray-Ban Meta в Дюссельдорфе: если очки ещё не куплены в Кёльне: сначала Apollo, затем при необходимости Fielmann на той же улице. Нужны Wayfarer Gen 2, Matte Black / Transitions Grey, 53 (L), RW4012 601S1Z 53–22, EAN 8056262721384. Наличие именно этой комплектации, цену на кассе и оформление Tax Free подтвердить до покупки; возврат пока не учитывать в бюджете. Apollo — основной вариант: Schadowstraße 53, 40212 Düsseldorf. Пн–сб 10:00–20:00, вс закрыто;  Флагманский магазин с примеркой Meta AI Glasses. Fielmann — второй вариант рядом: Schadowstraße 63, 40212 Düsseldorf. Пн–сб 10:00–20:00, вс закрыто;  Филиал указан в списке магазинов с Ray-Ban Meta. Цену и наличие версии Transitions 53 уточнить. Optik Kremer — запасной вариант: Graf-Adolf-Straße 25, 40212 Düsseldorf;  Пн–пт 09:30–18:00, сб 09:30–13:30. Продажа Ray-Ban Meta подтверждена сайтом, но Gen 2 и нужная комплектация не подтверждены. Если выберем этот магазин, зайти до Apple или переставить шопинг: после основных магазинов можем не успеть до закрытия.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Apollo",
+          "url": "https://www.apollo.de/filialen/dusseldorf/schadowstr-53-7661"
+        },
+        {
+          "text": "Fielmann",
+          "url": "https://www.fielmann.de/niederlassungen/duesseldorf/40212-schadowstrasse-63/"
+        },
+        {
+          "text": "Optik Kremer",
+          "url": "https://optiker-kremer.de/category/allgemein/"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-25-group",
+      "dayId": "day-2026-09-25",
+      "placeId": "city-dusseldorf",
+      "title": "Встреча группы на Düsseldorf Hbf",
+      "start": "18:30",
+      "end": "20:15",
+      "category": "food",
+      "description": "18:30 – 20:15: Закончить покупки, дойти от Schadowstraße 53/63 до Düsseldorf Hbf — ориентировочно 20–30 минут; при усталости городской транспорт по Google Maps. Здесь встреча с Олей, Наташей и Тимом, спокойный ужин, туалет, вода и еда в автобус. Предлагаемое место сбора — главный вход Düsseldorf Hbf, Konrad-Adenauer-Platz 14, к 19:00; согласовать его с группой. Если им удобнее сразу ZOB — общий сбор там к 21:00.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Düsseldorf Hbf, Konrad-Adenauer-Platz 14",
+          "url": "https://www.google.com/maps/search/?api=1&query=D%C3%BCsseldorf%20Hauptbahnhof"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-25-zob",
+      "dayId": "day-2026-09-25",
+      "placeId": "dusseldorf-zob",
+      "title": "Рюкзаки и сбор на Düsseldorf ZOB",
+      "start": "20:15",
+      "end": "21:00",
+      "category": "station",
+      "description": "20:15 – 21:00: Получить рюкзаки, если пользовались шкафчиками, и перейти к Düsseldorf ZOB, Worringer Straße 140, 40210 Düsseldorf. От главного входа Hbf идти по указателям ZOB к Worringer Straße, около 5–10 минут; от платформы с детьми и вещами заложить 15–20 минут. Открыть пеший маршрут Hbf → ZOB. Это центральная автостанция рядом с вокзалом, не аэропорт Düsseldorf и не CGN. У нужной платформы быть к 21:00; номер платформы в билетах не указан — сверить табло/автобус №50449 до Paris Bercy-Seine. Точная точка отправления по присланной ссылке: 51.2228889, 6.7955556 (51°13′22.4″N 6°47′44.0″E). Для подхода и общего сбора используем эту отметку Google Maps; номер платформы уточняем на месте.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Düsseldorf ZOB, Worringer Straße 140, 40210 Düsseldorf",
+          "url": "https://www.google.com/maps/search/?api=1&query=51.2228889%2C6.7955556"
+        },
+        {
+          "text": "пеший маршрут Hbf → ZOB",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=D%C3%BCsseldorf%20Hauptbahnhof&destination=51.2228889%2C6.7955556&travelmode=walking"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-25-bus-paris",
+      "dayId": "day-2026-09-25",
+      "placeId": "dusseldorf-zob",
+      "title": "BlaBlaCar Bus 50449 · Düsseldorf → Paris",
+      "start": "21:45",
+      "end": "07:40",
+      "category": "station",
+      "description": "21:45 – 07:40 следующего утра: купленный BlaBlaCar Bus, линия 50449, Düsseldorf ZOB → Paris Bercy-Seine, 208–210 Quai de Bercy, 75012 Paris. В пути 9 ч 55 мин, время местное. В билете требуется быть на остановке минимум за 15 минут, то есть к 21:30; наш сбор в 21:00 оставляет 45 минут на проверку документов и посадку. У каждого свой билет и паспорт. Все девять пассажиров подтверждены двумя заказами; старый вариант FlixBus из CGN отменён в плане. Источники: два PDF билетов и две квитанции PAYMENT RECEIPT со статусом SUCCESSFUL. Это оплата только дороги в Париж; обратный автобус этими документами не подтверждён. Места по билетам: Роман — 2D; Анна — 2E; Артур — 3A; Лера — 3B; Ярослав — 3D; Ирина Николаевна — 3E; Наташа — 12D; Оля — 12E; Тим — 20A. Тим оказался отдельно от Оли и Наташи: до поездки проверить возможность изменения мест или согласовать обмен, чтобы он ехал рядом со взрослым. Не считать всю группу сидящей вместе. Билеты и изменения сохранить офлайн.",
+      "status": "booked",
+      "optional": false,
+      "links": [
+        {
+          "text": "Paris Bercy-Seine, 208–210 Quai de Bercy, 75012 Paris",
+          "url": "https://www.google.com/maps/search/?api=1&query=Paris+Bercy+Seine+208+210+Quai+de+Bercy"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-26-bercy-disney",
+      "dayId": "day-2026-09-26",
+      "placeId": "city-disneyland",
+      "title": "Bercy-Seine → Disneyland",
+      "start": "07:40",
+      "end": "11:30",
+      "category": "station",
+      "description": "07:40: прибытие купленного BlaBlaCar Bus 50449 в Paris Bercy-Seine, 208–210 Quai de Bercy. Собраться всей группой, проверить рюкзаки и выйти через Parc de Bercy к метро Bercy; по инструкции билета пешеходный проход находится за площадкой силовых тренажёров. На выход с автостанции и дорогу к метро закладываем 20–30 минут. Далее M14 в сторону Saint-Denis Pleyel до Gare de Lyon, затем RER A только в сторону Marne-la-Vallée–Chessy. С ожиданием и переходами до парка закладываем 80–110 минут, с завтраком — около 2–2,5 часа. При прибытии автобуса по расписанию ориентир у парка — 09:40–10:10, затем хранение вещей и досмотр; начало аттракционов в 11:30 оставляет запас. При задержке автобуса сокращаем утренние ожидания/необязательные остановки, а не время заселения. Один Ticket Métro–Train–RER покрывает связку M14 + RER A, если не выходить из оплаченной зоны. Для квартиры выходить на Val d’Europe и идти по адресу хозяина; ориентир GPS из брони: 48.8558167, 2.7725500. Утреннее заселение не включено: заезд 17:00–19:00. К квартире утром едем только при согласованном раннем доступе или приёме рюкзаков. Иначе продолжаем до Marne-la-Vallée–Chessy: от станции до входа в парк около 2–5 минут, досмотр отдельно. Хранение вещей у парка уточнить заранее.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
       "source": ""
     },
     {
       "id": "visit-2026-09-26-disney",
       "dayId": "day-2026-09-26",
       "placeId": "disney",
-      "title": "Disneyland Park",
+      "title": "Disneyland Paris · 1 день / 2 парка",
       "start": "11:30",
       "end": null,
       "category": "sight",
-      "description": "Аттракционы Disneyland Park. Первейший евро-парк Диснея, открытый в 1992 году. Интересные факты и на что обратить внимание: Замок Спящей Красавицы уникален тем, что под ним живет огромный аниматронный Дракон. Старт сезона Halloween 2026. Используйте приложение Disney для отслеживания очередей. Вечернее шоу: название и время не фиксировать заранее — проверить в официальном приложении ближе к посещению. Занять место за 45 минут, только если у Ярослава останутся силы. После закрытия: Ужин в Disney Village и переезд в ещё не выбранный отель в районе «Val d’Europe» 📍 Val d’Europe, Serris (ориентир района, не адрес забронированного отеля) (1 остановка на поезде RER A или на автобусе/такси). Подтвердить позднее заселение и хранение рюкзаков до посещения парка. До оплаты уточнить состав французской группы: базовый расчёт на пятерых; участие родственников меняет жильё и билеты.",
-      "status": "planned",
+      "description": "11:30 – закрытие: Аттракционы; основной маршрут — Disneyland Park, второй парк можно посетить по силам и очередям: куплен доступ в оба парка. В Disneyland Park посмотреть замок Спящей Красавицы и аниматронного Дракона под ним. Используйте приложение Disney для отслеживания очередей. Сохраняем выезд одного взрослого за ключами примерно в 16:15 и вечернее шоу по силам. Билеты Disneyland Paris: Dated 1 Day/2 Park ticket — один день, оба парка; дата посещения: сент. 26, 2026. Заказы созданы сент. 16, 2026, способ оплаты — Mastercard. Итого 7 билетов по взрослому тарифу и 2 детских. Артур и Лера относятся к тарифу 12+, Ярославу уже нужен оплаченный билет. Условия в подтверждении: отмена разрешена не позднее чем за 3 дня до посещения; точное предельное время и порядок возврата сверить в письме бронирования. Источники — два приложенных подтверждения успешной оплаты. Сами входные билеты со штрихкодами получить по инструкции из отдельного письма, проверить и сохранить офлайн; скриншоты оплаты не заменяют входные билеты. Вечернее шоу: название и время не фиксировать заранее — проверить в официальном приложении ближе к посещению. Занять место за 45 минут, только если у Ярослава останутся силы.",
+      "status": "booked",
       "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-26-unconfirmed",
+      "dayId": "day-2026-09-26",
+      "placeId": "chessy-flat",
+      "title": "Шесси: получить ключи и заселиться",
+      "start": "16:15",
+      "end": "19:00",
+      "category": "hotel",
+      "description": "Ночёвка: Disney 4 min, from 4 to 14 Guests, 4 bedrooms, free parkings, 100 m2, Chessy 77700 — Бронь подтверждена PDF Booking, на имя Anna Proskurnina: одна ночь, 5 взрослых и 4 ребёнка (3, 8, 12 и 13 лет). Четыре спальни, 100 м², кухня. Это база у Диснейленда, а не в центре Парижа. Полная предоплата может быть списана в любое время; факт списания этим PDF не подтверждён. Заезд 17:00–19:00, выезд 08:00–10:00. Адрес в PDF: France, 77700 Chessy; улица и дом отсутствуют. GPS из брони: 48.8558167, 2.7725500. Получить точный вход и номер квартиры у хозяина. Заселение 17:00–19:00 пересекается с посещением Disney. Возможность повторного входа в парк проверить. Поздний самостоятельный доступ после шоу допустим только после письменного согласования с хозяином. После парка возвращаемся через RER A Marne-la-Vallée–Chessy → Val d’Europe, далее по адресу хозяина. Заложить время на выход из парка, RER, подход к квартире и передачу ключей; не приходить к хозяину позднее 19:00 без отдельной договорённости. Название «Disney 4 min» не означает четыре минуты от двери до входа: учитывать путь до станции, ожидание, поезд и досмотр. Бесплатный шаттл прежнего рекомендованного отеля к этой квартире не относится. Ужин — по силам до возвращения либо в квартире. Даты проживания: сент. 26, 2026 — сент. 27, 2026 (одна ночь). От Marne-la-Vallée–Chessy до Val d’Europe одна остановка, около 3 минут в поезде, но от выхода парка до квартиры планируем 20–35 минут с ожиданием и пешим участком, точный вход ещё нужно получить у хозяина. Чтобы быть у хозяина к 17:00, выходить из парка примерно в 16:15.",
+      "status": "booked",
+      "optional": false,
+      "links": [
+        {
+          "text": "Val d’Europe",
+          "url": "https://www.google.com/maps/search/?api=1&query=Val+d%27Europe+station"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-27-event-1",
       "dayId": "day-2026-09-27",
       "placeId": "city-paris",
-      "title": "Выселение из отеля и переезд в центр Парижа",
-      "start": "08:30",
-      "end": "10:30",
-      "category": "hotel",
-      "description": "Выселение из отеля и переезд в центр Парижа. Логистика: Поезд RER A от Val d’Europe / Marne-la-Vallée до центра Парижа (~40 мин).",
+      "title": "Выезд из Шесси, RER A и хранение рюкзаков",
+      "start": "08:00",
+      "end": "10:45",
+      "category": "station",
+      "description": "08:00 – 09:00: Завтрак, сбор всех рюкзаков и выезд из забронированных апартаментов Disney 4 min в Шесси. По брони выезд возможен с 08:00 и обязателен до 10:00. В Париж едем всей группой из 9 человек. Точный адрес входа и путь до Val d’Europe уточнить у хозяина: в подтверждении указан GPS, но нет улицы и номера дома. 09:00 – около 10:45: Пешком до Val d’Europe, RER A в западном направлении до Châtelet–Les Halles. На дорогу от квартиры до центра с ожиданием и переходами заложить 60–90 минут; ещё 15–20 минут на сдачу рюкзаков и около 20 минут пешком к Нотр-Даму. Итого 95–130 минут: при позднем выезде прибытие к собору может сместиться до 11:10. Время посещения собора подбирать с этим запасом, при задержке сокращать Тюильри. Хранение рядом с Châtelet–Les Halles выбрать заранее: открыто в воскресенье, принимает наши рюкзаки и позволяет забрать их около 17:30. Оно пока не забронировано. В Шесси после прогулки не возвращаемся. Крупные рюкзаки в собор не допускаются.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Val d’Europe",
+          "url": "https://www.google.com/maps/search/?api=1&query=Val%20d'Europe%20station%20Chessy"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-notre-dame",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Нотр-Дам · посещение внутри",
+      "start": "10:45",
+      "end": "11:45",
+      "category": "sight",
+      "description": "10:45 – 11:45: Нотр-Дам де Пари — посещение внутри, ориентировочный час с запасом на очередь. Посмотреть восстановленный интерьер, своды и витражи; башни и сокровищница в этот план не включены. Вход в собор бесплатный. Официальная система сейчас открывает бесплатные слоты только в день посещения, за несколько часов: проверить утром и оформить доступ на всех девятерых с учётом лимита формы. При отсутствии слотов возможна общая очередь; время входа не гарантировано. В воскресенье учитывать богослужения и ограничения осмотра. Бронирование Нотр-Дама; правила безопасности.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Нотр-Дам де Пари",
+          "url": "https://www.google.com/maps/search/?api=1&query=Notre%20Dame%20de%20Paris"
+        },
+        {
+          "text": "Бронирование Нотр-Дама",
+          "url": "https://resa.notredamedeparis.fr/en/reservationindividuelle/tickets"
+        },
+        {
+          "text": "правила безопасности",
+          "url": "https://www.notredamedeparis.fr/en/visit/practical-information/safety-guidelines/"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-lunch",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Обед в Латинском квартале",
+      "start": "11:45",
+      "end": "12:30",
+      "category": "food",
+      "description": "11:45 – 12:30: Обед и туалет в районе Saint-Michel / Латинского квартала. Для девяти человек предусмотреть запас на обслуживание; после Диснейленда этот отдых сохраняем.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Saint-Michel",
+          "url": "https://www.google.com/maps/search/?api=1&query=Place%20Saint%20Michel%20Paris"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-seine",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Сена и Pont Neuf",
+      "start": "12:30",
+      "end": "13:15",
+      "category": "sight",
+      "description": "12:30 – 13:15: Прогулка вдоль Сены через Pont Neuf к Лувру. Это моя дополнительная остановка по пути: виды острова Сите и набережных, короткие остановки для фотографий. Расстояние ориентировочно 2 км; идти в темпе детей.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Pont Neuf",
+          "url": "https://www.google.com/maps/search/?api=1&query=Pont%20Neuf%20Paris"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-louvre",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Наружные пирамиды Лувра",
+      "start": "13:15",
+      "end": "14:00",
+      "category": "sight",
+      "description": "13:15 – 14:00: Двор Лувра Cour Napoléon — большая стеклянная пирамида и малые пирамиды, фасады дворца, фотографии. В музей Лувра не заходим, билет в музей для этой прогулки не покупаем. Имеются в виду наружные пирамиды; подземная перевёрнутая пирамида в маршрут не включена. Часы дворов Лувра.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Двор Лувра Cour Napoléon",
+          "url": "https://www.google.com/maps/search/?api=1&query=Cour%20Napoleon%20Louvre%20Paris"
+        },
+        {
+          "text": "Часы дворов Лувра",
+          "url": "https://www.louvre.fr/en/visit/hours-admission"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-tuileries",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Тюильри · короткая прогулка",
+      "start": "14:00",
+      "end": "14:30",
+      "category": "sight",
+      "description": "14:00 – 14:30: Сад Тюильри — короткая прогулка на запад и отдых у пруда. Это вторая дополнительная остановка по пути; при задержке у собора сократить её первой.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Сад Тюильри",
+          "url": "https://www.google.com/maps/search/?api=1&query=Jardin%20des%20Tuileries%20Paris"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-metro-m8",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Concorde → École Militaire",
+      "start": "14:30",
+      "end": "15:15",
+      "category": "station",
+      "description": "14:30 – 15:15: Переход к Concorde, метро M8 в сторону Balard до École Militaire, затем пешком к Марсову полю. На ожидание, переходы и прогулку заложить около 45 минут. Схема M8; работу линии на день поездки перепроверить накануне.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Concorde",
+          "url": "https://www.google.com/maps/search/?api=1&query=Concorde%20metro%20Paris"
+        },
+        {
+          "text": "École Militaire",
+          "url": "https://www.google.com/maps/search/?api=1&query=Ecole%20Militaire%20metro%20Paris"
+        },
+        {
+          "text": "Схема M8",
+          "url": "https://www.ratp.fr/plans-lignes/metro/8"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-eiffel",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Эйфелева башня снаружи",
+      "start": "15:15",
+      "end": "16:00",
+      "category": "sight",
+      "description": "15:15 – 16:00: Эйфелева башня снаружи и Марсово поле — фотографии и отдых. Базовый план без подъёма. Если хотим зайти в ограждённые сады/на эспланаду под башней, вход бесплатный, но потребуется досмотр и дополнительное время. Дополнительные варианты: подъём на Эйфелеву башню — только после выбора обратного транспорта и покупки официального билета на время; заложить дополнительно 2–3 часа, сократить другие остановки или изменить время отъезда. Официальные билеты Эйфелевой башни. Прогулку на кораблике по Сене можно рассмотреть как замену части прогулки, если останутся силы и время; причал, длительность и последний рейс проверить отдельно. В основной день дополнительные платные посещения не включены.",
+      "status": "planned",
+      "optional": false,
+      "links": [
+        {
+          "text": "Эйфелева башня",
+          "url": "https://www.google.com/maps/search/?api=1&query=Tour%20Eiffel%20Paris"
+        },
+        {
+          "text": "Официальные билеты Эйфелевой башни",
+          "url": "https://www.toureiffel.paris/en/planning-smooth-visit"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-27-trocadero",
       "dayId": "day-2026-09-27",
       "placeId": "trocadero",
-      "title": "Тюильри, Сена и Трокадеро",
-      "start": "10:30",
-      "end": "15:00",
+      "title": "Трокадеро · по силам",
+      "start": "16:00",
+      "end": "16:30",
       "category": "sight",
-      "description": "Экспресс-маршрут по Парижу: Сад Тюильри 📍 Place de la Concorde, Paris, набережные Сены и лучший панорамный вид на «Эйфелеву башню» 📍 5 Av. Anatole France, Paris со смотровой площадки «Трокадеро» 📍 Pl. du Trocadéro et du 11 Novembre, Paris. Обед и выезд к вокзалу — по времени купленного поезда, с запасом на дорогу и посадку. Для Eurostar в Кёльн обычно используется Gare du Nord; вокзал другого рейса брать строго из билета. Вокзалы не взаимозаменяемы.",
+      "description": "16:00 – 16:30: Через Pont d’Iéna к Трокадеро — панорама Эйфелевой башни и общая фотография. При усталости достаточно вида со стороны Марсова поля: Трокадеро можно пропустить.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Трокадеро",
+          "url": "https://www.google.com/maps/search/?api=1&query=Place%20du%20Trocadero%20Paris"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-backpacks",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Забрать рюкзаки и поужинать",
+      "start": "16:30",
+      "end": "19:00",
+      "category": "rest",
+      "description": "16:30 – 17:30: Возвращение за рюкзаками. От Trocadéro — M6 в сторону Charles de Gaulle–Étoile до конечной, затем RER A на восток до Châtelet–Les Halles. На дорогу с переходами 35–50 минут, на получение вещей ещё 15–20 минут. 17:30–19:00 — спокойный ужин, туалет, запас еды и воды в автобус. Это план под рекомендованный прямой рейс в 21:35, а не под отправление в 19:00.",
       "status": "planned",
       "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-pershing",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Переезд к Porte Maillot · после покупки автобуса",
+      "start": "19:30",
+      "end": "20:30",
+      "category": "station",
+      "description": "19:30 – 20:30: Переезд к Paris Pershing–Porte Maillot для прямого автобуса. От Châtelet — M1 в сторону La Défense до Porte Maillot, затем 15–20 минут пешком к автобусной остановке на Boulevard Pershing, 22. От места хранения закладываем 45–60 минут. Сбор всей группы у нужной платформы не позднее 20:45 для рейса 21:35. В билете должны совпадать Paris Pershing–Porte Maillot и адрес остановки: это НЕ Bercy Seine. После выхода за рюкзаками нужен новый билет на метро. Если выберем рейс 20:45 из Bercy Seine: от Châtelet M14 в сторону Aéroport d’Orly до Bercy и 15–20 минут пешком, всего около 40–55 минут; быть у автобуса к 20:00.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
       "source": ""
     },
     {
       "id": "visit-2026-09-27-event-3",
       "dayId": "day-2026-09-27",
       "placeId": "city-paris",
-      "title": "Переезд Париж → Дормаген",
-      "start": "15:30",
-      "end": "22:00",
+      "title": "Ночной автобус в Германию · ещё не куплен",
+      "start": null,
+      "end": null,
       "category": "station",
-      "description": "Переезд Париж → Дормаген. Логистика: Скоростной поезд Eurostar (Thalys) / ICE из Парижа до Köln Hbf / Düsseldorf Hbf (~3,5–4 ч), далее региональный поезд RE7 / S11 до Dormagen (~20 мин) или междугородний автобус FlixBus. В дорогу подготовить воду и ужин/перекус. Конкретный обратный поезд или автобус ещё не выбран; время возвращения пересчитать после покупки. Около 22:00: ориентировочное возвращение в Дормаген, если выбранное сообщение это позволяет. При задержке проверить последнюю пересадку и резервный трансфер от станции.",
+      "description": "Обратные автобусы: проверена выдача FlixBus на воскресный выезд после парижской прогулки для 5 взрослых и 4 детей, всего 9 пассажиров. В интервале 19:00–20:00 вариантов не показано ни до Кёльна, ни до Дюссельдорфа. Это результат проверки FlixBus, а не утверждение об отсутствии рейсов у всех перевозчиков. Рекомендую: 21:35 Paris Pershing–Porte Maillot → Düsseldorf ZOB 06:15 следующим утром, прямой, 8 ч 40 мин. Прибытие утром удобнее для дальнейшей дороги в Дормаген. Оба варианта с одной пересадкой; для нашей группы менее удобны. Все прибытия — следующим утром. Cologne Airport — аэропорт CGN, а не Köln Hbf. Покупка обратного автобуса: FlixBus Париж — Дюссельдорф; FlixBus Париж — Кёльн. Выставить дату нашего воскресного выезда и 5 взрослых + 4 детей. Суммы на группу выше рассчитаны из округлённой цены «на человека» в выдаче; окончательную сумму, плату за выбор мест и условия проверить перед оплатой. Желательно выбрать места рядом. На каждого, включая младшего ребёнка, нужен автобусный билет. К остановке приходим с запасом 45–50 минут. После ночного автобуса: от Düsseldorf ZOB пройти к Düsseldorf Hbf, далее подобрать поезд в Dormagen; от Cologne Airport сначала потребуется железнодорожное сообщение из аэропорта. На путь после высадки до жилья планово резервируем 1–1,5 часа, точное время зависит от поезда и адреса в Дормагене. Утро следующего дня оставляем для возвращения и сна, прежний ориентир «в Дормагене в 22:00» не использовать.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "FlixBus Париж — Дюссельдорф",
+          "url": "https://global.flixbus.com/bus-routes/bus-paris-dusseldorf"
+        },
+        {
+          "text": "FlixBus Париж — Кёльн",
+          "url": "https://global.flixbus.com/bus-routes/bus-paris-cologne"
+        }
+      ],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-27-transport-guide",
+      "dayId": "day-2026-09-27",
+      "placeId": "city-paris",
+      "title": "Париж: билеты на метро и RER",
+      "start": null,
+      "end": null,
+      "category": "station",
+      "description": "Париж: оплата и билеты на городской транспорт Обычную банковскую карту нельзя просто приложить к турникету метро/RER вместо билета. Ею оплачивают ПОКУПКУ билета в автомате, кассе или приложении. На турникете прикладывают Navigo Easy либо совместимый телефон с заранее загруженным транспортным билетом; оплата банковской картой в телефоне сама по себе проезд не открывает. Для группы проще отдельная Navigo Easy каждому платящему пассажиру: 8 карт, из них 7 с полным тарифом и 1 со льготным для ребёнка 8 лет. Ярославу 3 года — бесплатный проезд. Дети 12 и 13 лет оплачивают полный тариф. Пополнять её можно в автоматах и через официальное приложение Île-de-France Mobilités. В приложении также можно купить билет непосредственно на совместимый телефон. Нельзя провести девять человек одним билетом или одной картой: каждый платящий пассажир использует свой носитель, взрослый помогает ребёнку. Карточку сохраняем до конца поездки и прикладываем при входе, а в RER также при выходе. Он действует по региону, включая Val d’Europe и Marne-la-Vallée–Chessy у Disney, но не на аэропортовых поездках, TGV и автобусах. Пересадки метро ↔ RER ↔ поезд включены в пределах двух часов без выхода из оплаченной зоны; после выхода на прогулку или за рюкзаками требуется новый билет. На оплату банковской картой непосредственно в автобусе как на универсальный способ не рассчитываем: заранее загружаем нужный билет. Парижский день — примерно четыре оплачиваемых участка: Шесси → центр, Concorde → École Militaire, Trocadéro → хранение, хранение → автостанция. От Marne-la-Vallée–Chessy до Val d’Europe одна остановка, около 3 минут в поезде, но от выхода парка до квартиры планируем 20–35 минут с ожиданием и пешим участком, точный вход ещё нужно получить у хозяина. Чтобы быть у хозяина к 17:00, выходить из парка примерно в 16:15. Камера хранения, междугородние автобусы и дополнительные поездки в сумму не входят. Практика маршрута: в RER A на восток читать конечную Marne-la-Vallée–Chessy, не Boissy-Saint-Léger. В центре Paris Châtelet и Châtelet–Les Halles соединены переходами, но это большой узел: группе закладывать 10–15 минут на пересадку. M4 Saint-Michel закрыта на ремонт в период поездки; наш путь к собору пешком от Châtelet её обходит. В опубликованном графике полных закрытий M6 наше воскресенье не указано; работу RER A, M1, M6, M8 и M14 повторно проверить накануне в Île-de-France Mobilités / RATP. Все времена выше — плановые диапазоны с ожиданием, не обещание конкретного отправления. Источники по проезду: официальные тарифы Île-de-France Mobilités; правила Ticket Métro–Train–RER; Navigo Easy; детские тарифы; работы на M4; работы на M6. Карты для переездов: Val d’Europe; Marne-la-Vallée–Chessy; Châtelet–Les Halles; Paris Pershing–Porte Maillot; Paris Bercy Seine.",
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "официальные тарифы Île-de-France Mobilités",
+          "url": "https://www.iledefrance-mobilites.fr/en/tarifs-titre-de-transport-en-commun-2026"
+        },
+        {
+          "text": "правила Ticket Métro–Train–RER",
+          "url": "https://www.iledefrance-mobilites.fr/en/titres-et-tarifs/detail/ticket-metro-train-rer"
+        },
+        {
+          "text": "Navigo Easy",
+          "url": "https://www.iledefrance-mobilites.fr/en/titres-et-tarifs/supports/passe-navigo-easy"
+        },
+        {
+          "text": "детские тарифы",
+          "url": "https://www.iledefrance-mobilites.fr/en/aide-et-contacts/titres-unitaires-tarifs-reduits/tarif-reduit"
+        },
+        {
+          "text": "работы на M4",
+          "url": "https://www.ratp.fr/decouvrir/coulisses/modernisation-du-reseau/metro-ligne-4-travaux"
+        },
+        {
+          "text": "работы на M6",
+          "url": "https://www.ratp.fr/decouvrir/coulisses/modernisation-du-reseau/metro-ligne-6-travaux"
+        },
+        {
+          "text": "Val d’Europe",
+          "url": "https://www.google.com/maps/search/?api=1&query=Val%20d%E2%80%99Europe"
+        },
+        {
+          "text": "Marne-la-Vallée–Chessy",
+          "url": "https://www.google.com/maps/search/?api=1&query=Marne-la-Vall%C3%A9e%E2%80%93Chessy"
+        },
+        {
+          "text": "Châtelet–Les Halles",
+          "url": "https://www.google.com/maps/search/?api=1&query=Ch%C3%A2telet%E2%80%93Les%20Halles"
+        },
+        {
+          "text": "Paris Pershing–Porte Maillot",
+          "url": "https://www.google.com/maps/search/?api=1&query=Paris%20Pershing%E2%80%93Porte%20Maillot"
+        },
+        {
+          "text": "Paris Bercy Seine",
+          "url": "https://www.google.com/maps/search/?api=1&query=Paris%20Bercy%20Seine"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-09-28-event-1",
       "dayId": "day-2026-09-28",
       "placeId": "city-dormagen",
-      "title": "Восстановление сил, прогулка по Дормагену, домашний обед и стирка перед поездкой в Нидерланды",
+      "title": "Возвращение в Дормаген, сон и отдых",
       "start": "09:00",
       "end": "18:00",
       "category": "rest",
-      "description": "Восстановление сил, прогулка по Дормагену, домашний обед и стирка перед поездкой в Нидерланды.",
+      "description": "После ночного автобуса: от Düsseldorf ZOB пройти к Düsseldorf Hbf, далее подобрать поезд в Dormagen; от Cologne Airport сначала потребуется железнодорожное сообщение из аэропорта. На путь после высадки до жилья планово резервируем 1–1,5 часа, точное время зависит от поезда и адреса в Дормагене. Утро следующего дня оставляем для возвращения и сна, прежний ориентир «в Дормагене в 22:00» не использовать. 09:00 – 18:00: Восстановление сил, прогулка по Дормагену, домашний обед и стирка перед поездкой в Нидерланды.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1536,9 +2937,15 @@
       "start": "06:30",
       "end": "10:30",
       "category": "station",
-      "description": "Поезд Dormagen → Düsseldorf Hbf → «Amsterdam Centraal» 📍 Stationsplein, Amsterdam. Поезд ещё не выбран. 10:30–12:00: запас на задержку, перекус и хранение вещей. Бронировать NEMO после выбора поезда, оставляя около 1,5 часа после прибытия. Отель выбирать с учётом пути от вокзала.",
+      "description": "06:30 – 10:30: Поезд Dormagen → Düsseldorf Hbf → «Amsterdam Centraal» 📍 Stationsplein, Amsterdam. Поезд ещё не выбран. 10:30–12:00: запас на задержку, перекус и хранение вещей. Бронировать NEMO после выбора поезда, оставляя около 1,5 часа после прибытия. Отель выбирать с учётом пути от вокзала.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Stationsplein, Amsterdam",
+          "url": "https://www.google.com/maps/search/?api=1&query=Amsterdam+Centraal+Stationsplein+Amsterdam"
+        }
+      ],
       "source": ""
     },
     {
@@ -1549,9 +2956,15 @@
       "start": "12:00",
       "end": "15:00",
       "category": "sight",
-      "description": "Музей науки NEMO 📍 Oosterdok 2, Amsterdam. Интерактивный музей в зеленом здании в форме носа корабля (архитектор Ренцо Пиано). Интересные факты и на что обратить внимание: 5 этажей интерактивных экспериментов с физикой, химией и светом. Поднимитесь на ступенчатую крышу-террасу.",
+      "description": "12:00 – 15:00: Музей науки NEMO 📍 Oosterdok 2, Amsterdam. Интерактивный музей в зеленом здании в форме носа корабля (архитектор Ренцо Пиано). Интересные факты и на что обратить внимание: 5 этажей интерактивных экспериментов с физикой, химией и светом. Поднимитесь на ступенчатую крышу-террасу.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Oosterdok 2, Amsterdam",
+          "url": "https://www.google.com/maps/search/?api=1&query=NEMO+Science+Museum+Oosterdok+2+Amsterdam"
+        }
+      ],
       "source": ""
     },
     {
@@ -1562,9 +2975,10 @@
       "start": "15:00",
       "end": "16:00",
       "category": "food",
-      "description": "Обед: Малосолёная голландская сельдь в киоске Stubbe's Haring и хрустящий картофель фри.",
+      "description": "15:00 – 16:00: Обед: Малосолёная голландская сельдь в киоске Stubbe's Haring и хрустящий картофель фри.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1575,9 +2989,10 @@
       "start": "16:00",
       "end": "18:30",
       "category": "sight",
-      "description": "Круиз на лодке по каналам XVII века (объект ЮНЕСКО) и заселение в отель в Амстердаме.",
+      "description": "16:00 – 18:30: Круиз на лодке по каналам XVII века (объект ЮНЕСКО) и заселение в отель в Амстердаме.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1588,9 +3003,15 @@
       "start": "10:00",
       "end": "13:00",
       "category": "rest",
-      "description": "«Вондельпарк» 📍 Vondelpark, Amsterdam. Главный публичный парк города (47 га), открытый в 1865 году. Прогулка, детские площадки и пикник у прудов. Вход свободный. При дожде: спокойное утро в кафе рядом с отелем и короткая прогулка в погодное окно; парк отменить. Закрытый музей добавлять только после выбора и проверки билетов.",
+      "description": "10:00 – 13:00: «Вондельпарк» 📍 Vondelpark, Amsterdam. Главный публичный парк города (47 га), открытый в 1865 году. Прогулка, детские площадки и пикник у прудов. Вход свободный. При дожде: спокойное утро в кафе рядом с отелем и короткая прогулка в погодное окно; парк отменить. Закрытый музей добавлять только после выбора и проверки билетов.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Vondelpark, Amsterdam",
+          "url": "https://www.google.com/maps/search/?api=1&query=Vondelpark+Amsterdam"
+        }
+      ],
       "source": ""
     },
     {
@@ -1601,9 +3022,15 @@
       "start": "13:00",
       "end": "16:00",
       "category": "food",
-      "description": "Обед, забор рюкзаков из отеля и прибытие на вокзал «Amsterdam Centraal» 📍 Stationsplein, Amsterdam.",
+      "description": "13:00 – 16:00: Обед, забор рюкзаков из отеля и прибытие на вокзал «Amsterdam Centraal» 📍 Stationsplein, Amsterdam.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Stationsplein, Amsterdam",
+          "url": "https://www.google.com/maps/search/?api=1&query=Amsterdam+Centraal+Stationsplein+Amsterdam"
+        }
+      ],
       "source": ""
     },
     {
@@ -1614,22 +3041,24 @@
       "start": "16:30",
       "end": "21:00",
       "category": "station",
-      "description": "Поезд Amsterdam Centraal → Düsseldorf Hbf → Dormagen.",
+      "description": "16:30 – 21:00: Поезд Amsterdam Centraal → Düsseldorf Hbf → Dormagen.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
       "id": "visit-2026-10-01-event-1",
       "dayId": "day-2026-10-01",
       "placeId": "city-dormagen",
-      "title": "Упаковка рюкзаков и контрольное взвешивание перед вылетом турецким лоукостером Pegasus",
+      "title": "Pegasus: билеты, рюкзаки и документы Tax Free",
       "start": "10:00",
       "end": "14:00",
       "category": "rest",
-      "description": "Упаковка рюкзаков и контрольное взвешивание перед вылетом турецким лоукостером Pegasus.",
+      "description": "10:00 – 14:00: Подготовка к купленному Pegasus PC 1012: проверить пять билетов и получение посадочных талонов. В заказе оплачена услуга онлайн-регистрации на всех пятерых, но это ещё не подтверждение выполненной регистрации. Взвесить личные вещи: по одной до 3 кг и 40×30×15 см каждому, включая детей. У Анны и Романа отдельно оплачено по 1×8 кг; квитанция называет услугу «Дополнительный багаж» без уточнения вида — проверить в брони Pegasus, что это cabin baggage, и допустимые размеры. Не распределять эти два места на детей и не считать их сдаваемым багажом без подтверждения. Подготовить транспорт до CGN и встречу в SAW. Проверка Tax Free перед вылетом: собрать покупки, упаковки, загранпаспорт, подтверждение проживания вне ЕС, чеки и формы Global Blue; сверить данные и сохранить копии. Покупки должны помещаться в разрешённые рюкзаки вместе с остальными вещами. Уточнить расположение и часы таможни для ручной клади в CGN, подходящий способ передачи форм Global Blue и выплаты. При необходимости — резервный визит в Apple Schildergasse или Düsseldorf во время поездки на прощальный ужин, после проверки наличия.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
@@ -1640,22 +3069,37 @@
       "start": "14:00",
       "end": "18:00",
       "category": "food",
-      "description": "Неспешный прощальный ужин в Кёльне или Дюссельдорфе, отдых перед перелётом.",
+      "description": "14:00 – 18:00: Неспешный прощальный ужин в Кёльне или Дюссельдорфе, отдых перед перелётом.",
       "status": "planned",
       "optional": false,
+      "links": [],
       "source": ""
     },
     {
       "id": "visit-2026-10-02-event-1",
       "dayId": "day-2026-10-02",
       "placeId": "city-istanbul",
-      "title": "Трансфер Dormagen → «Аэропорт Кёльн/Бонн (CGN)» 📍 Kennedystraße, Köln",
-      "start": null,
-      "end": null,
+      "title": "Дормаген → CGN · раньше при Tax Free",
+      "start": "08:30",
+      "end": "10:20",
       "category": "station",
-      "description": "Трансфер из Дормагена в аэропорт Кёльн/Бонн к рейсу PC 1012 в 13:20. Время выезда пересчитать с учётом нового времени вылета; расписание поезда ещё не подтверждено.",
+      "description": "Ориентировочно 08:30 – 10:20: Трансфер Dormagen → «Аэропорт Кёльн/Бонн (CGN)» 📍 Kennedystraße, Köln. От Дормаген (частный адрес скрыт) заложить путь до станции Dormagen, ожидание, пересадку и переход в терминал. Подобрать маршрут в DB Navigator с прибытием в CGN не позднее 10:20 — за 3 часа до вылета 13:20; прямой RE6 при наличии либо соединение через Köln Hbf. Отправление около 08:30 — плановый ориентир, не расписание; цену проверить на фактический состав наземной группы. В самолёте подтверждены только 5 человек основной семьи. Резерв — заранее заказанный вместительный трансфер; терминал и стойку уточнить по Pegasus/табло. При оформлении Tax Free: прибыть в CGN к 09:20–09:35, то есть на 45–60 минут раньше основной цели 10:20. Плановый выезд из дома около 07:30–08:00, точное время выбрать по соединению DB и дороге до станции. Время на таможню не отнимать у досмотра и паспортного контроля. Регистрацию/сдачу багажа, если она требуется, закончить до 12:20; у выхода быть около 12:30–12:40, закрытие посадки по общему правилу Pegasus — 13:00. При более раннем времени в посадочном следовать ему. Tax Free в CGN перед рейсом в Стамбул: это выход из ЕС по текущему маршруту. Переезды во Францию и Нидерланды не являются вывозом из ЕС. Предъявить таможне сами покупки, паспорт, посадочный талон, чеки и формы; для рюкзаков заранее уточнить нужный пункт таможни и его расположение относительно досмотра. Подтверждение вывоза получить до отлёта, не откладывать до Стамбула. Источник: правила ЕС о возврате НДС. После таможни: передать подтверждённые формы Global Blue по инструкции на бланке — через подходящий пункт возврата либо отправкой документов. Сохранить копии и отслеживать возврат по номеру формы. Таможня подтверждает вывоз, деньги выплачивает оператор за вычетом комиссии; штамп сам по себе не завершает заявку. Источник: памятка Германии о возврате НДС.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Kennedystraße, Köln",
+          "url": "https://www.google.com/maps/search/?api=1&query=Cologne+Bonn+Airport+Kennedystra%C3%9Fe+K%C3%B6ln"
+        },
+        {
+          "text": "правила ЕС о возврате НДС",
+          "url": "https://europa.eu/youreurope/citizens/consumers/shopping/vat/faq/index_en.htm"
+        },
+        {
+          "text": "памятка Германии о возврате НДС",
+          "url": "https://germania.diplo.de/ru-de/service/08-sonstigekonsularischedienstleistungen/2465032-2465032"
+        }
+      ],
       "source": ""
     },
     {
@@ -1664,24 +3108,36 @@
       "placeId": "saw",
       "title": "Pegasus PC 1012 · Кёльн/Бонн → Стамбул SAW",
       "start": "13:20",
-      "end": null,
+      "end": "17:30",
       "category": "airport",
-      "description": "Купленный рейс Pegasus PC 1012, 2 октября в 13:20 по времени Кёльна. Время прибытия уточнить по билету.",
+      "description": "13:20 – 17:30: Перелёт CGN → «Стамбул (аэропорт SAW)» 📍 Sanayi, Pendik, Istanbul рейсом Pegasus PC 1012. Куплено на всех пятерых: Роман, Анна, Артур, Валерия и Ярослав; статус билетов OK. Время местное: перелёт 3 ч 10 мин, Стамбул на час впереди Кёльна в этот день. Источники — PC-1012.pdf и PC-1012_Forms.pdf; это два представления одного заказа, не две покупки. Номера паспортов и билетов в план не переносим.",
       "status": "booked",
       "optional": false,
+      "links": [
+        {
+          "text": "Sanayi, Pendik, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Sabiha+G%C3%B6k%C3%A7en+International+Airport+Sanayi+Pendik+Istanbul"
+        }
+      ],
       "source": ""
     },
     {
       "id": "visit-2026-10-02-event-3",
       "dayId": "day-2026-10-02",
       "placeId": "city-istanbul",
-      "title": "Трансфер из SAW в район «Султанахмет» 📍 Sultanahmet, Fatih, Istanbul",
-      "start": "20:00",
-      "end": "22:00",
+      "title": "SAW: контроль, трансфер и заселение",
+      "start": "17:30",
+      "end": "21:00",
       "category": "station",
-      "description": "Трансфер из SAW в район «Султанахмет» 📍 Sultanahmet, Fatih, Istanbul.",
+      "description": "17:30 – 18:30/19:00: Прилёт в SAW, паспортный контроль и выход в зал прилёта. Ориентировочно 18:30/19:00 – 20:30/21:00: Трансфер из SAW в район «Султанахмет» 📍 Sultanahmet, Fatih, Istanbul. Основной вариант для пяти человек — заранее согласованный минивэн до двери жилья с детским креслом и отслеживанием PC 1012; на дорогу закладываем 1,5–2 часа и запас на пятничные пробки. Бюджетная альтернатива — M4 из SAW с дальнейшими пересадками к выбранному адресу; это не прямой маршрут в Султанахмет. После заселения — простой ужин и отдых; при задержке рейса сдвигаем вечер, достопримечательности оставляем на следующий день.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Sultanahmet, Fatih, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Sultanahmet+Fatih+Istanbul"
+        }
+      ],
       "source": ""
     },
     {
@@ -1692,9 +3148,19 @@
       "start": "09:00",
       "end": "12:00",
       "category": "sight",
-      "description": "«Айя-София» 📍 Sultanahmet Meydanı 1, Fatih, Istanbul и «Голубая мечеть» 📍 Atmeydanı Cd. 7, Fatih, Istanbul. Величайшие шедевры византийского и османского зодчества VI и XVII веков. Интересные факты и на что обратить внимание: В Голубой мечети обратите внимание на 20 000 изникских керамических плиток ручной работы. Логистика: Пешком из Султанахмета.",
+      "description": "09:00 – 12:00: «Айя-София» 📍 Sultanahmet Meydanı 1, Fatih, Istanbul и «Голубая мечеть» 📍 Atmeydanı Cd. 7, Fatih, Istanbul. Величайшие шедевры византийского и османского зодчества VI и XVII веков. Интересные факты и на что обратить внимание: В Голубой мечети обратите внимание на 20 000 изникских керамических плиток ручной работы. Логистика: Пешком из Султанахмета.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Sultanahmet Meydanı 1, Fatih, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Hagia+Sophia+Sultan+Ahmet+Sultanahmet+Meydan%C4%B1+1+Fatih+Istanbul"
+        },
+        {
+          "text": "Atmeydanı Cd. 7, Fatih, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Blue+Mosque+Sultan+Ahmet+Atmeydan%C4%B1+Cd+7+Fatih+Istanbul"
+        }
+      ],
       "source": ""
     },
     {
@@ -1705,9 +3171,15 @@
       "start": "13:00",
       "end": "14:30",
       "category": "food",
-      "description": "Обед у «Галатского моста» 📍 Beyoğlu, Istanbul.",
+      "description": "13:00 – 14:30: Обед у «Галатского моста» 📍 Beyoğlu, Istanbul.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Beyoğlu, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Galata+Bridge+Kemanke%C5%9F+Karamustafa+Pa%C5%9Fa+Beyo%C4%9Flu+Istanbul"
+        }
+      ],
       "source": ""
     },
     {
@@ -1718,9 +3190,19 @@
       "start": "15:00",
       "end": "17:00",
       "category": "sight",
-      "description": "Городской паром от пристани «Эминёню» 📍 Eminönü, Fatih, Istanbul до пристани «Кадыкёй» 📍 Kadıköy, Istanbul в Азии. Поездка между континентами через Босфор.",
+      "description": "15:00 – 17:00: Городской паром от пристани «Эминёню» 📍 Eminönü, Fatih, Istanbul до пристани «Кадыкёй» 📍 Kadıköy, Istanbul в Азии. Поездка между континентами через Босфор.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Eminönü, Fatih, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Emin%C3%B6n%C3%BC+Fatih+Istanbul"
+        },
+        {
+          "text": "Kadıköy, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Kad%C4%B1k%C3%B6y+Istanbul"
+        }
+      ],
       "source": ""
     },
     {
@@ -1731,22 +3213,15 @@
       "start": "08:00",
       "end": "10:00",
       "category": "food",
-      "description": "Завтрак и покупка свежей пахлавы в кондитерской Karaköy Güllüoğlu 📍 Kemankeş Cad. 67, İstanbul. Выезд из района «Султанахмет» 📍 Sultanahmet, Fatih, Istanbul в аэропорт вылета (IST/SAW) на трансфере или Havaist за 3,5–4 часа до выбранного рейса Стамбул → Москва.",
+      "description": "08:00 – 10:00: Завтрак и покупка свежей пахлавы в кондитерской Karaköy Güllüoğlu 📍 Kemankeş Cad. 67, İstanbul.",
       "status": "planned",
       "optional": false,
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-26-unconfirmed",
-      "dayId": "day-2026-09-26",
-      "placeId": "city-disneyland",
-      "title": "Ночёвка возле Disneyland",
-      "start": null,
-      "end": null,
-      "category": "hotel",
-      "description": "Отель не выбран. Подтвердить позднее заселение, хранение рюкзаков и состав группы.",
-      "status": "planned",
-      "optional": false,
+      "links": [
+        {
+          "text": "Kemankeş Cad. 67, İstanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Karaköy+Güllüoğlu+Kemankeş+Cad+67+İstanbul"
+        }
+      ],
       "source": ""
     },
     {
@@ -1757,9 +3232,15 @@
       "start": null,
       "end": null,
       "category": "airport",
-      "description": "Рейс и аэропорт IST/SAW не выбраны. Выезд назначить после покупки билета.",
+      "description": "Выезд из района «Султанахмет» 📍 Sultanahmet, Fatih, Istanbul в аэропорт вылета (IST/SAW) на трансфере или Havaist за 3,5–4 часа до выбранного рейса Стамбул → Москва.",
       "status": "planned",
       "optional": false,
+      "links": [
+        {
+          "text": "Sultanahmet, Fatih, Istanbul",
+          "url": "https://www.google.com/maps/search/?api=1&query=Sultanahmet+Fatih+Istanbul"
+        }
+      ],
       "source": ""
     }
   ],
@@ -1834,18 +3315,7 @@
       "id": "dorm-duss",
       "from": "dormagen",
       "to": "dusseldorf",
-      "date": "2026-09-24",
-      "mode": "train",
-      "departure": null,
-      "arrival": null,
-      "status": "planned",
-      "schematic": true
-    },
-    {
-      "id": "duss-dorm",
-      "from": "dusseldorf",
-      "to": "dormagen",
-      "date": "2026-09-24",
+      "date": "2026-09-25",
       "mode": "train",
       "departure": null,
       "arrival": null,
@@ -1856,7 +3326,7 @@
       "id": "dorm-koeln",
       "from": "dormagen",
       "to": "cologne",
-      "date": "2026-09-25",
+      "date": "2026-09-24",
       "mode": "train",
       "departure": null,
       "arrival": null,
@@ -1865,13 +3335,13 @@
     },
     {
       "id": "france-out",
-      "from": "cologne",
-      "to": "disneyland",
+      "from": "dusseldorf",
+      "to": "paris",
       "date": "2026-09-25",
-      "mode": "unknown",
-      "departure": null,
-      "arrival": null,
-      "status": "planned",
+      "mode": "bus",
+      "departure": "2026-09-25T21:45:00+02:00",
+      "arrival": "2026-09-26T07:40:00+02:00",
+      "status": "booked",
       "schematic": true
     },
     {
@@ -1888,9 +3358,9 @@
     {
       "id": "france-back",
       "from": "paris",
-      "to": "dormagen",
+      "to": "dusseldorf",
       "date": "2026-09-27",
-      "mode": "unknown",
+      "mode": "bus",
       "departure": null,
       "arrival": null,
       "status": "planned",
@@ -1920,12 +3390,12 @@
     },
     {
       "id": "pegasus",
-      "from": "dormagen",
+      "from": "cologne",
       "to": "istanbul",
       "date": "2026-10-02",
       "mode": "flight",
       "departure": "2026-10-02T13:20:00+02:00",
-      "arrival": null,
+      "arrival": "2026-10-02T17:30:00+03:00",
       "status": "booked",
       "schematic": true
     },
@@ -1935,6 +3405,50 @@
       "to": "moscow",
       "date": "2026-10-04",
       "mode": "flight",
+      "departure": null,
+      "arrival": null,
+      "status": "planned",
+      "schematic": true
+    },
+    {
+      "id": "koeln-dorm",
+      "from": "cologne",
+      "to": "dormagen",
+      "date": "2026-09-24",
+      "mode": "train",
+      "departure": null,
+      "arrival": null,
+      "status": "planned",
+      "schematic": true
+    },
+    {
+      "id": "paris-disney",
+      "from": "paris",
+      "to": "disneyland",
+      "date": "2026-09-26",
+      "mode": "train",
+      "departure": null,
+      "arrival": null,
+      "status": "planned",
+      "schematic": true
+    },
+    {
+      "id": "duss-dorm-after-paris",
+      "from": "dusseldorf",
+      "to": "dormagen",
+      "date": "2026-09-28",
+      "mode": "train",
+      "departure": null,
+      "arrival": null,
+      "status": "planned",
+      "schematic": true
+    },
+    {
+      "id": "dorm-cgn",
+      "from": "dormagen",
+      "to": "cologne",
+      "date": "2026-10-02",
+      "mode": "train",
       "departure": null,
       "arrival": null,
       "status": "planned",
