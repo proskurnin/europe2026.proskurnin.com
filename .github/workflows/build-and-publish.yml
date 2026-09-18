@@ -52,3 +52,28 @@ jobs:
           git -C "$artifact_dir" add -A
           git -C "$artifact_dir" commit --allow-empty -m "Build $GITHUB_SHA"
           git -C "$artifact_dir" push origin HEAD:deploy
+  verify-production:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Wait for VPS to publish this commit
+        env:
+          EXPECTED_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          response=$(mktemp)
+          for attempt in $(seq 1 40); do
+            if curl --fail --silent --show-error --connect-timeout 5 --max-time 10 \
+              "https://europe2026.proskurnin.com/deploy-version.json?commit=$EXPECTED_COMMIT" -o "$response" \
+              && python3 -c 'import json,os,sys; sys.exit(0 if json.load(open(sys.argv[1])).get("commit")==os.environ["EXPECTED_COMMIT"] else 1)' "$response"; then
+              echo "Verified production commit $EXPECTED_COMMIT"
+              exit 0
+            fi
+            echo "Waiting for VPS deployment ($attempt/40)"
+            sleep 10
+          done
+          echo 'Build published, but VPS deployment was not confirmed. Inspect europe2026-deploy.service on the server.' >&2
+          exit 1
