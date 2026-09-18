@@ -1,19 +1,25 @@
 'use client';
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
 import {Check,ArrowRight,MapPin,BookOpen,Wallet} from 'lucide-react';
 import {Progress} from '@/components/ui/progress';
 
 import {dateLabel,money,totals,type Trip} from '@/lib/trip';
 
 export function JourneyProgress({plan,visits,onJournal}:{plan:Trip;visits:any[];onJournal:()=>void}){
- const execution=plan.execution;if(!execution)return null;
+ const [today,setToday]=useState('');
+ useEffect(()=>{
+  const update=()=>{const d=new Date();setToday([d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'));};
+  update();const timer=setInterval(update,60000);return()=>clearInterval(timer);
+ },[]);
+ const days=[...plan.days].sort((a,b)=>a.date.localeCompare(b.date));
  const places=visits.filter(v=>v.category==='sight'&&!v.optional&&v.status!=='skip');
  const seen=places.filter(v=>v.status==='visited').length;
- const elapsed=plan.days.filter(d=>d.date<execution.asOfDate).length;
- const current=plan.days.findIndex(d=>d.date===execution.asOfDate)+1;
+ const elapsed=today?days.filter(d=>d.date<today).length:0;
+ const current=days.findIndex(d=>d.date===today)+1;
+ const caption=!today?'Календарь поездки':current?'День '+current+' из '+days.length:elapsed===days.length?'Все дни по расписанию завершены':'Поездка по расписанию';
  return <section className="journey-progress" aria-label="Прогресс путешествия">
-  <div className="journey-heading"><div><small>ПУТЕШЕСТВИЕ НАЧАЛОСЬ</small><h2><MapPin size={24}/>{execution.location} · день {current||'—'} из {plan.days.length}</h2><p>По записи от {dateLabel(execution.asOfDate)} · перелёт позади, первая прогулка состоялась.</p></div><button onClick={onJournal}><BookOpen size={18}/>Бортовой журнал<ArrowRight size={17}/></button></div>
-  <div className="journey-meters"><div><div className="journey-meter-label"><span>Календарь поездки</span><b>{elapsed} из {plan.days.length} дней позади</b></div><Progress value={elapsed/Math.max(1,plan.days.length)*100} aria-label="Дни до даты последней записи"/><p>Текущий день ещё не завершён. Даты сами по себе не подтверждают посещения.</p></div><div><div className="journey-meter-label"><span>Места основного плана</span><b>{seen} из {places.length} посетили</b></div><Progress value={seen/Math.max(1,places.length)*100} aria-label="Посещённые места основного плана"/><p>По журналу и вашим отметкам. Необязательные и пропущенные места исключены.</p></div></div>
+  <div className="journey-heading"><div><small>ПРОГРЕСС ПУТЕШЕСТВИЯ</small><h2><MapPin size={24}/>{caption}</h2><p>{today?'На '+dateLabel(today)+' · календарный прогресс и подтверждённые посещения.':'Календарный прогресс и подтверждённые посещения.'}</p></div>{plan.execution?.events?.length>0&&<button onClick={onJournal}><BookOpen size={18}/>Бортовой журнал<ArrowRight size={17}/></button>}</div>
+  <div className="journey-meters"><div><div className="journey-meter-label"><span>Календарь поездки</span><b>{elapsed} из {days.length} дней позади</b></div><Progress value={elapsed/Math.max(1,days.length)*100} aria-label="Завершённые календарные дни поездки"/><p>По текущей дате на вашем устройстве. Даты сами по себе не подтверждают посещения.</p></div><div><div className="journey-meter-label"><span>Места основного плана</span><b>{seen} из {places.length} посетили</b></div><Progress value={seen/Math.max(1,places.length)*100} aria-label="Посещённые места основного плана"/><p>По отметкам посещения. Необязательные и пропущенные места исключены.</p></div></div>
  </section>
 }
 
