@@ -1,0 +1,54 @@
+name: Build and publish Europe deploy branch
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: europe-production-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit --pretty false
+      - run: node --test server/account/app.test.mjs
+      - name: Build Apache site
+        run: |
+          EUROPE_STATIC=1 npm run build
+          node scripts/prepare-apache-export.mjs
+      - name: Publish build and API code (no private plan)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          artifact_dir=$(mktemp -d)
+          mkdir -p "$artifact_dir/site" "$artifact_dir/account" "$artifact_dir/deployment"
+          cp -a dist/client/. "$artifact_dir/site/"
+          cp server/account/*.mjs "$artifact_dir/account/"
+          rm -f "$artifact_dir/account/app.test.mjs"
+          cp deployment/* "$artifact_dir/deployment/"
+          printf '{"commit":"%s"}\n' "$GITHUB_SHA" > "$artifact_dir/site/deploy-version.json"
+          printf '%s\n' "$GITHUB_SHA" > "$artifact_dir/source-commit"
+          test ! -e "$artifact_dir/site/data/plan.json"
+          test ! -e "$artifact_dir/account/plan.json"
+          git -C "$artifact_dir" init
+          git -C "$artifact_dir" config user.name 'github-actions[bot]'
+          git -C "$artifact_dir" config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C "$artifact_dir" config credential.helper '!f() { echo username=x-access-token; echo password=$GH_TOKEN; }; f'
+          git -C "$artifact_dir" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          if git -C "$artifact_dir" ls-remote --exit-code origin refs/heads/deploy >/dev/null; then
+            git -C "$artifact_dir" fetch --depth=1 origin deploy
+            git -C "$artifact_dir" reset --mixed FETCH_HEAD
+          fi
+          git -C "$artifact_dir" add -A
+          git -C "$artifact_dir" commit --allow-empty -m "Build $GITHUB_SHA"
+          git -C "$artifact_dir" push origin HEAD:deploy
