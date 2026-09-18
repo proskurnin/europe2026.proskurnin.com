@@ -1,34 +1,16 @@
 'use client';
+import {useEffect,useState} from 'react';
+import {Plane,ArrowRight} from 'lucide-react';
+import {nextFlight,flightTime} from '@/lib/flights';
 
-import {useEffect, useMemo, useState} from 'react';
-import {AlertCircle, Clock3, Plane, RefreshCw} from 'lucide-react';
-
-type FlightStatus={
-  flight:string;
-  departure:string;
-  scheduledDeparture:string;
-  source:string;
-  sourceUrl:string;
-  updatedAt:string;
-  refreshAfter:string;
-  delayed?:boolean;
-  note?:string;
-};
-
-const fallback:FlightStatus={flight:'UT 785',departure:'2026-09-17T20:50:00+03:00',scheduledDeparture:'2026-09-17T20:50:00+03:00',source:'Расписание из плана',sourceUrl:'https://rasp.yandex.ru/',updatedAt:'',refreshAfter:'',note:'Расписание проверяется'};
-const number=(value:number)=>String(Math.max(0,value)).padStart(2,'0');
-function formatDeadline(value:string){return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Moscow'}).format(new Date(value));}
-
-export default function FlightCountdown(){
- const [flight,setFlight]=useState<FlightStatus>(fallback),[now,setNow]=useState(Date.now()),[loading,setLoading]=useState(true),[error,setError]=useState(false);
- const refresh=async()=>{setLoading(true);try{const response=await window.fetch('/api/ut785.json',{cache:'no-store'});if(!response.ok)throw Error('unavailable');const data=await response.json() as FlightStatus;if(!data?.departure||Number.isNaN(Date.parse(data.departure)))throw Error('invalid');setFlight(data);setError(false)}catch{setError(true)}finally{setLoading(false)}};
- useEffect(()=>{refresh();const schedule=window.setInterval(refresh,5*60*1000);const timer=window.setInterval(()=>setNow(Date.now()),1000);return()=>{window.clearInterval(schedule);window.clearInterval(timer)}},[]);
- const remaining=useMemo(()=>Math.max(0,Date.parse(flight.departure)-now),[flight.departure,now]);
- const parts={days:Math.floor(remaining/86400000),hours:Math.floor(remaining/3600000)%24,minutes:Math.floor(remaining/60000)%60,seconds:Math.floor(remaining/1000)%60};
- const moved=flight.departure!==flight.scheduledDeparture;
- const finished=remaining===0;
- return <section className="flight-countdown" aria-live="polite"><div className="flight-countdown-copy"><small><Plane size={14}/>ПЕРВЫЙ ВЫЛЕТ · ВНУКОВО → ЗВАРТНОЦ</small><h2>{finished?'Рейс уже вылетел':<>До вылета из Москвы</>}</h2><p>{flight.flight} · {formatDeadline(flight.departure)} по Москве</p></div><div className="countdown-digits" aria-label={finished?'Время вылета наступило':`${parts.days} дней ${parts.hours} часов ${parts.minutes} минут ${parts.seconds} секунд до вылета`}>
- <div><b>{number(parts.days)}</b><span>дней</span></div><i>:</i><div><b>{number(parts.hours)}</b><span>часов</span></div><i>:</i><div><b>{number(parts.minutes)}</b><span>минут</span></div><i>:</i><div><b>{number(parts.seconds)}</b><span>секунд</span></div></div>
- <div className="flight-status"><p className={moved?'flight-moved':''}>{moved?'Время изменено авиакомпанией':flight.delayed?'Есть изменение времени вылета':'Расписание подтверждено'}</p><span>{error?<><AlertCircle size={13}/> Не удалось обновить сейчас — показываем последнее полученное время.</>:<><Clock3 size={13}/> Проверено {flight.updatedAt?new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(flight.updatedAt)):'сейчас'}.</>}</span><button type="button" onClick={refresh} disabled={loading}><RefreshCw size={14}/>{loading?'Обновляем':'Проверить ещё раз'}</button><a href={flight.sourceUrl} target="_blank" rel="noreferrer">Источник: {flight.source}</a></div>
- </section>;
+const number=(n:number)=>String(n).padStart(2,'0');
+export default function FlightCountdown({sourceDocument=""}:{sourceDocument?:string}){
+ const [now,setNow]=useState<number|null>(null);
+ useEffect(()=>{const tick=()=>setNow(Date.now());tick();const timer=window.setInterval(tick,1000);document.addEventListener('visibilitychange',tick);window.addEventListener('pageshow',tick);return()=>{clearInterval(timer);document.removeEventListener('visibilitychange',tick);window.removeEventListener('pageshow',tick)}},[]);
+ if(now===null)return <section className="flight-countdown"><p>Определяем следующий рейс…</p></section>;
+ const flight=nextFlight(now);
+ if(!flight)return <section className="flight-countdown"><div className="flight-countdown-copy"><small><Plane size={14}/>ПЕРЕЛЁТЫ</small><h2>Новых рейсов в плане пока нет</h2><p>Все указанные даты вылета уже прошли. Фактическое выполнение смотрите в журнале.</p></div></section>;
+ const remaining=flight.departure?Math.max(0,Date.parse(flight.departure)-now):null;
+ const parts=remaining===null?null:[Math.floor(remaining/86400000),Math.floor(remaining/3600000)%24,Math.floor(remaining/60000)%60,Math.floor(remaining/1000)%60];
+ return <section className="flight-countdown next-flight" aria-label="Следующий рейс"><div className="flight-countdown-copy"><small><Plane size={14}/>СЛЕДУЮЩИЙ РЕЙС · {flight.number}</small><h2>{flight.from} → {flight.to}</h2><div className="flight-airports"><span><span role="img" aria-label={flight.fromCountry}>{flight.fromFlag}</span> {flight.fromAirport}</span><ArrowRight size={18} aria-hidden="true"/><span><span role="img" aria-label={flight.toCountry}>{flight.toFlag}</span> {flight.toAirport}</span></div><p>{flight.departure?<>Вылет: {flightTime(flight.departure,flight.fromZone)} · местное время ({flight.from})</>:<>Дата по плану: {new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',timeZone:'UTC'}).format(new Date(flight.date+'T12:00:00Z'))} · время вылета уточняется</>}</p>{flight.arrival&&<p>Прилёт: {flightTime(flight.arrival,flight.toZone)} · местное время ({flight.to})</p>}</div>{parts?<div className="flight-clock"><p>До вылета по расписанию</p><div className="countdown-digits" role="timer" aria-label="Обратный отсчёт до следующего вылета">{parts.map((n,i)=><div key={i}><b>{number(n)}</b><span>{['дней','часов','минут','секунд'][i]}</span></div>)}</div></div>:<p>Обратный отсчёт появится после подтверждения времени.</p>}<div className="flight-status"><p>Расписание из Google Doc · сверено 18.09.2026</p><span>После времени вылета карточка переключается автоматически. Задержки сверяйте с авиакомпанией.</span>{sourceDocument&&<a href={sourceDocument} target="_blank" rel="noreferrer">Открыть план</a>}</div></section>;
 }

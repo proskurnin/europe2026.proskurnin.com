@@ -14,7 +14,7 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
  const origin='http://127.0.0.1:18929',app=createApp({dbPath,planPath:resolve('data/plan.json'),origin,secure:false});await new Promise(r=>app.listen(18929,'127.0.0.1',r));
  const request=async(path,{method='GET',body,cookie='',site=origin}={})=>{const res=await fetch(origin+path,{method,headers:{...(cookie?{Cookie:cookie}:{}),...(body?{'Content-Type':'application/json',Origin:site}:{})},body:body?JSON.stringify(body):undefined});return {status:res.status,data:await res.json(),cookie:res.headers.get('set-cookie')?.split(';')[0]};};
  try {
-  let r=await request('/api/trip/plan');assert.equal(r.status,200);assert.equal(r.data.plan.expenses.length,0);assert.equal(r.data.plan.checks.length,0);assert.equal(r.data.plan.sourceDocument,'');assert.ok(r.data.plan.days.every(d=>!d.sourceText));
+  let r=await request('/api/trip/plan');assert.equal(r.status,200);assert.equal(r.data.plan.expenses.length,0);assert.equal(r.data.plan.checks.length,0);assert.equal(r.data.plan.sourceDocument,'');assert.ok(r.data.plan.days.every(d=>!d.sourceText));assert.equal(r.data.plan.execution?.events,undefined);assert.equal(r.data.plan.execution?.expenses,undefined);
   for(const [path,method,body]of [['/api/trip/state','PATCH',{kind:'check',id:'x',value:true}],['/api/trip/videos','POST',{}],['/api/account/users','POST',{}]])assert.equal((await request(path,{method,body})).status,401);
   r=await request('/api/account/activate',{method:'POST',body:{token:ownerToken,password:'Owner secure phrase 2026'}});assert.equal(r.status,200);const owner=r.cookie;
   assert.equal((await request('/api/account/activate',{method:'POST',body:{token:ownerToken,password:'Another secure phrase'}})).status,400);
@@ -29,7 +29,7 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
    for(const [path,method,body]of [['/api/trip/state','PATCH',{kind:'check',id:checkId,value:true}],['/api/trip/videos','POST',{url:'https://youtu.be/M7lc1UVf-VE',title:'Test'}],['/api/account/users','POST',{email:'x@y.test',role:'participant'}],['/api/trip/import-marks','POST',{checks:{}}]])assert.equal((await request(path,{method,body,cookie:r.cookie})).status,403);
   }
   assert.equal((await request('/api/trip/plan',{cookie:cookies.participant})).data.plan.expenses.length,sourcePlan.expenses.length);
-  assert.equal((await request('/api/trip/plan',{cookie:cookies.viewer})).data.plan.expenses.length,0);
+  assert.equal((await request('/api/trip/plan',{cookie:cookies.viewer})).data.plan.expenses.length,0);assert.equal((await request('/api/trip/plan',{cookie:cookies.viewer})).data.plan.execution?.events,undefined);assert.deepEqual((await request('/api/trip/plan',{cookie:cookies.participant})).data.plan.execution,sourcePlan.execution);
   r=await request('/api/trip/import-marks',{method:'POST',cookie:owner,body:{checks:{[checkId]:true},visits:{[visitId]:{status:'visited'}}}});assert.equal(r.status,200);assert.equal(r.data.checks[checkId],true);
   assert.equal((await request('/api/trip/import-marks',{method:'POST',cookie:owner,body:{checks:{}}})).status,409);
   r=await request('/api/trip/state',{cookie:cookies.viewer});assert.deepEqual(r.data.checks,{});assert.equal(r.data.visits[visitId],'visited');

@@ -38,7 +38,7 @@ export default function TripMap({plan,visits,day,selected,onSelect,overview=fals
   for(const t of plan.transfers.filter(t=>overview||!day||t.date===day.date)){
    const f=plan.cities[t.from],to=plan.cities[t.to];if(!f||!to)continue;
    const path=[{lat:f[1],lng:f[2]},{lat:to[1],lng:to[2]}];
-   lines.push(new google.maps.Polyline({map:m,path,geodesic:t.mode==='flight',strokeOpacity:0,strokeWeight:2.5,icons:[{icon:{path:'M 0,-1 0,1',strokeOpacity:.8,strokeColor:t.mode==='flight'?'#c68138':t.mode==='unknown'?'#7a7f89':'#217785',scale:2.5},offset:'0',repeat:t.mode==='unknown'?'14px':'10px'}]}));
+   lines.push(new google.maps.Polyline({map:m,path,geodesic:t.mode==='flight',strokeOpacity:t.status==='visited'?1:0,strokeColor:'#18704b',strokeWeight:t.status==='visited'?4:2.5,icons:[{icon:{path:'M 0,-1 0,1',strokeOpacity:.8,strokeColor:t.status==='visited'?'#18704b':t.mode==='flight'?'#c68138':t.mode==='unknown'?'#7a7f89':'#217785',scale:2.5},offset:'0',repeat:t.mode==='unknown'?'14px':'10px'}]}));
    if(overview)path.forEach(p=>bounds.extend(p));
   }
   const symbols:Record<string,string>={sight:'◆',rest:'♧',food:'◉',hotel:'▰',airport:'✈',station:'▤'};
@@ -49,7 +49,7 @@ export default function TripMap({plan,visits,day,selected,onSelect,overview=fals
   for(const [placeId,group] of groups){
    const p=plan.places.find(x=>x.id===placeId)!;const v=group.find(v=>v.id===selected?.id)||group[0];
    const position={lat:p.lat,lng:p.lng};bounds.extend(position);
-   const pin=document.createElement('span');pin.className='pin '+(group.some(v=>v.id===selected?.id)?'selected ':'')+v.category;pin.textContent=symbols[v.category]||'•';
+   const pin=document.createElement('span');pin.className='pin '+(group.some(v=>v.id===selected?.id)?'selected ':'')+v.category+(v.status==='visited'?' visited':'');pin.textContent=v.status==='visited'?'✓':symbols[v.category]||'•';
    const marker=new google.maps.marker.AdvancedMarkerElement({position,title:group.map(v=>v.title).join(' / '),content:pin,gmpClickable:true});
    marker.addListener('click',()=>{
     if(group.length===1){callback.current(v);return;}
@@ -65,5 +65,5 @@ export default function TripMap({plan,visits,day,selected,onSelect,overview=fals
   else if(day){const c=plan.cities[day.city];if(c){m.panTo({lat:c[1],lng:c[2]});m.setZoom(11);}}
   return()=>{idle?.remove();info.close();cluster.clearMarkers();cluster.setMap(null);markers.forEach(marker=>{google.maps.event.clearInstanceListeners(marker);marker.map=null;});lines.forEach(line=>line.setMap(null));};
  },[ready,plan,visits,day,selected,overview]);
- return <><div className="mapwrap"><div ref={node} className="map" aria-label="Интерактивная карта Google Maps"/><div className="map-label"><span className="live-dot"/>{overview?'Весь маршрут':day?.title||'Маршрут'}<small>ПЕРЕЕЗДЫ МЕЖДУ ГОРОДАМИ — СХЕМА</small></div><div className="map-legend"><span>◆ Место</span><span>▰ Жильё</span><span>◉ Еда</span><span>✈ Аэропорт</span><span>▤ Вокзал / переезд</span><span>♧ Отдых</span><span className="air-line">Перелёт</span><span className="rail-line">Поезд</span><span>··· Транспорт уточняется</span></div>{error&&<p className="map-error" role="status">{error}</p>}</div><GoogleDayRoute map={ready?map.current:null} plan={plan} visits={visits} day={day} onSelect={onSelect}/></>
+ return <><div className="mapwrap"><div ref={node} className="map" aria-label="Интерактивная карта Google Maps"/><div className="map-label"><span className="live-dot"/>{overview?'Весь маршрут':day?.title||'Маршрут'}<small>ПЕРЕЕЗДЫ МЕЖДУ ГОРОДАМИ — СХЕМА</small></div><div className="map-legend"><span>✓ Посетили</span><span>◆ В плане</span><span>▰ Жильё</span><span>◉ Еда</span><span>✈ Аэропорт</span><span>▤ Вокзал / переезд</span><span>♧ Отдых</span><span className="air-line">Перелёт</span><span className="rail-line">Поезд</span><span>··· Транспорт уточняется</span></div>{error&&<p className="map-error" role="status">{error}</p>}</div><GoogleDayRoute map={ready?map.current:null} plan={plan} visits={visits} day={day} onSelect={onSelect}/></>
 }

@@ -1,4 +1,4 @@
-export type Trip = { schemaVersion:number; version:string; importedAt:string; sourceDocument:string; sourceTabs:any[]; family:any; cities:Record<string,any[]>; days:any[]; places:any[]; visits:any[]; transfers:any[]; expenses:any[]; checks:any[]; issues:string[] };
+export type Trip = { execution?:any; schemaVersion:number; version:string; importedAt:string; sourceDocument:string; sourceTabs:any[]; family:any; cities:Record<string,any[]>; days:any[]; places:any[]; visits:any[]; transfers:any[]; expenses:any[]; checks:any[]; issues:string[] };
 export type Personal = { visits:Record<string,{note?:string;status?:string;favorite?:boolean;start?:string;end?:string;price?:number|null}>; checks:Record<string,boolean> };
 export const emptyPersonal:Personal={visits:{},checks:{}};
 export const statusNames:Record<string,string>={planned:'В плане',booked:'Забронировано',visited:'Посетили',skip:'Пропустить'};
