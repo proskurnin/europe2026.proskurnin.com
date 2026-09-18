@@ -66,8 +66,16 @@ stage=update-account-code
 for name in "${files[@]}"; do cp "$repo/account/$name" "$app_source/$name"; chmod 644 "$app_source/$name"; done
 docker restart europe-account >/dev/null
 stage=check-account-api
-curl --fail --silent --show-error --retry 12 --retry-connrefused --retry-delay 2 \
-  http://127.0.0.1:3220/api/trip/plan > "$backup/public-health.json"
+api_ready=0
+for attempt in {1..15}; do
+  if curl --fail --silent --show-error --connect-timeout 2 --max-time 5 \
+    http://127.0.0.1:3220/api/trip/plan > "$backup/public-health.json"; then
+    api_ready=1
+    break
+  fi
+  sleep 2
+done
+test "$api_ready" = 1
 python3 - "$backup/public-health.json" <<'PY'
 import json,sys
 p=json.load(open(sys.argv[1]))['plan']
