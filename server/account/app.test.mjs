@@ -28,6 +28,26 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
    r=await request('/api/account/activate',{method:'POST',body:{token:t,password:'Member secure phrase 2026'}});assert.equal(r.status,200);cookies[role]=r.cookie;ids[role]=r.data.user.id;
    for(const [path,method,body]of [['/api/trip/state','PATCH',{kind:'check',id:checkId,value:true}],['/api/trip/videos','POST',{url:'https://youtu.be/M7lc1UVf-VE',title:'Test'}],['/api/account/users','POST',{email:'x@y.test',role:'participant'}],['/api/trip/import-marks','POST',{checks:{}}]])assert.equal((await request(path,{method,body,cookie:r.cookie})).status,403);
   }
+  // Personal data belongs to the signed-in account and survives service restarts.
+  assert.equal((await request('/api/trip/storage')).status,401);
+  assert.equal((await request('/api/trip/storage',{cookie:cookies.viewer})).status,403);
+  const personal=JSON.stringify({visits:{[visitId]:{note:'Owner note',favorite:true}},checks:{}});
+  let saved=await request('/api/trip/storage',{method:'PUT',cookie:owner,body:{key:'personal',value:personal,revision:0,accountId:'owner'}});
+  assert.equal(saved.status,200);assert.equal(saved.data.row.revision,1);
+  assert.equal((await request('/api/trip/storage',{cookie:cookies.participant})).data.items.personal,undefined);
+  assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:owner,body:{key:'personal',value:personal,revision:0,accountId:'owner'}})).status,409);
+  assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:owner,site:'https://evil.example',body:{key:'personal',value:personal,revision:1,accountId:'owner'}})).status,403);
+  assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.participant,body:{key:'personal',value:personal,revision:0,accountId:'owner'}})).status,409);
+  assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.participant,body:{key:'plan',value:JSON.stringify(sourcePlan),revision:0,accountId:ids.participant}})).status,403);
+  const legacy=JSON.stringify({visits:{[visitId]:{note:'Old device note'}},checks:{}});
+  saved=await request('/api/trip/storage/import',{method:'POST',cookie:owner,body:{key:'personal',value:legacy,accountId:'owner'}});
+  assert.equal(saved.status,200);assert.equal(saved.data.row.value,personal);
+  await request('/api/trip/storage/import',{method:'POST',cookie:owner,body:{key:'personal',value:legacy,accountId:'owner'}});
+  assert.equal((await request('/api/trip/storage/archive',{cookie:owner})).data.archives.length,1);
+  assert.equal((await request('/api/trip/storage/archive',{cookie:cookies.participant})).data.archives.length,0);
+  const second=createApp({dbPath,planPath:resolve('data/plan.json'),origin,secure:false});
+  await new Promise(r=>second.listen(18930,'127.0.0.1',r));
+  try{const data=await(await fetch('http://127.0.0.1:18930/api/trip/storage',{headers:{Cookie:owner}})).json();assert.equal(data.items.personal.value,personal);}finally{await new Promise(r=>second.close(r));}
   assert.equal((await request('/api/trip/plan',{cookie:cookies.participant})).data.plan.expenses.length,sourcePlan.expenses.length);
   assert.equal((await request('/api/trip/plan',{cookie:cookies.viewer})).data.plan.expenses.length,0);assert.equal((await request('/api/trip/plan',{cookie:cookies.viewer})).data.plan.execution?.events,undefined);assert.deepEqual((await request('/api/trip/plan',{cookie:cookies.participant})).data.plan.execution,sourcePlan.execution);
   r=await request('/api/trip/import-marks',{method:'POST',cookie:owner,body:{checks:{[checkId]:true},visits:{[visitId]:{status:'visited'}}}});assert.equal(r.status,200);assert.equal(r.data.checks[checkId],true);

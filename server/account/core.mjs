@@ -19,6 +19,8 @@ export function openDB(path) {
     CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY,value INTEGER NOT NULL);
     INSERT OR IGNORE INTO meta VALUES('revision',0);
     CREATE TABLE IF NOT EXISTS videos(id TEXT PRIMARY KEY,video_id TEXT NOT NULL UNIQUE,title TEXT NOT NULL,day_id TEXT,created_at TEXT NOT NULL,deleted INTEGER NOT NULL DEFAULT 0);
+    CREATE TABLE IF NOT EXISTS personal_storage(user_id TEXT NOT NULL REFERENCES users(id),key TEXT NOT NULL,value TEXT NOT NULL,revision INTEGER NOT NULL DEFAULT 1,PRIMARY KEY(user_id,key));
+    CREATE TABLE IF NOT EXISTS personal_archive(user_id TEXT NOT NULL REFERENCES users(id),key TEXT NOT NULL,digest TEXT NOT NULL,value TEXT NOT NULL,created_at TEXT NOT NULL,PRIMARY KEY(user_id,key,digest));
     CREATE TABLE IF NOT EXISTS throttle(key TEXT PRIMARY KEY,count INTEGER NOT NULL,until INTEGER NOT NULL);
   `);
   return db;

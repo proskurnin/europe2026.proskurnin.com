@@ -31,7 +31,7 @@ export function createApp({dbPath,planPath,origin,secure=true}) {
    if(mutating){
     if(req.headers.origin!==origin)throw problem(403,'Запрос должен быть отправлен с сайта.');
     if(!String(req.headers['content-type']||'').startsWith('application/json'))throw problem(415,'Нужен JSON.');
-    let size=0,parts=[];for await(const chunk of req){size+=chunk.length;if(size>65536)throw problem(413,'Слишком большой запрос.');parts.push(chunk);}
+    let size=0,parts=[];for await(const chunk of req){size+=chunk.length;if(size>(path.startsWith('/api/trip/storage')?16*1024*1024:65536))throw problem(413,'Слишком большой запрос.');parts.push(chunk);}
     try{body=JSON.parse(Buffer.concat(parts).toString('utf8'));}catch{throw problem(400,'Не удалось прочитать запрос.');}
     if(!body||typeof body!=='object'||Array.isArray(body))throw problem(400,'Некорректные данные.');
    }
@@ -91,6 +91,50 @@ export function createApp({dbPath,planPath,origin,secure=true}) {
     if(!['participant','viewer'].includes(body.role)||typeof body.active!=='boolean')throw problem(400,'Некорректная роль или статус.');
     transaction(db,()=>{db.prepare('UPDATE users SET role=?,active=? WHERE id=?').run(body.role,+body.active,id);db.prepare('DELETE FROM sessions WHERE user_id=?').run(id);if(!body.active)db.prepare('DELETE FROM invitations WHERE user_id=?').run(id);});
     return send(res,200,{ok:true});
+   }
+   if(['/api/trip/storage','/api/trip/storage/import','/api/trip/storage/archive'].includes(path)){
+    requireMember(user);
+    const ownerKeys=['plan','history','base-version','draft'];
+    const permitted=key=>['personal','logistics','map-provider','preferences',...ownerKeys].includes(key)&&(!ownerKeys.includes(key)||user.role==='owner');
+    if(path.endsWith('/archive')&&method==='GET')return send(res,200,{archives:db.prepare('SELECT key,value,created_at AS createdAt FROM personal_archive WHERE user_id=?').all(user.id)});
+    const read=key=>db.prepare('SELECT value,revision FROM personal_storage WHERE user_id=? AND key=?').get(user.id,key);
+    if(method==='GET'&&path==='/api/trip/storage')return send(res,200,{userId:user.id,items:Object.fromEntries(db.prepare('SELECT key,value,revision FROM personal_storage WHERE user_id=?').all(user.id).filter(r=>permitted(r.key)).map(r=>[r.key,{value:r.value,revision:r.revision}]))});
+    if((method==='PUT'&&path==='/api/trip/storage')||(method==='POST'&&path.endsWith('/import'))){
+     const {key,value,revision}=body;
+     if(body.accountId!==user.id)throw problem(409,'Учётная запись изменилась. Обновите страницу.');
+     if(!permitted(key))throw problem(403,'Эти данные недоступны для вашей роли.');
+     if(typeof value!=='string'||Buffer.byteLength(value)>12*1024*1024)throw problem(400,'Некорректный размер данных.');
+     if(key==='map-provider'){if(!['google','osm'].includes(value))throw problem(400,'Неизвестная карта.');}
+     else if(key==='draft'){if(value.length>2000000)throw problem(400,'Черновик больше 2 МБ.');}
+     else if(key==='base-version'){if(value.length>100)throw problem(400,'Некорректная версия.');}
+     else {
+      let parsed;try{parsed=JSON.parse(value);}catch{throw problem(400,'Некорректный JSON.');}
+      if(!parsed||typeof parsed!=='object')throw problem(400,'Нужен объект данных.');
+      if(key==='personal'){
+       if(!parsed.visits||typeof parsed.visits!=='object'||Array.isArray(parsed.visits)||!parsed.checks||typeof parsed.checks!=='object')throw problem(400,'Некорректные личные отметки.');
+       for(const [id,v] of Object.entries(parsed.visits)){
+        if(id.length>200||!v||typeof v!=='object'||Array.isArray(v)||Object.keys(v).some(k=>!['note','favorite','start','end','price','status'].includes(k)))throw problem(400,'Некорректная запись места.');
+        if(v.note!==undefined&&(typeof v.note!=='string'||v.note.length>20000))throw problem(400,'Заметка слишком длинная.');
+        if(v.favorite!==undefined&&typeof v.favorite!=='boolean')throw problem(400,'Некорректное избранное.');
+        for(const k of ['start','end'])if(v[k]!==undefined&&v[k]!==''&&!/^([01]\d|2[0-3]):[0-5]\d$/.test(v[k]))throw problem(400,'Некорректное время.');
+        if(v.price!==undefined&&v.price!==null&&(!Number.isFinite(v.price)||v.price<0))throw problem(400,'Некорректная цена.');
+        if(user.role!=='owner'&&['start','end','price','status'].some(k=>k in v))throw problem(403,'Время, цену и общие отметки изменяет владелец.');
+       }
+      }
+      if(key==='logistics'&&(!parsed.modes||!parsed.addresses))throw problem(400,'Некорректные настройки маршрутов.');
+      if(key==='history'&&(!Array.isArray(parsed)||parsed.length>5))throw problem(400,'Допускается пять версий плана.');
+      if(key==='plan'&&(!Array.isArray(parsed.days)||!Array.isArray(parsed.visits)||!Array.isArray(parsed.places)))throw problem(400,'Некорректный план.');
+     }
+     const row=transaction(db,()=>{
+      const current=read(key);
+      if(path.endsWith('/import')){
+       db.prepare('INSERT OR IGNORE INTO personal_archive VALUES(?,?,?,?,?)').run(user.id,key,digest(value),value,new Date().toISOString());
+       if(current)return current;
+      }else if(!Number.isSafeInteger(revision)||revision!==(current?.revision||0))throw problem(409,'Данные изменены на другом устройстве. Скачайте резервную копию текущих правок и обновите страницу.');
+      db.prepare('INSERT INTO personal_storage VALUES(?,?,?,1) ON CONFLICT(user_id,key) DO UPDATE SET value=excluded.value,revision=personal_storage.revision+1').run(user.id,key,value);
+      return read(key);
+     });return send(res,200,{row});
+    }
    }
    if(path==='/api/trip/plan'&&method==='GET')return send(res,200,{plan:member?plan:publicData});
    if(path==='/api/trip/state'&&method==='GET')return send(res,200,state(member));

@@ -21,6 +21,7 @@ jobs:
       - run: npm ci
       - run: npx tsc --noEmit --pretty false
       - run: node --test server/account/app.test.mjs
+      - run: node scripts/storage-client-check.mjs
       - name: Build Apache site
         run: |
           EUROPE_STATIC=1 npm run build
