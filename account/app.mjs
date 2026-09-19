@@ -1,11 +1,11 @@
-import {publicPlan} from './public-plan.mjs';
+import {publicPlan,applyRouteUpdates} from './public-plan.mjs';
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { openDB,digest,token,emailAddress,passwordHash,passwordMatches,passwordValid,publicUser,transaction,invite,youtubeId } from './core.mjs';
 
 export function createApp({dbPath,planPath,origin,secure=true}) {
- const db=openDB(dbPath), plan=JSON.parse(readFileSync(planPath,'utf8')), publicData=publicPlan(plan);
+ const db=openDB(dbPath), plan=applyRouteUpdates(JSON.parse(readFileSync(planPath,'utf8'))), publicData=publicPlan(plan);
  const visitIds=new Set(plan.visits.map(x=>x.id)),checkIds=new Set(plan.checks.map(x=>x.id)),dayIds=new Set(plan.days.map(x=>x.id));
  const cookieName=secure?'__Host-europe-session':'europe-test-session'; let hashing=0;
  const hashWork=async task=>{if(hashing>=2)throw problem(503,'Вход занят. Повторите через несколько секунд.');hashing++;try{return await task();}finally{hashing--;}};
