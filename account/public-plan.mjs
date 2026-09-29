@@ -176,7 +176,7 @@ const routeUpdate = {
     }
   ]
 };
-export function applyRouteUpdates(plan) {
+function applyYerevanUpdate(plan) {
  if (!plan?.days?.some(d=>d.id===routeUpdate.dayId) || plan.appliedRouteUpdates?.includes(routeUpdate.id)) return plan;
  const next=structuredClone(plan);
  Object.assign(next.days.find(d=>d.id===routeUpdate.dayId),routeUpdate.day);
@@ -187,5 +187,41 @@ export function applyRouteUpdates(plan) {
  next.visits=before;
  next.appliedRouteUpdates=[...(next.appliedRouteUpdates||[]),routeUpdate.id];
  next.version=next.version+'+'+routeUpdate.id;
+ return next;
+}
+
+// September 29 decision: two days at the family base, then an optional day trip.
+export function applyRouteUpdates(plan) {
+ const next=structuredClone(applyYerevanUpdate(plan));
+ const id='dormagen-amsterdam-daytrip-2026-09-29';
+ if(next.appliedRouteUpdates?.includes(id)) return next;
+ const dates=['2026-09-28','2026-09-29','2026-09-30'];
+ if(!dates.every(date=>next.days.some(d=>d.date===date))) return next;
+ const map=(text,query)=>({text,url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query)});
+ const walking={text:'Маршрут дня пешком',url:'https://www.google.com/maps/dir/?api=1&origin=Amsterdam+Centraal&destination=Amsterdam+Centraal&waypoints=NEMO+Science+Museum+Oosterdok+2+Amsterdam%7CStromma+Prins+Hendrikkade+37+Amsterdam&travelmode=walking'};
+ const station=map('Amsterdam Centraal · Stationsplein, Amsterdam','Amsterdam Centraal Stationsplein');
+ const visits=[];
+ const add=(date,key,placeId,title,start,end,category,description,links=[])=>visits.push({id:key,dayId:'day-'+date,placeId,title,start,end,category,description,links,status:'planned',optional:date==='2026-09-30',source:'Уточнение маршрута 29.09.2026; часы — плановые ориентиры'});
+ for(const date of dates.slice(0,2)) {
+  const day=next.days.find(d=>d.date===date);
+  const story=date==='2026-09-28'?'День проведён в Дормагене. Отдых и время с семьёй, без выездной программы.':'День в Дормагене: отдых и время с семьёй. Междугородних поездок сегодня нет.';
+  Object.assign(day,{title:'Дормаген · отдых с семьёй',city:'dormagen',country:'Германия',night:'У родственников · Дормаген',story,sourceText:story,routeLinks:[]});
+  add(date,'visit-'+date+'-rest','city-dormagen','Отдых в Дормагене',null,null,'rest',story);
+ }
+ add('2026-09-30','visit-2026-09-29-event-1','city-amsterdam','Ранний поезд в Амстердам · рейс ещё не выбран','06:00','11:00','station','Плановое окно: отправление из Dormagen 06:00–07:00, прибытие Amsterdam Centraal около 10:00–11:00. Региональный поезд до Düsseldorf Hbf, затем прямой ICE. Ориентир 3–4 часа между станциями; на пересадку 30–45 минут. Путь от дома до Dormagen Bahnhof добавить отдельно. Это не подтверждённое расписание. Сначала выбрать оба поезда, проверить обратную пересадку и купить места вместе.',[map('Dormagen Bahnhof · Willy-Brandt-Platz, 41539 Dormagen','Dormagen Bahnhof Willy-Brandt-Platz'),map('Düsseldorf Hbf · Konrad-Adenauer-Platz 14','Dusseldorf Hbf Konrad-Adenauer-Platz 14'),station,{text:'Выбрать поезда DB',url:'https://www.bahn.de/'}]);
+ add('2026-09-30','visit-2026-09-29-nemo','nemo','Музей науки NEMO','12:00','14:30','sight','Oosterdok 2, 1011 VX Amsterdam. От Centraal пешком 20–25 минут. Временной слот покупать после поездов, оставив минимум час после прибытия. Время посещения предварительное; стоимость и наличие проверить при покупке.',[map('NEMO · Oosterdok 2','NEMO Science Museum Oosterdok 2 Amsterdam'),{text:'NEMO: билеты',url:'https://www.nemosciencemuseum.nl/en/plan-your-visit'}]);
+ add('2026-09-30','visit-2026-09-29-event-3','city-amsterdam','Обед и отдых','14:30','15:30','food','Обед возле NEMO или по пути к причалу. Кафе выбрать на месте. Далее 20–30 минут пешком к Stromma у центрального вокзала.');
+ add('2026-09-30','visit-2026-09-29-canals','canals','Круиз по каналам · предварительно','16:00','17:15','sight','Stromma Central Station Bridge, Prins Hendrikkade 37, Amsterdam. Круговой круиз 60–75 минут с возвращением к тому же причалу. Точный причал и отправление сверить в билете. Завершить минимум за час до обратного поезда.',[map('Причал · Prins Hendrikkade 37','Stromma Prins Hendrikkade 37 Amsterdam'),{text:'Stromma: причалы',url:'https://www.stromma.com/en-nl/amsterdam/customer-service/ticket-shops-departure-points/central-station/'}]);
+ add('2026-09-30','visit-2026-09-30-event-3','city-amsterdam','Вечерний поезд обратно в Дормаген','18:00','23:30','station','Плановое отправление Amsterdam Centraal 18:00–19:00, через Düsseldorf Hbf в Dormagen. Дома ориентировочно 21:30–23:30. Быть на вокзале за 30 минут. Конкретные рейсы, цена и последняя региональная пересадка пока не подтверждены; нужен запасной вариант. При задержке сократить прогулку, а не запас до поезда.',[station,{text:'Расписание DB',url:'https://www.bahn.de/'}]);
+ const day=next.days.find(d=>d.date==='2026-09-30');
+ const story='Предварительно: Амстердам одним днём, NEMO и круиз по каналам. Ранний поезд туда, вечерний обратно. Без ночёвки, Вондельпарка и дополнительных музеев. Всего около 3–4 км пешком. Основные вещи оставить в Дормагене; взять документы, воду, перекус и защиту от дождя. Состав участников уточнить перед покупкой. Если неудобные поезда или мало сил — остаться в Дормагене. Все часы — ориентиры, билеты ещё не подтверждены.';
+ Object.assign(day,{title:'Амстердам одним днём · предварительно',city:'amsterdam',country:'Нидерланды',night:'У родственников · Дормаген',story,sourceText:story+'\n'+visits.filter(v=>v.dayId===day.id).map(v=>v.description).join('\n'),routeLinks:[walking,{text:'Dormagen → Düsseldorf → Amsterdam',url:'https://www.google.com/maps/dir/?api=1&origin=Dormagen+Bahnhof&destination=Amsterdam+Centraal&travelmode=transit'}]});
+ const first=next.visits.findIndex(v=>dates.some(d=>v.dayId==='day-'+d));
+ next.visits=next.visits.filter(v=>!dates.some(d=>v.dayId==='day-'+d));
+ next.visits.splice(first<0?next.visits.length:first,0,...visits);
+ next.checks=(next.checks||[]).map(c=>c.id==='check-8'?{...c,text:'Амстердам 30.09 — предварительно одним днём. Подтвердить состав, купить поезда туда и обратно с местами рядом и запасом на пересадку; затем слот NEMO и круговой круиз. Отель и хранение вещей после выселения не нужны.'}:c);
+ next.expenses=(next.expenses||[]).filter(e=>e.id!=='unknown-ams-hotel');
+ next.appliedRouteUpdates=[...(next.appliedRouteUpdates||[]),id];
+ next.version=next.version+'+'+id;
  return next;
 }
