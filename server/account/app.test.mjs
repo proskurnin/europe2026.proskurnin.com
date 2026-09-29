@@ -5,9 +5,10 @@ import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {openDB,invite} from './core.mjs';
 import {createApp} from './app.mjs';
+import {applyRouteUpdates} from './public-plan.mjs';
 
 test('Roles, sessions, invitations, protected data and owner-only writes',async()=>{
- const sourcePlan=JSON.parse(readFileSync('data/plan.json','utf8'));
+ const sourcePlan=applyRouteUpdates(JSON.parse(readFileSync('data/plan.json','utf8')));
  const dir=mkdtempSync(join(tmpdir(),'europe-auth-test-')),dbPath=join(dir,'test.sqlite');
  const db=openDB(dbPath);db.prepare("INSERT INTO users(id,email,name,role,created_at) VALUES('owner','owner@example.test','Owner','owner',?)").run(new Date().toISOString());
  const ownerToken=invite(db,'owner');db.close();
