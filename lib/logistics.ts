@@ -25,8 +25,8 @@ const days:Record<string,Stop[]>={
  '2026-09-26':[q('chessy','Marne-la-Vallée – Chessy','disneyland','Marne la Vallée Chessy station, France'),p('disney','disneyland'),q('village','Disney Village · ужин','disneyland','Disney Village, Chessy, France'),q('valdeurope','Val d’Europe · станция','disneyland',"Val d'Europe RER station, Serris, France",'train',undefined,'Ориентир района проживания; отель ещё не выбран.'),gap('stay','Отель возле Disneyland','disneyland','unconfirmed')],
  '2026-09-27':[gap('stay','Выселение из отеля','disneyland','event-1'),q('valdeurope','Val d’Europe · RER A','disneyland',"Val d'Europe RER station, Serris, France"),q('tuileries','Сад Тюильри','paris','Jardin des Tuileries, Paris','train','trocadero'),q('seine','Набережная Сены · Concorde','paris','Pont de la Concorde, Paris','walk','trocadero'),p('trocadero','paris','metro'),gap('departure','Вокзал выезда · по выбранному билету','paris','event-3')],
  '2026-09-28':[gap('home','Отдых и прогулка по Дормагену · свободный день','dormagen','event-1')],
- '2026-09-29':[dormagen(),amsterdamStation(),p('nemo','amsterdam'),q('lunch',"Stubbe’s Haring · обед",'amsterdam',"Stubbe's Haring, Amsterdam",'walk','event-3'),gap('cruise','Круиз по каналам · выбрать оператора и причал','amsterdam','canals'),gap('stay','Отель в Амстердаме','amsterdam')],
- '2026-09-30':[gap('stay','Отель в Амстердаме','amsterdam'),p('vondel','amsterdam'),gap('bags','Забрать рюкзаки из отеля','amsterdam','event-2'),amsterdamStation(),dormagen(),gap('home','Дом родственников','dormagen')],
+ '2026-09-29':[gap('home','Отдых с семьёй в Дормагене · без выезда','dormagen','rest')],
+ '2026-09-30':[dormagen(),q('dusseldorf-out','Düsseldorf Hbf · пересадка 30–45 минут','dusseldorf','Dusseldorf Hbf Konrad-Adenauer-Platz 14','train'),amsterdamStation(),p('nemo','amsterdam'),q('cruise','Круиз Stromma · причал уточнить в билете','amsterdam','Stromma Prins Hendrikkade 37 Amsterdam','walk','canals','Предварительно 16:00–17:15. Круговой круиз возвращается к тому же причалу.'),{...amsterdamStation(),id:'amsterdam-return',mode:'walk',note:'Обратный поезд 18:00–19:00 — ориентир, рейс не выбран. На вокзале за 30 минут.'},q('dusseldorf-return','Düsseldorf Hbf · обратная пересадка','dusseldorf','Dusseldorf Hbf Konrad-Adenauer-Platz 14','train'),{...dormagen(),id:'dormagen-return'},gap('home','Возвращение к родственникам · Дормаген','dormagen')],
  '2026-10-01':[gap('home','Сборы и отдых в Дормагене','dormagen','event-1'),gap('dinner','Прощальный ужин · город и ресторан выбрать','dormagen','event-2')],
  '2026-10-02':[dormagen(),q('cgn','Аэропорт Кёльн/Бонн','cologne','Cologne Bonn Airport, Germany','train','event-1'),p('saw','istanbul','flight'),q('sultanahmet','Султанахмет · район проживания','istanbul','Sultanahmet Square, Istanbul','taxi','event-3','Предложение: минивэн на пятерых до района; точный адрес отеля уточняется.'),gap('stay','Отель в Стамбуле','istanbul')],
  '2026-10-03':[gap('stay','Отель в Стамбуле','istanbul'),p('hagia','istanbul'),q('blue-mosque','Голубая мечеть','istanbul','Sultan Ahmed Mosque, Istanbul','walk','hagia'),p('galata','istanbul'),q('eminonu-pier','Причал Эминёню','istanbul','Eminönü Kadıköy ferry pier, Istanbul','walk','eminonu'),q('kadikoy','Причал Кадыкёй','istanbul','Kadıköy Şehir Hatları ferry pier, Istanbul','ferry','eminonu'),gap('return-stay','Возвращение · согласовать после прогулки','istanbul')],
@@ -35,8 +35,9 @@ const days:Record<string,Stop[]>={
 
 export function itinerary(plan:Trip,date:string,visits=plan.visits):{stops:Stop[];legs:Leg[]}{
  const seenVisits=new Set<string>();
- const stops=(days[date]||[]).filter(s=>!s.visit||visits.find(v=>v.id===`visit-${date}-${s.visit}`)?.status!=='skip').map(s=>{
-  const place=plan.places.find(p=>p.id===s.place),v=visits.find(v=>v.id===`visit-${date}-${s.visit}`);
+ const visitFor=(key:string|undefined)=>visits.find(v=>v.dayId===`day-${date}`&&(v.id===`visit-${date}-${key}`||(date==='2026-09-30'&&v.id===`visit-2026-09-29-${key}`)));
+ const stops=(days[date]||[]).filter(s=>!s.visit||visitFor(s.visit)?.status!=='skip').map(s=>{
+  const place=plan.places.find(p=>p.id===s.place),v=visitFor(s.visit);
   const first=v&&!seenVisits.has(v.id);if(v)seenVisits.add(v.id);
   return {...s,visit:v?s.visit:undefined,title:s.place==='galleria'?'Галерея Виктора Эммануила II':s.place==='trocadero'?'Площадь Трокадеро':s.title||place?.title||s.place||'',time:s.time||(first?v?.start:undefined),leave:v?.end||v?.start,location:place?{lat:place.lat,lng:place.lng}:undefined};
  });
