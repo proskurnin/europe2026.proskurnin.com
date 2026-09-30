@@ -228,7 +228,7 @@ function applySeptember29Update(plan) {
 
 
 // Confirmed September 30: stay in Germany; replace the tentative Netherlands trip.
-export function applyRouteUpdates(plan) {
+function applySeptember30Update(plan) {
  const next=structuredClone(applySeptember29Update(plan));
  const id='germany-neuss-2026-09-30';
  if(next.appliedRouteUpdates?.includes(id)) return next;
@@ -266,6 +266,41 @@ export function applyRouteUpdates(plan) {
  Object.assign(day,{title:'Нойс · прогулка по центру и старому городу',city:'neuss',country:'Германия',night:'У родственников · Дормаген',story,sourceText:story+'\n'+next.visits.filter(v=>v.dayId===day.id).map(v=>v.description).join('\n'),routeLinks:[walk,out,backWalk,back]});
  next.visits=next.visits.map(v=>({...v,description:v.description.replace('Переезды во Францию и Нидерланды не являются вывозом из ЕС.','Переезд во Францию не является вывозом из ЕС.')}));
  next.checks.push({id:'check-neuss-20260930',text:'30.09: перед выездом проверить прямой поезд Dormagen ↔ Neuss и билеты на фактический состав группы. Прогулка без обязательных платных посещений.'});
+ next.appliedRouteUpdates=[...(next.appliedRouteUpdates||[]),id];
+ next.version+='+'+id;
+ return next;
+}
+
+// October 1 is conditional on dry weather; flight preparation remains mandatory.
+export function applyRouteUpdates(plan) {
+ const next=structuredClone(applySeptember30Update(plan));
+ const id='zons-weather-option-2026-10-01';
+ if(next.appliedRouteUpdates?.includes(id))return next;
+ const day=next.days.find(d=>d.date==='2026-10-01');
+ if(!day)return next;
+ const map=(text,query)=>({text,url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query)});
+ const route=(text,from,to,mode='walking',via=[])=>({text,url:'https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(from)+'&destination='+encodeURIComponent(to)+'&travelmode='+mode+(via.length?'&waypoints='+encodeURIComponent(via.join('|')):'')});
+ const zons={id:'zons-old-town',title:'Цонз · старый город',city:'dormagen',lat:51.1227,lng:6.8503,category:'sight',precision:'Ориентир старого города; входы и остановки уточняются по адресам маршрута',photo:null};
+ if(!next.places.some(p=>p.id===zons.id))next.places.push(zons);
+ const walk=route('Цонз · прогулка по старому городу и к Рейну','Rheintor Zons','Rheintor Zons','walking',['Tourist Information Schlossstrasse 2-4 Zons','Schloss Friedestrom Zons','Rheinufer Zons']);
+ const out=route('Dormagen Bahnhof → Zons · автобус','Dormagen Bahnhof','Zons Schlossstrasse','transit');
+ const back=route('Zons → Dormagen Bahnhof · автобус','Zons Schlossstrasse','Dormagen Bahnhof','transit');
+ const source='Уточнение пользователя 30.09.2026: ехать утром 01.10 только при отсутствии дождя; часы — ориентиры';
+ const v=(key,title,start,end,category,description,links)=>({id:'visit-2026-10-01-'+key,dayId:day.id,placeId:zons.id,title,start,end,category,description,links,status:'planned',optional:true,source});
+ const additions=[
+  v('zons-out','Цонз при сухой погоде · выезд утром','10:00','10:45','station','Утром проверить почасовой прогноз и дождь на месте. Если сухо — выезд ориентировочно после 10:00; при дожде всю прогулку отменяем. Прямой городской автобус 886 идёт от Dormagen Bahnhof через Zons. Ориентир на дорогу между вокзалом и Zons 15–25 минут, на ожидание и подход 15–20 минут; путь от дома до остановки добавить отдельно. Конкретный рейс и ближайшую остановку выхода проверить в VRR или Stadtbus перед выездом. Оплату/действительность имеющегося билета проверить до посадки; бесплатный проезд в Москве не означает бесплатный проезд в Германии. Альтернатива — машина с родственниками, если договоритесь.',[out,map('Dormagen Bahnhof · Willy-Brandt-Platz, 41539 Dormagen','Dormagen Bahnhof Willy-Brandt-Platz'),{text:'Stadtbus · действующие расписания',url:'https://stadtbus-dormagen.de/de/fahrplaene'}]),
+  v('zons-walk','Цонз · старый город и берег Рейна','10:45','12:30','sight','Спокойная прогулка: Rheintor (Rheinstraße, 41541 Dormagen-Zons) → Schloßstraße → Tourist-Info (Schloßstraße 2–4) → Schloss Friedestrom (Schloßstraße 1) → берег Рейна → Rheintor. Осматриваем улицы, ворота и крепость снаружи; платные музеи, экскурсии и подъём на башню не обязательны. Ориентир 1,5–2 часа и 2–3 км пешком с паузами. К воде выходим только при сухой погоде и удобном проходе; при начавшемся дожде сокращаем прогулку.',[walk,map('Rheintor · Rheinstraße, Zons','Rheintor Zons'),map('Tourist-Info · Schloßstraße 2–4','Tourist Information Schlossstrasse 2-4 Zons'),map('Schloss Friedestrom · Schloßstraße 1','Schloss Friedestrom Schlossstrasse 1 Zons'),map('Берег Рейна · Zons','Rheinufer Zons'),{text:'Цонз · официальный путеводитель',url:'https://www.dormagen.de/tourismus-freizeit/stadtportraet/stadtteile/zons/'}]),
+  v('zons-lunch','Кофе или обед в Цонзе · по желанию','12:30','13:15','food','Выбрать кафе на Schloßstraße или Rheinstraße по свободным столикам и меню. Заложить 30–45 минут. Можно вместо этого пообедать дома; конкретное заведение не забронировано.',[map('Кафе · Schloßstraße / Rheinstraße, Zons','Restaurants Schlossstrasse Zons')]),
+  v('zons-return','Возвращение в Дормаген','13:15','14:15','station','Вернуться к выбранной остановке Zons; автобус 886 в направлении Dormagen Bahnhof. Ориентир 15–25 минут в автобусе плюс ожидание и дорога домой. Конкретный рейс сверить перед выходом из кафе. Вторая половина дня и ночёвка в Дормагене, без обязательного выезда в Кёльн или Дюссельдорф.',[back])
+ ];
+ const prep=next.visits.find(v=>v.id==='visit-2026-10-01-event-1');
+ if(prep)Object.assign(prep,{start:'15:00',end:'17:30',description:prep.description.replace('10:00 – 14:00:','15:00–17:30 (или утром, если Цонз отменён):').replace('При необходимости — резервный визит в Apple Schildergasse или Düsseldorf во время поездки на прощальный ужин, после проверки наличия.','Дополнительные поездки за покупками сегодня не обязательны: оставить запас времени на сборы и отдых.')});
+ const dinner=next.visits.find(v=>v.id==='visit-2026-10-01-event-2');
+ if(dinner)Object.assign(dinner,{title:'Прощальный ужин и отдых в Дормагене',start:'18:00',end:'20:00',description:'Спокойный ужин в Дормагене с родными. Место выбираем на месте; обязательной поездки в Кёльн или Дюссельдорф нет. Затем отдых перед вылетом 2 октября.'});
+ next.visits=next.visits.filter(v=>v.dayId!==day.id).concat(additions,[prep,dinner].filter(Boolean));
+ const story='Утром Цонз, только если нет дождя: старый город, крепость снаружи и Рейн, кофе или обед по желанию. Ориентировочный выезд после 10:00, возвращение к 14:00–14:30. При дожде остаёмся в Дормагене. После прогулки — билеты Pegasus, посадочные, рюкзаки и Tax Free; вечером ужин с родными и отдых перед вылетом 2 октября. Часы не являются расписанием автобусов.';
+ Object.assign(day,{title:'Дормаген → Цонз · если сухо',city:'dormagen',country:'Германия',night:'У родственников · Дормаген',story,sourceText:story+'\n'+next.visits.filter(v=>v.dayId===day.id).map(v=>v.description).join('\n'),routeLinks:[walk,out,back]});
+ next.checks.push({id:'check-zons-20261001',text:'01.10: утром проверить дождь и расписание 886. Цонз — только при сухой погоде; сборы к вылету и проверку билетов выполнить в любом случае.'});
  next.appliedRouteUpdates=[...(next.appliedRouteUpdates||[]),id];
  next.version+='+'+id;
  return next;
