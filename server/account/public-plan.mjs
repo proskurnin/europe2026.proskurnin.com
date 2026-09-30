@@ -191,7 +191,7 @@ function applyYerevanUpdate(plan) {
 }
 
 // September 29 decision: two days at the family base, then an optional day trip.
-export function applyRouteUpdates(plan) {
+function applySeptember29Update(plan) {
  const next=structuredClone(applyYerevanUpdate(plan));
  const id='dormagen-amsterdam-daytrip-2026-09-29';
  if(next.appliedRouteUpdates?.includes(id)) return next;
@@ -223,5 +223,50 @@ export function applyRouteUpdates(plan) {
  next.expenses=(next.expenses||[]).filter(e=>e.id!=='unknown-ams-hotel');
  next.appliedRouteUpdates=[...(next.appliedRouteUpdates||[]),id];
  next.version=next.version+'+'+id;
+ return next;
+}
+
+
+// Confirmed September 30: stay in Germany; replace the tentative Netherlands trip.
+export function applyRouteUpdates(plan) {
+ const next=structuredClone(applySeptember29Update(plan));
+ const id='germany-neuss-2026-09-30';
+ if(next.appliedRouteUpdates?.includes(id)) return next;
+ if(!next.days.some(d=>d.date==='2026-09-30')) return next;
+ const map=(text,query)=>({text,url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query)});
+ const route=(text,from,to,mode='walking',via=[])=>({text,url:'https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(from)+'&destination='+encodeURIComponent(to)+'&travelmode='+mode+(via.length?'&waypoints='+encodeURIComponent(via.join('|')):'')});
+ const oldPlaces=new Set(next.places.filter(p=>p.city==='amsterdam').map(p=>p.id));
+ next.visits=next.visits.filter(v=>!oldPlaces.has(v.placeId)&&!['day-2026-09-29','day-2026-09-30'].includes(v.dayId));
+ next.places=next.places.filter(p=>p.city!=='amsterdam');
+ delete next.cities.amsterdam;
+ next.cities.neuss=['Нойс',51.1984,6.6919,'Europe/Berlin'];
+ next.places.push({id:'city-neuss',title:'Нойс',lat:51.1984,lng:6.6919,city:'neuss',category:'city',precision:'Центр города; точные адреса остановок указаны в маршруте',photo:null});
+ next.transfers=next.transfers.filter(t=>t.from!=='amsterdam'&&t.to!=='amsterdam');
+ const nl=/Амстердам|Нидерланд|Amsterdam|NEMO|Stromma|Вондельпарк/i;
+ next.checks=next.checks.filter(c=>!nl.test(c.text));
+ next.issues=next.issues.filter(t=>!nl.test(t));
+ next.expenses=next.expenses.filter(e=>e.status==='paid'||!nl.test(JSON.stringify(e)));
+ const add=(date,key,title,category,description,links=[],optional=false,status='planned')=>next.visits.push({id:'visit-'+date+'-'+key,dayId:'day-'+date,placeId:date==='2026-09-29'?'city-dormagen':'city-neuss',title,start:null,end:null,category,description,links,status,optional,source:'Уточнение пользователя 30.09.2026; время в пути ориентировочное'});
+ const yesterday=next.days.find(d=>d.date==='2026-09-29');
+ const fact='Весь день провели в Дормагене, сходили в магазин. Междугородних поездок не было. Название магазина не указано.';
+ if(yesterday)Object.assign(yesterday,{title:'Дормаген · день в городе и магазин',city:'dormagen',country:'Германия',night:'У родственников · Дормаген',story:fact,sourceText:fact,routeLinks:[]});
+ add('2026-09-29','rest','День в Дормагене и поход в магазин','rest',fact,[],false,'visited');
+ const out=route('Дормаген → Нойс · поезд','Dormagen Bahnhof','Neuss Hbf','transit');
+ const walk=route('Прогулка: вокзал → центр → Обертор','Neuss Hbf','Obertor Neuss','walking',['Buechel Neuss','Quirinus Muenster Muensterplatz 23 Neuss','Markt Neuss']);
+ const backWalk=route('Возвращение пешком к вокзалу','Obertor Neuss','Neuss Hbf');
+ const back=route('Нойс → Дормаген · поезд','Neuss Hbf','Dormagen Bahnhof','transit');
+ add('2026-09-30','out','Поезд Дормаген → Нойс','station','От Dormagen Bahnhof (Willy-Brandt-Platz, 41539 Dormagen) до Neuss Hbf (Further Straße 1, 41462 Neuss). Выбрать прямой региональный поезд или S-Bahn в DB Navigator: ориентир 11–25 минут между вокзалами; ещё 10–20 минут на ожидание и подход к платформе. Дорога от дома до станции отдельно. Час выезда свободный, конкретный рейс не выбран. Билет купить до посадки; цену для фактического состава группы проверить в приложении.',[out,{text:'Расписание DB',url:'https://www.bahn.de/'}]);
+ add('2026-09-30','center','Центральная улица: Niederstraße → Büchel','sight','От Neuss Hbf около 15–20 минут пешком к пешеходному центру. Адреса: Niederstraße и Büchel, 41460 Neuss. Спокойная прогулка, витрины и остановки по желанию, без обязательных магазинов.',[map('Niederstraße · центр Нойса','Niederstrasse Neuss'),map('Büchel · пешеходная улица','Buechel Neuss')]);
+ add('2026-09-30','minster','Старый город: Квиринусмюнстер и Markt','sight','Quirinus-Münster: Münsterplatz 23, 41460 Neuss. Осмотреть собор и площадь снаружи; зайти внутрь только если открыт и нет ограничений из-за службы. Затем Markt, 41460 Neuss — площадь у ратуши. Между точками 5–10 минут пешком; на осмотр и отдых около 45–60 минут.',[map('Собор · Münsterplatz 23','Quirinus Muenster Muensterplatz 23 Neuss'),map('Рыночная площадь · Markt','Markt Neuss')]);
+ add('2026-09-30','lunch','Обед или кофе в центре','food','Около Markt или Neustraße, 41460 Neuss. Выбрать кафе на месте по свободным столикам и меню. Заложить 45–60 минут, без предварительного бронирования.',[map('Neustraße · кафе и прогулка','Neustrasse Neuss')]);
+ add('2026-09-30','obertor','Обертор · по желанию','sight','Obertor, Am Obertor, 41460 Neuss. От Markt по Oberstraße около 10–15 минут пешком. Средневековые городские ворота, осмотр снаружи 10–15 минут. Если устали, пропустить и вернуться к вокзалу прямо из центра.',[map('Обертор · Am Obertor','Obertor Am Obertor Neuss')],true);
+ add('2026-09-30','return','Возвращение в Дормаген','station','От Obertor до Neuss Hbf около 25–35 минут пешком, от Markt около 15–20 минут. Затем прямой поезд до Dormagen Bahnhof: ориентир 11–25 минут плюс ожидание. Вечер и ночёвка в Дормагене; время возвращения выбираем по самочувствию. Расписание и платформу проверить перед отправлением.',[backWalk,back]);
+ const story='Нойс одним днём из Дормагена: центральная пешеходная улица, старый город, Квиринусмюнстер и Markt. Обертор — дополнительная остановка по силам. На прогулку с обедом 3–4 часа, около 3–4 км пешком с возвращением на вокзал. Без жёсткого раннего выезда. Вечером обратно в Дормаген. До завершения европейской части поездки остаёмся в Германии.';
+ const day=next.days.find(d=>d.date==='2026-09-30');
+ Object.assign(day,{title:'Нойс · прогулка по центру и старому городу',city:'neuss',country:'Германия',night:'У родственников · Дормаген',story,sourceText:story+'\n'+next.visits.filter(v=>v.dayId===day.id).map(v=>v.description).join('\n'),routeLinks:[walk,out,backWalk,back]});
+ next.visits=next.visits.map(v=>({...v,description:v.description.replace('Переезды во Францию и Нидерланды не являются вывозом из ЕС.','Переезд во Францию не является вывозом из ЕС.')}));
+ next.checks.push({id:'check-neuss-20260930',text:'30.09: перед выездом проверить прямой поезд Dormagen ↔ Neuss и билеты на фактический состав группы. Прогулка без обязательных платных посещений.'});
+ next.appliedRouteUpdates=[...(next.appliedRouteUpdates||[]),id];
+ next.version+='+'+id;
  return next;
 }
