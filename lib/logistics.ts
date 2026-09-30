@@ -9,7 +9,6 @@ const q=(id:string,title:string,city:string,query:string,mode:Mode='walk',visit?
 const gap=(id:string,title:string,city:string,visit?:string):Stop=>({id,title,city,visit,mode:'unknown',note:'Точный адрес пока не указан. Этот участок не прокладывается через условный центр города.'});
 const dormagen=()=>q('dormagen-station','Вокзал Дормагена','dormagen','Dormagen Bahnhof, Germany','train');
 const veniceStation=()=>q('venice-station','Venezia Santa Lucia','venice','Venezia Santa Lucia railway station, Venice, Italy','train');
-const amsterdamStation=()=>q('amsterdam-station','Amsterdam Centraal','amsterdam','Amsterdam Centraal, Netherlands','train');
 // Reviewed against the trip document. Modes on a stop describe the leg INTO it.
 // Alternatives are explicit proposals, never silent geocoding of city-centre placeholders.
 const days:Record<string,Stop[]>={
@@ -25,8 +24,8 @@ const days:Record<string,Stop[]>={
  '2026-09-26':[q('chessy','Marne-la-Vallée – Chessy','disneyland','Marne la Vallée Chessy station, France'),p('disney','disneyland'),q('village','Disney Village · ужин','disneyland','Disney Village, Chessy, France'),q('valdeurope','Val d’Europe · станция','disneyland',"Val d'Europe RER station, Serris, France",'train',undefined,'Ориентир района проживания; отель ещё не выбран.'),gap('stay','Отель возле Disneyland','disneyland','unconfirmed')],
  '2026-09-27':[gap('stay','Выселение из отеля','disneyland','event-1'),q('valdeurope','Val d’Europe · RER A','disneyland',"Val d'Europe RER station, Serris, France"),q('tuileries','Сад Тюильри','paris','Jardin des Tuileries, Paris','train','trocadero'),q('seine','Набережная Сены · Concorde','paris','Pont de la Concorde, Paris','walk','trocadero'),p('trocadero','paris','metro'),gap('departure','Вокзал выезда · по выбранному билету','paris','event-3')],
  '2026-09-28':[gap('home','Отдых и прогулка по Дормагену · свободный день','dormagen','event-1')],
- '2026-09-29':[gap('home','Отдых с семьёй в Дормагене · без выезда','dormagen','rest')],
- '2026-09-30':[dormagen(),q('dusseldorf-out','Düsseldorf Hbf · пересадка 30–45 минут','dusseldorf','Dusseldorf Hbf Konrad-Adenauer-Platz 14','train'),amsterdamStation(),p('nemo','amsterdam'),q('cruise','Круиз Stromma · причал уточнить в билете','amsterdam','Stromma Prins Hendrikkade 37 Amsterdam','walk','canals','Предварительно 16:00–17:15. Круговой круиз возвращается к тому же причалу.'),{...amsterdamStation(),id:'amsterdam-return',mode:'walk',note:'Обратный поезд 18:00–19:00 — ориентир, рейс не выбран. На вокзале за 30 минут.'},q('dusseldorf-return','Düsseldorf Hbf · обратная пересадка','dusseldorf','Dusseldorf Hbf Konrad-Adenauer-Platz 14','train'),{...dormagen(),id:'dormagen-return'},gap('home','Возвращение к родственникам · Дормаген','dormagen')],
+ '2026-09-29':[gap('home','День в Дормагене · сходили в магазин','dormagen','rest')],
+ '2026-09-30':[dormagen(),q('neuss-station','Neuss Hbf','neuss','Neuss Hbf Further Strasse 1 Neuss','train','out'),q('center','Niederstraße → Büchel','neuss','Buechel Neuss','walk','center'),q('minster','Квиринусмюнстер','neuss','Quirinus Muenster Muensterplatz 23 Neuss','walk','minster'),q('markt','Markt · старый город','neuss','Markt Neuss'),q('lunch','Neustraße · обед по выбору','neuss','Neustrasse Neuss','walk','lunch'),q('obertor','Обертор · по желанию','neuss','Obertor Am Obertor Neuss','walk','obertor','Необязательная остановка; при усталости вернуться к вокзалу из центра.'),q('neuss-return','Neuss Hbf · обратный поезд','neuss','Neuss Hbf Further Strasse 1 Neuss','walk','return'),{...dormagen(),id:'dormagen-return'},gap('home','Вечер у родственников · Дормаген','dormagen')],
  '2026-10-01':[gap('home','Сборы и отдых в Дормагене','dormagen','event-1'),gap('dinner','Прощальный ужин · город и ресторан выбрать','dormagen','event-2')],
  '2026-10-02':[dormagen(),q('cgn','Аэропорт Кёльн/Бонн','cologne','Cologne Bonn Airport, Germany','train','event-1'),p('saw','istanbul','flight'),q('sultanahmet','Султанахмет · район проживания','istanbul','Sultanahmet Square, Istanbul','taxi','event-3','Предложение: минивэн на пятерых до района; точный адрес отеля уточняется.'),gap('stay','Отель в Стамбуле','istanbul')],
  '2026-10-03':[gap('stay','Отель в Стамбуле','istanbul'),p('hagia','istanbul'),q('blue-mosque','Голубая мечеть','istanbul','Sultan Ahmed Mosque, Istanbul','walk','hagia'),p('galata','istanbul'),q('eminonu-pier','Причал Эминёню','istanbul','Eminönü Kadıköy ferry pier, Istanbul','walk','eminonu'),q('kadikoy','Причал Кадыкёй','istanbul','Kadıköy Şehir Hatları ferry pier, Istanbul','ferry','eminonu'),gap('return-stay','Возвращение · согласовать после прогулки','istanbul')],
@@ -35,7 +34,7 @@ const days:Record<string,Stop[]>={
 
 export function itinerary(plan:Trip,date:string,visits=plan.visits):{stops:Stop[];legs:Leg[]}{
  const seenVisits=new Set<string>();
- const visitFor=(key:string|undefined)=>visits.find(v=>v.dayId===`day-${date}`&&(v.id===`visit-${date}-${key}`||(date==='2026-09-30'&&v.id===`visit-2026-09-29-${key}`)));
+ const visitFor=(key:string|undefined)=>visits.find(v=>v.dayId===`day-${date}`&&v.id===`visit-${date}-${key}`);
  const stops=(days[date]||[]).filter(s=>!s.visit||visitFor(s.visit)?.status!=='skip').map(s=>{
   const place=plan.places.find(p=>p.id===s.place),v=visitFor(s.visit);
   const first=v&&!seenVisits.has(v.id);if(v)seenVisits.add(v.id);
