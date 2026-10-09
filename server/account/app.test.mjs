@@ -40,6 +40,12 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
   assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:owner,site:'https://evil.example',body:{key:'personal',value:personal,revision:1,accountId:'owner'}})).status,403);
   assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.participant,body:{key:'personal',value:personal,revision:0,accountId:'owner'}})).status,409);
   assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.participant,body:{key:'plan',value:JSON.stringify(sourcePlan),revision:0,accountId:ids.participant}})).status,403);
+  // Content drafts use existing private preferences storage without publishing them.
+  const contentPreferences=JSON.stringify({currency:'EUR',contentStudio:{version:1,items:[{id:'story-1',title:'Family album',format:'album',stage:'select',dayId,source:'https://example.test/folder',link:'',notes:'Private selection'}]}});
+  assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:owner,body:{key:'preferences',value:contentPreferences,revision:0,accountId:'owner'}})).status,200);
+  assert.equal((await request('/api/trip/storage',{cookie:owner})).data.items.preferences.value,contentPreferences);
+  assert.equal((await request('/api/trip/storage',{cookie:cookies.participant})).data.items.preferences,undefined);
+  assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.viewer,body:{key:'preferences',value:contentPreferences,revision:0,accountId:ids.viewer}})).status,403);
   const legacy=JSON.stringify({visits:{[visitId]:{note:'Old device note'}},checks:{}});
   saved=await request('/api/trip/storage/import',{method:'POST',cookie:owner,body:{key:'personal',value:legacy,accountId:'owner'}});
   assert.equal(saved.status,200);assert.equal(saved.data.row.value,personal);

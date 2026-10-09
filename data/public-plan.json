@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "2026-09-17-2",
+  "version": "2026-09-17-2+yerevan-2026-09-19-metro-aznavour-cafe-v3+dormagen-amsterdam-daytrip-2026-09-29+germany-neuss-2026-09-30+zons-weather-option-2026-10-01",
   "importedAt": "2026-09-17T01:33:16+03:00",
   "sourceDocument": "",
   "sourceTabs": [],
@@ -73,17 +73,17 @@
       2.3522,
       "Europe/Paris"
     ],
-    "amsterdam": [
-      "Амстердам",
-      52.3676,
-      4.9041,
-      "Europe/Amsterdam"
-    ],
     "istanbul": [
       "Стамбул",
       41.0082,
       28.9784,
       "Europe/Istanbul"
+    ],
+    "neuss": [
+      "Нойс",
+      51.1984,
+      6.6919,
+      "Europe/Berlin"
     ]
   },
   "days": [
@@ -125,23 +125,35 @@
     {
       "id": "day-2026-09-19",
       "date": "2026-09-19",
-      "title": "Ереван → Милан",
+      "title": "Ереван: метро, «Мать Армения» и площадь Азнавура → Милан",
       "city": "yerevan",
       "country": "Армения",
       "night": "8th floor – Milano view · две ночи 19–21 сентября",
-      "story": "Основное: выселение, Вернисаж и выезд в EVN. ГУМ и Английский парк — только при запасе сил. До выезда согласовать хранение рюкзаков: прежняя квартира после checkout не является доступной базой автоматически. Последний участок от фактического места получения вещей; автомобиль к EVN планировать с запасом 45–60 минут. При переносе места хранения обновить начальную точку.",
+      "story": "Метро → «Мать Армения» → площадь Шарля Азнавура → обед и отдых в центре (кафе выберем на месте) → аэропорт. Рюкзаки весь день с собой, квартира не продлена. К парку и обратно в центр — на такси. Площадь и кафе — одна компактная остановка без дополнительных экскурсий. Выезд в аэропорт в 18:30, прибытие к 19:30, вылет в 22:35.",
       "routeLinks": [
         {
-          "text": "1. Основная прогулка",
-          "url": "https://www.google.com/maps/dir/?api=1&origin=Amiryan%204%2F2%20Yerevan&destination=Yerevan%20Tavern%20Amiryan%205%20Yerevan&travelmode=walking&waypoints=Republic%20Square%20Yerevan%7CVernissage%20Aram%20Street%20Yerevan"
+          "text": "1. К метро «Площадь Республики»",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Amiryan+4%2F2+Yerevan&destination=Republic+Square+metro+station+Yerevan&travelmode=walking"
         },
         {
-          "text": "2. Необязательный круг",
-          "url": "https://www.google.com/maps/dir/?api=1&origin=Yerevan%20Tavern%20Amiryan%205%20Yerevan&destination=Amiryan%204%2F2%20Yerevan&travelmode=walking&waypoints=GUM%20Market%20Khorenatsi%2035%20Yerevan%7CEnglish%20Park%20Yerevan"
+          "text": "2. Метро: одна остановка",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Republic+Square+metro+station+Yerevan&destination=Yeritasardakan+metro+station+Yerevan&travelmode=transit"
         },
         {
-          "text": "3. Выезд в аэропорт",
-          "url": "https://www.google.com/maps/dir/?api=1&origin=Amiryan%204%2F2%20Yerevan&destination=Zvartnots%20International%20Airport&travelmode=driving"
+          "text": "3. К парку Победы",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Yeritasardakan+metro+station+Yerevan&destination=Victory+Park+Azatutyan+Avenue+Yerevan&travelmode=driving"
+        },
+        {
+          "text": "4. К площади Шарля Азнавура",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Victory%20Park%20Azatutyan%20Avenue%20Yerevan&destination=Charles%20Aznavour%20Square%20Yerevan&travelmode=driving"
+        },
+        {
+          "text": "5. Dalan — возможный вариант кафе",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Charles%20Aznavour%20Square%20Yerevan&destination=Dalan%20Abovyan%2012%20Yerevan&travelmode=walking"
+        },
+        {
+          "text": "6. В аэропорт из центра (точку посадки уточнить)",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Charles%20Aznavour%20Square%20Yerevan&destination=Zvartnots%20International%20Airport&travelmode=driving"
         }
       ],
       "sourceText": ""
@@ -433,45 +445,75 @@
     {
       "id": "day-2026-09-28",
       "date": "2026-09-28",
-      "title": "Дормаген",
+      "title": "Дормаген · отдых с семьёй",
       "city": "dormagen",
       "country": "Германия",
       "night": "У родственников · Дормаген",
-      "story": "Утром — возвращение после ночного автобуса, затем сон и отдых в Дормагене. Обратный автобус ещё не куплен.",
+      "story": "День проведён в Дормагене. Отдых и время с семьёй, без выездной программы.",
       "routeLinks": [],
       "sourceText": ""
     },
     {
       "id": "day-2026-09-29",
       "date": "2026-09-29",
-      "title": "Амстердам",
-      "city": "amsterdam",
-      "country": "Нидерланды",
-      "night": "Амстердам · отель не выбран",
-      "story": "Эксперименты, лодки и прогулки в городе каналов.",
+      "title": "Дормаген · день в городе и магазин",
+      "city": "dormagen",
+      "country": "Германия",
+      "night": "У родственников · Дормаген",
+      "story": "Весь день провели в Дормагене, сходили в магазин. Междугородних поездок не было. Название магазина не указано.",
       "routeLinks": [],
       "sourceText": ""
     },
     {
       "id": "day-2026-09-30",
       "date": "2026-09-30",
-      "title": "Амстердам → Дормаген",
-      "city": "amsterdam",
-      "country": "Нидерланды",
+      "title": "Нойс · прогулка по центру и старому городу",
+      "city": "neuss",
+      "country": "Германия",
       "night": "У родственников · Дормаген",
-      "story": "Эксперименты, лодки и прогулки в городе каналов.",
-      "routeLinks": [],
+      "story": "Нойс одним днём из Дормагена: центральная пешеходная улица, старый город, Квиринусмюнстер и Markt. Обертор — дополнительная остановка по силам. На прогулку с обедом 3–4 часа, около 3–4 км пешком с возвращением на вокзал. Без жёсткого раннего выезда. Вечером обратно в Дормаген. До завершения европейской части поездки остаёмся в Германии.",
+      "routeLinks": [
+        {
+          "text": "Прогулка: вокзал → центр → Обертор",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Neuss%20Hbf&destination=Obertor%20Neuss&travelmode=walking&waypoints=Buechel%20Neuss%7CQuirinus%20Muenster%20Muensterplatz%2023%20Neuss%7CMarkt%20Neuss"
+        },
+        {
+          "text": "Дормаген → Нойс · поезд",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Dormagen%20Bahnhof&destination=Neuss%20Hbf&travelmode=transit"
+        },
+        {
+          "text": "Возвращение пешком к вокзалу",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Obertor%20Neuss&destination=Neuss%20Hbf&travelmode=walking"
+        },
+        {
+          "text": "Нойс → Дормаген · поезд",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Neuss%20Hbf&destination=Dormagen%20Bahnhof&travelmode=transit"
+        }
+      ],
       "sourceText": ""
     },
     {
       "id": "day-2026-10-01",
       "date": "2026-10-01",
-      "title": "Дормаген",
+      "title": "Дормаген → Цонз · если сухо",
       "city": "dormagen",
       "country": "Германия",
       "night": "У родственников · Дормаген",
-      "story": "Время для дороги, отдыха и встреч с близкими.",
-      "routeLinks": [],
+      "story": "Утром Цонз, только если нет дождя: старый город, крепость снаружи и Рейн, кофе или обед по желанию. Ориентировочный выезд после 10:00, возвращение к 14:00–14:30. При дожде остаёмся в Дормагене. После прогулки — билеты Pegasus, посадочные, рюкзаки и Tax Free; вечером ужин с родными и отдых перед вылетом 2 октября. Часы не являются расписанием автобусов.",
+      "routeLinks": [
+        {
+          "text": "Цонз · прогулка по старому городу и к Рейну",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Rheintor%20Zons&destination=Rheintor%20Zons&travelmode=walking&waypoints=Tourist%20Information%20Schlossstrasse%202-4%20Zons%7CSchloss%20Friedestrom%20Zons%7CRheinufer%20Zons"
+        },
+        {
+          "text": "Dormagen Bahnhof → Zons · автобус",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Dormagen%20Bahnhof&destination=Zons%20Schlossstrasse&travelmode=transit"
+        },
+        {
+          "text": "Zons → Dormagen Bahnhof · автобус",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Zons%20Schlossstrasse&destination=Dormagen%20Bahnhof&travelmode=transit"
+        }
+      ],
       "sourceText": ""
     },
     {
@@ -800,36 +842,6 @@
       "photo": "paris"
     },
     {
-      "id": "nemo",
-      "title": "Музей науки NEMO",
-      "lat": 52.3742,
-      "lng": 4.9123,
-      "city": "amsterdam",
-      "category": "sight",
-      "precision": "Ориентир на карте; вход уточняйте по адресу",
-      "photo": "amsterdam"
-    },
-    {
-      "id": "canals",
-      "title": "Каналы Амстердама",
-      "lat": 52.3777,
-      "lng": 4.8994,
-      "city": "amsterdam",
-      "category": "sight",
-      "precision": "Ориентир на карте; вход уточняйте по адресу",
-      "photo": null
-    },
-    {
-      "id": "vondel",
-      "title": "Вондельпарк",
-      "lat": 52.3579,
-      "lng": 4.8686,
-      "city": "amsterdam",
-      "category": "rest",
-      "precision": "Ориентир на карте; вход уточняйте по адресу",
-      "photo": "vondelpark"
-    },
-    {
       "id": "saw",
       "title": "Кёльн/Бонн → Стамбул SAW",
       "lat": 40.8986,
@@ -980,16 +992,6 @@
       "photo": null
     },
     {
-      "id": "city-amsterdam",
-      "title": "Амстердам",
-      "lat": 52.3676,
-      "lng": 4.9041,
-      "city": "amsterdam",
-      "category": "city",
-      "precision": "Точка города, не адрес жилья",
-      "photo": null
-    },
-    {
       "id": "city-istanbul",
       "title": "Стамбул",
       "lat": 41.0082,
@@ -1017,6 +1019,66 @@
       "lat": 48.8558167,
       "lng": 2.77255,
       "precision": "Координаты из плана; платформу или точный вход уточнить.",
+      "photo": null
+    },
+    {
+      "id": "republic-metro",
+      "title": "Метро «Площадь Республики»",
+      "city": "yerevan",
+      "category": "station",
+      "lat": 40.1786,
+      "lng": 44.5153,
+      "precision": "Ориентир на карте; вход уточняйте по адресу",
+      "photo": null
+    },
+    {
+      "id": "mother-armenia",
+      "title": "Мать Армения",
+      "city": "yerevan",
+      "category": "sight",
+      "lat": 40.1951,
+      "lng": 44.5247,
+      "precision": "Ориентир на карте; вход уточняйте по адресу",
+      "photo": null
+    },
+    {
+      "id": "aznavour-square",
+      "title": "Площадь Шарля Азнавура",
+      "city": "yerevan",
+      "category": "sight",
+      "lat": 40.1815,
+      "lng": 44.5163,
+      "precision": "Ориентир на карте; площадь перед кинотеатром «Москва»",
+      "photo": null
+    },
+    {
+      "id": "dalan",
+      "title": "Dalan · Абовяна, 12",
+      "city": "yerevan",
+      "category": "food",
+      "lat": 40.1808,
+      "lng": 44.5156,
+      "precision": "Приблизительный ориентир; вход по адресу Абовяна, 12",
+      "photo": null
+    },
+    {
+      "id": "city-neuss",
+      "title": "Нойс",
+      "lat": 51.1984,
+      "lng": 6.6919,
+      "city": "neuss",
+      "category": "city",
+      "precision": "Центр города; точные адреса остановок указаны в маршруте",
+      "photo": null
+    },
+    {
+      "id": "zons-old-town",
+      "title": "Цонз · старый город",
+      "city": "dormagen",
+      "lat": 51.1227,
+      "lng": 6.8503,
+      "category": "sight",
+      "precision": "Ориентир старого города; входы и остановки уточняются по адресам маршрута",
       "photo": null
     }
   ],
@@ -1257,126 +1319,92 @@
       "source": ""
     },
     {
-      "id": "visit-2026-09-19-event-1",
       "dayId": "day-2026-09-19",
-      "placeId": "city-yerevan",
-      "title": "Завтрак, сбор рюкзаков и выезд из Stylish",
-      "start": "09:00",
-      "end": "10:30",
-      "category": "food",
-      "description": "09:00 – 10:30: Завтрак в Stylish, сбор рюкзаков и сдача ключей до выхода на Вернисаж: прогулка заканчивается после стандартного выезда в 12:00. Позднее выселение желательно для дневного отдыха, но требует подтверждения и может быть платным. Иначе согласовать с хозяином формат выезда и хранение рюкзаков; стандартный выезд — до 12:00.",
+      "start": null,
+      "end": null,
       "status": "planned",
       "optional": false,
       "links": [],
+      "id": "visit-2026-09-19-metro",
+      "placeId": "republic-metro",
+      "title": "Ереванское метро",
+      "category": "station",
+      "description": "«Площадь Республики» → «Еритасардакан»: одна остановка в сторону «Барекамутюн», без пересадок. Рюкзаки с собой; у сотрудника уточнить оплату для всей семьи.",
       "source": ""
     },
     {
-      "id": "visit-2026-09-19-vernissage",
       "dayId": "day-2026-09-19",
-      "placeId": "vernissage",
-      "title": "Вернисаж",
-      "start": "10:30",
-      "end": "13:00",
-      "category": "sight",
-      "description": "10:30 – 13:00: Ярмарка ремёсел «Вернисаж» 📍 Aram St, Yerevan. Открытый рынок художественных промыслов и антиквариата, возникший в 1980-х годах во время движения за независимость. Интересные факты и на что обратить внимание: Обратите внимание на резные дудуки из абрикосового дерева, серебряные украшения с гранатовым мотивом, ковры ручной работы и картины местных художников. На ярмарке принято вежливо торговаться.",
+      "start": null,
+      "end": null,
       "status": "planned",
       "optional": false,
-      "links": [
-        {
-          "text": "Aram St, Yerevan",
-          "url": "https://www.google.com/maps/search/?api=1&query=Vernissage+Aram+St+Yerevan"
-        }
-      ],
+      "links": [],
+      "id": "visit-2026-09-19-mother-armenia",
+      "placeId": "mother-armenia",
+      "title": "«Мать Армения» · парк Победы",
+      "category": "sight",
+      "description": "От «Еритасардакан» — такси ко входу в парк Победы со стороны проспекта Азатутян, затем короткая прогулка к памятнику. Осмотр, панорама и отдых — 45–60 минут. Без подъёма через Каскад.",
       "source": ""
     },
     {
-      "id": "visit-2026-09-19-event-3",
       "dayId": "day-2026-09-19",
-      "placeId": "city-yerevan",
-      "title": "Обед в семейном ресторане «Tavern Yerevan» 📍 Amiryan St, 5 рядом с площадью Республики",
-      "start": "13:00",
-      "end": "14:30",
+      "start": null,
+      "end": null,
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "id": "visit-2026-09-19-aznavour",
+      "placeId": "aznavour-square",
+      "title": "Площадь Шарля Азнавура",
+      "category": "sight",
+      "description": "Из парка Победы — на такси к площади перед кинотеатром «Москва». Короткая прогулка и фотографии: 15–20 минут. Затем обед и отдых рядом: кафе выберем на месте, без дополнительных экскурсий.",
+      "source": ""
+    },
+    {
+      "dayId": "day-2026-09-19",
+      "start": null,
+      "end": null,
+      "status": "planned",
+      "optional": true,
+      "links": [
+        {
+          "text": "Сайт Dalan",
+          "url": "https://dalan.am/"
+        }
+      ],
+      "id": "visit-2026-09-19-dalan",
+      "placeId": "dalan",
+      "title": "Dalan — возможный вариант кафе",
       "category": "food",
-      "description": "13:00 – 14:30: Обед в семейном ресторане «Tavern Yerevan» 📍 Amiryan St, 5 рядом с площадью Республики. Попробуйте форель на мангале, хинкали или кюфту.",
-      "status": "planned",
-      "optional": false,
-      "links": [
-        {
-          "text": "Amiryan St, 5",
-          "url": "https://www.google.com/maps/search/?api=1&query=Tavern+Yerevan+Amiryan+St+5+Yerevan"
-        }
-      ],
+      "description": "Кафе ещё не выбрано. Dalan, Абовяна, 12 — один из вариантов для обеда и отдыха, посещение необязательно. Выбираем на месте по свободным столикам и удобству с рюкзаками. К 18:00 проверить паспорта, пять посадочных и заряд телефонов; заказать машину на пять пассажиров с детским креслом.",
       "source": ""
     },
     {
-      "id": "visit-2026-09-19-gum",
       "dayId": "day-2026-09-19",
-      "placeId": "gum",
-      "title": "Рынок ГУМ",
-      "start": "14:30",
-      "end": "16:30",
-      "category": "sight",
-      "description": "14:30 – 16:30: По силам, вместо дневного отдыха — продовольственный «Рынок ГУМ» (Ташир) 📍 35 Movses Khorenatsi St, Yerevan. Главный колоритный продуктовый крытый рынок Еревана. Интересные факты и на что обратить внимание: Оцените эффектно разложенные пирамиды сухофруктов с фаршированными орехами, фаршированные персики (алани) и свежайший лаваш. Продавцы активно предлагают дегустации.",
-      "status": "planned",
-      "optional": true,
-      "links": [
-        {
-          "text": "35 Movses Khorenatsi St, Yerevan",
-          "url": "https://www.google.com/maps/search/?api=1&query=GUM+Market+35+Movses+Khorenatsi+St+Yerevan"
-        }
-      ],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-19-english-park",
-      "dayId": "day-2026-09-19",
-      "placeId": "english-park",
-      "title": "Английский парк",
-      "start": "16:30",
-      "end": "18:00",
-      "category": "rest",
-      "description": "16:30 – 18:00: Отдых в Английском парке 📍 Italy St, Yerevan. Один из старейших парков Еревана, заложенный в 1860-х годах. При подтверждённом позднем выселении предпочтителен отдых в номере. 18:00–18:30: вернуться из Английского парка к Stylish, 4/2 Amiryan Street, за рюкзаками, если хранение согласовано; вода и встреча с водителем у подтверждённого входа. Без хранения рюкзаки весь день с нами.",
-      "status": "planned",
-      "optional": true,
-      "links": [
-        {
-          "text": "Italy St, Yerevan",
-          "url": "https://www.google.com/maps/search/?api=1&query=English+Park+Yerevan"
-        }
-      ],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-19-evn",
-      "dayId": "day-2026-09-19",
-      "placeId": "evn",
-      "title": "Аэропорт Звартноц",
       "start": "18:30",
       "end": "19:30",
-      "category": "airport",
-      "description": "18:30 – 19:30: Поездка от Stylish в «Аэропорт Звартноц (EVN)» 📍 Yerevan, Armenia.",
-      "status": "planned",
-      "optional": false,
-      "links": [
-        {
-          "text": "Yerevan, Armenia",
-          "url": "https://www.google.com/maps/search/?api=1&query=Zvarnots+International+Airport+Yerevan"
-        }
-      ],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-19-event-7",
-      "dayId": "day-2026-09-19",
-      "placeId": "city-yerevan",
-      "title": "Регистрация, досмотр и вылет рейсом Wizz Air W4 6456 в Милан (MXP) в 22:35",
-      "start": "19:30",
-      "end": "22:35",
-      "category": "rest",
-      "description": "19:30 – 22:35: Регистрация, досмотр и вылет рейсом Wizz Air W4 6456 в Милан (MXP) в 22:35. Без багажа, только ручная кладь до 10 кг на человека.",
       "status": "planned",
       "optional": false,
       "links": [],
+      "id": "visit-2026-09-19-evn",
+      "placeId": "evn",
+      "title": "Такси из центра в Звартноц",
+      "category": "airport",
+      "description": "18:30–19:30: выезд от выбранного кафе в центре или ближайшей удобной точки посадки. На дорогу 40–60 минут с запасом на пробки. Машина на пять пассажиров с детским креслом. Цель — быть в аэропорту к 19:30.",
+      "source": ""
+    },
+    {
+      "dayId": "day-2026-09-19",
+      "start": "19:30",
+      "end": "22:35",
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "id": "visit-2026-09-19-event-7",
+      "placeId": "evn",
+      "title": "Вылет W4 6456 в Милан · 22:35",
+      "category": "airport",
+      "description": "С 19:30 — необходимые формальности, досмотр и ожидание. Вылет в Милан-Мальпенса по билету в 22:35. Онлайн-регистрацию и пять посадочных проверить заранее; статус и выход — по табло.",
       "source": ""
     },
     {
@@ -2916,163 +2944,17 @@
       "source": ""
     },
     {
-      "id": "visit-2026-09-28-event-1",
+      "id": "visit-2026-09-28-rest",
       "dayId": "day-2026-09-28",
       "placeId": "city-dormagen",
-      "title": "Возвращение в Дормаген, сон и отдых",
-      "start": "09:00",
-      "end": "18:00",
+      "title": "Отдых в Дормагене",
+      "start": null,
+      "end": null,
       "category": "rest",
-      "description": "После ночного автобуса: от Düsseldorf ZOB пройти к Düsseldorf Hbf, далее подобрать поезд в Dormagen; от Cologne Airport сначала потребуется железнодорожное сообщение из аэропорта. На путь после высадки до жилья планово резервируем 1–1,5 часа, точное время зависит от поезда и адреса в Дормагене. Утро следующего дня оставляем для возвращения и сна, прежний ориентир «в Дормагене в 22:00» не использовать. 09:00 – 18:00: Восстановление сил, прогулка по Дормагену, домашний обед и стирка перед поездкой в Нидерланды.",
-      "status": "planned",
-      "optional": false,
+      "description": "День проведён в Дормагене. Отдых и время с семьёй, без выездной программы.",
       "links": [],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-29-event-1",
-      "dayId": "day-2026-09-29",
-      "placeId": "city-amsterdam",
-      "title": "Поезд Dormagen → Düsseldorf Hbf → «Amsterdam Centraal» 📍 Stationsplein, Amsterdam",
-      "start": "06:30",
-      "end": "10:30",
-      "category": "station",
-      "description": "06:30 – 10:30: Поезд Dormagen → Düsseldorf Hbf → «Amsterdam Centraal» 📍 Stationsplein, Amsterdam. Поезд ещё не выбран. 10:30–12:00: запас на задержку, перекус и хранение вещей. Бронировать NEMO после выбора поезда, оставляя около 1,5 часа после прибытия. Отель выбирать с учётом пути от вокзала.",
       "status": "planned",
       "optional": false,
-      "links": [
-        {
-          "text": "Stationsplein, Amsterdam",
-          "url": "https://www.google.com/maps/search/?api=1&query=Amsterdam+Centraal+Stationsplein+Amsterdam"
-        }
-      ],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-29-nemo",
-      "dayId": "day-2026-09-29",
-      "placeId": "nemo",
-      "title": "Музей науки NEMO",
-      "start": "12:00",
-      "end": "15:00",
-      "category": "sight",
-      "description": "12:00 – 15:00: Музей науки NEMO 📍 Oosterdok 2, Amsterdam. Интерактивный музей в зеленом здании в форме носа корабля (архитектор Ренцо Пиано). Интересные факты и на что обратить внимание: 5 этажей интерактивных экспериментов с физикой, химией и светом. Поднимитесь на ступенчатую крышу-террасу.",
-      "status": "planned",
-      "optional": false,
-      "links": [
-        {
-          "text": "Oosterdok 2, Amsterdam",
-          "url": "https://www.google.com/maps/search/?api=1&query=NEMO+Science+Museum+Oosterdok+2+Amsterdam"
-        }
-      ],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-29-event-3",
-      "dayId": "day-2026-09-29",
-      "placeId": "city-amsterdam",
-      "title": "Обед: Малосолёная голландская сельдь в киоске Stubbe's Haring и хрустящий картофель фри",
-      "start": "15:00",
-      "end": "16:00",
-      "category": "food",
-      "description": "15:00 – 16:00: Обед: Малосолёная голландская сельдь в киоске Stubbe's Haring и хрустящий картофель фри.",
-      "status": "planned",
-      "optional": false,
-      "links": [],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-29-canals",
-      "dayId": "day-2026-09-29",
-      "placeId": "canals",
-      "title": "Каналы Амстердама",
-      "start": "16:00",
-      "end": "18:30",
-      "category": "sight",
-      "description": "16:00 – 18:30: Круиз на лодке по каналам XVII века (объект ЮНЕСКО) и заселение в отель в Амстердаме.",
-      "status": "planned",
-      "optional": false,
-      "links": [],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-30-vondel",
-      "dayId": "day-2026-09-30",
-      "placeId": "vondel",
-      "title": "Вондельпарк",
-      "start": "10:00",
-      "end": "13:00",
-      "category": "rest",
-      "description": "10:00 – 13:00: «Вондельпарк» 📍 Vondelpark, Amsterdam. Главный публичный парк города (47 га), открытый в 1865 году. Прогулка, детские площадки и пикник у прудов. Вход свободный. При дожде: спокойное утро в кафе рядом с отелем и короткая прогулка в погодное окно; парк отменить. Закрытый музей добавлять только после выбора и проверки билетов.",
-      "status": "planned",
-      "optional": false,
-      "links": [
-        {
-          "text": "Vondelpark, Amsterdam",
-          "url": "https://www.google.com/maps/search/?api=1&query=Vondelpark+Amsterdam"
-        }
-      ],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-30-event-2",
-      "dayId": "day-2026-09-30",
-      "placeId": "city-amsterdam",
-      "title": "Обед, забор рюкзаков из отеля и прибытие на вокзал «Amsterdam Centraal» 📍 Stationsplein, Amsterdam",
-      "start": "13:00",
-      "end": "16:00",
-      "category": "food",
-      "description": "13:00 – 16:00: Обед, забор рюкзаков из отеля и прибытие на вокзал «Amsterdam Centraal» 📍 Stationsplein, Amsterdam.",
-      "status": "planned",
-      "optional": false,
-      "links": [
-        {
-          "text": "Stationsplein, Amsterdam",
-          "url": "https://www.google.com/maps/search/?api=1&query=Amsterdam+Centraal+Stationsplein+Amsterdam"
-        }
-      ],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-09-30-event-3",
-      "dayId": "day-2026-09-30",
-      "placeId": "city-amsterdam",
-      "title": "Поезд Amsterdam Centraal → Düsseldorf Hbf → Dormagen",
-      "start": "16:30",
-      "end": "21:00",
-      "category": "station",
-      "description": "16:30 – 21:00: Поезд Amsterdam Centraal → Düsseldorf Hbf → Dormagen.",
-      "status": "planned",
-      "optional": false,
-      "links": [],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-10-01-event-1",
-      "dayId": "day-2026-10-01",
-      "placeId": "city-dormagen",
-      "title": "Pegasus: билеты, рюкзаки и документы Tax Free",
-      "start": "10:00",
-      "end": "14:00",
-      "category": "rest",
-      "description": "10:00 – 14:00: Подготовка к купленному Pegasus PC 1012: проверить пять билетов и получение посадочных талонов. В заказе оплачена услуга онлайн-регистрации на всех пятерых, но это ещё не подтверждение выполненной регистрации. Взвесить личные вещи: по одной до 3 кг и 40×30×15 см каждому, включая детей. У Анны и Романа отдельно оплачено по 1×8 кг; квитанция называет услугу «Дополнительный багаж» без уточнения вида — проверить в брони Pegasus, что это cabin baggage, и допустимые размеры. Не распределять эти два места на детей и не считать их сдаваемым багажом без подтверждения. Подготовить транспорт до CGN и встречу в SAW. Проверка Tax Free перед вылетом: собрать покупки, упаковки, загранпаспорт, подтверждение проживания вне ЕС, чеки и формы Global Blue; сверить данные и сохранить копии. Покупки должны помещаться в разрешённые рюкзаки вместе с остальными вещами. Уточнить расположение и часы таможни для ручной клади в CGN, подходящий способ передачи форм Global Blue и выплаты. При необходимости — резервный визит в Apple Schildergasse или Düsseldorf во время поездки на прощальный ужин, после проверки наличия.",
-      "status": "planned",
-      "optional": false,
-      "links": [],
-      "source": ""
-    },
-    {
-      "id": "visit-2026-10-01-event-2",
-      "dayId": "day-2026-10-01",
-      "placeId": "city-dormagen",
-      "title": "Неспешный прощальный ужин в Кёльне или Дюссельдорфе, отдых перед перелётом",
-      "start": "14:00",
-      "end": "18:00",
-      "category": "food",
-      "description": "14:00 – 18:00: Неспешный прощальный ужин в Кёльне или Дюссельдорфе, отдых перед перелётом.",
-      "status": "planned",
-      "optional": false,
-      "links": [],
       "source": ""
     },
     {
@@ -3083,7 +2965,7 @@
       "start": "08:30",
       "end": "10:20",
       "category": "station",
-      "description": "Ориентировочно 08:30 – 10:20: Трансфер Dormagen → «Аэропорт Кёльн/Бонн (CGN)» 📍 Kennedystraße, Köln. От Дормаген (частный адрес скрыт) заложить путь до станции Dormagen, ожидание, пересадку и переход в терминал. Подобрать маршрут в DB Navigator с прибытием в CGN не позднее 10:20 — за 3 часа до вылета 13:20; прямой RE6 при наличии либо соединение через Köln Hbf. Отправление около 08:30 — плановый ориентир, не расписание; цену проверить на фактический состав наземной группы. В самолёте подтверждены только 5 человек основной семьи. Резерв — заранее заказанный вместительный трансфер; терминал и стойку уточнить по Pegasus/табло. При оформлении Tax Free: прибыть в CGN к 09:20–09:35, то есть на 45–60 минут раньше основной цели 10:20. Плановый выезд из дома около 07:30–08:00, точное время выбрать по соединению DB и дороге до станции. Время на таможню не отнимать у досмотра и паспортного контроля. Регистрацию/сдачу багажа, если она требуется, закончить до 12:20; у выхода быть около 12:30–12:40, закрытие посадки по общему правилу Pegasus — 13:00. При более раннем времени в посадочном следовать ему. Tax Free в CGN перед рейсом в Стамбул: это выход из ЕС по текущему маршруту. Переезды во Францию и Нидерланды не являются вывозом из ЕС. Предъявить таможне сами покупки, паспорт, посадочный талон, чеки и формы; для рюкзаков заранее уточнить нужный пункт таможни и его расположение относительно досмотра. Подтверждение вывоза получить до отлёта, не откладывать до Стамбула. Источник: правила ЕС о возврате НДС. После таможни: передать подтверждённые формы Global Blue по инструкции на бланке — через подходящий пункт возврата либо отправкой документов. Сохранить копии и отслеживать возврат по номеру формы. Таможня подтверждает вывоз, деньги выплачивает оператор за вычетом комиссии; штамп сам по себе не завершает заявку. Источник: памятка Германии о возврате НДС.",
+      "description": "Ориентировочно 08:30 – 10:20: Трансфер Dormagen → «Аэропорт Кёльн/Бонн (CGN)» 📍 Kennedystraße, Köln. От Дормаген (частный адрес скрыт) заложить путь до станции Dormagen, ожидание, пересадку и переход в терминал. Подобрать маршрут в DB Navigator с прибытием в CGN не позднее 10:20 — за 3 часа до вылета 13:20; прямой RE6 при наличии либо соединение через Köln Hbf. Отправление около 08:30 — плановый ориентир, не расписание; цену проверить на фактический состав наземной группы. В самолёте подтверждены только 5 человек основной семьи. Резерв — заранее заказанный вместительный трансфер; терминал и стойку уточнить по Pegasus/табло. При оформлении Tax Free: прибыть в CGN к 09:20–09:35, то есть на 45–60 минут раньше основной цели 10:20. Плановый выезд из дома около 07:30–08:00, точное время выбрать по соединению DB и дороге до станции. Время на таможню не отнимать у досмотра и паспортного контроля. Регистрацию/сдачу багажа, если она требуется, закончить до 12:20; у выхода быть около 12:30–12:40, закрытие посадки по общему правилу Pegasus — 13:00. При более раннем времени в посадочном следовать ему. Tax Free в CGN перед рейсом в Стамбул: это выход из ЕС по текущему маршруту. Переезд во Францию не является вывозом из ЕС. Предъявить таможне сами покупки, паспорт, посадочный талон, чеки и формы; для рюкзаков заранее уточнить нужный пункт таможни и его расположение относительно досмотра. Подтверждение вывоза получить до отлёта, не откладывать до Стамбула. Источник: правила ЕС о возврате НДС. После таможни: передать подтверждённые формы Global Blue по инструкции на бланке — через подходящий пункт возврата либо отправкой документов. Сохранить копии и отслеживать возврат по номеру формы. Таможня подтверждает вывоз, деньги выплачивает оператор за вычетом комиссии; штамп сам по себе не завершает заявку. Источник: памятка Германии о возврате НДС.",
       "status": "planned",
       "optional": false,
       "links": [
@@ -3242,6 +3124,282 @@
         }
       ],
       "source": ""
+    },
+    {
+      "id": "visit-2026-09-29-rest",
+      "dayId": "day-2026-09-29",
+      "placeId": "city-dormagen",
+      "title": "День в Дормагене и поход в магазин",
+      "start": null,
+      "end": null,
+      "category": "rest",
+      "description": "Весь день провели в Дормагене, сходили в магазин. Междугородних поездок не было. Название магазина не указано.",
+      "links": [],
+      "status": "visited",
+      "optional": false,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-30-out",
+      "dayId": "day-2026-09-30",
+      "placeId": "city-neuss",
+      "title": "Поезд Дормаген → Нойс",
+      "start": null,
+      "end": null,
+      "category": "station",
+      "description": "От Dormagen Bahnhof (Willy-Brandt-Platz, 41539 Dormagen) до Neuss Hbf (Further Straße 1, 41462 Neuss). Выбрать прямой региональный поезд или S-Bahn в DB Navigator: ориентир 11–25 минут между вокзалами; ещё 10–20 минут на ожидание и подход к платформе. Дорога от дома до станции отдельно. Час выезда свободный, конкретный рейс не выбран. Билет купить до посадки; цену для фактического состава группы проверить в приложении.",
+      "links": [
+        {
+          "text": "Дормаген → Нойс · поезд",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Dormagen%20Bahnhof&destination=Neuss%20Hbf&travelmode=transit"
+        },
+        {
+          "text": "Расписание DB",
+          "url": "https://www.bahn.de/"
+        }
+      ],
+      "status": "planned",
+      "optional": false,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-30-center",
+      "dayId": "day-2026-09-30",
+      "placeId": "city-neuss",
+      "title": "Центральная улица: Niederstraße → Büchel",
+      "start": null,
+      "end": null,
+      "category": "sight",
+      "description": "От Neuss Hbf около 15–20 минут пешком к пешеходному центру. Адреса: Niederstraße и Büchel, 41460 Neuss. Спокойная прогулка, витрины и остановки по желанию, без обязательных магазинов.",
+      "links": [
+        {
+          "text": "Niederstraße · центр Нойса",
+          "url": "https://www.google.com/maps/search/?api=1&query=Niederstrasse%20Neuss"
+        },
+        {
+          "text": "Büchel · пешеходная улица",
+          "url": "https://www.google.com/maps/search/?api=1&query=Buechel%20Neuss"
+        }
+      ],
+      "status": "planned",
+      "optional": false,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-30-minster",
+      "dayId": "day-2026-09-30",
+      "placeId": "city-neuss",
+      "title": "Старый город: Квиринусмюнстер и Markt",
+      "start": null,
+      "end": null,
+      "category": "sight",
+      "description": "Quirinus-Münster: Münsterplatz 23, 41460 Neuss. Осмотреть собор и площадь снаружи; зайти внутрь только если открыт и нет ограничений из-за службы. Затем Markt, 41460 Neuss — площадь у ратуши. Между точками 5–10 минут пешком; на осмотр и отдых около 45–60 минут.",
+      "links": [
+        {
+          "text": "Собор · Münsterplatz 23",
+          "url": "https://www.google.com/maps/search/?api=1&query=Quirinus%20Muenster%20Muensterplatz%2023%20Neuss"
+        },
+        {
+          "text": "Рыночная площадь · Markt",
+          "url": "https://www.google.com/maps/search/?api=1&query=Markt%20Neuss"
+        }
+      ],
+      "status": "planned",
+      "optional": false,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-30-lunch",
+      "dayId": "day-2026-09-30",
+      "placeId": "city-neuss",
+      "title": "Обед или кофе в центре",
+      "start": null,
+      "end": null,
+      "category": "food",
+      "description": "Около Markt или Neustraße, 41460 Neuss. Выбрать кафе на месте по свободным столикам и меню. Заложить 45–60 минут, без предварительного бронирования.",
+      "links": [
+        {
+          "text": "Neustraße · кафе и прогулка",
+          "url": "https://www.google.com/maps/search/?api=1&query=Neustrasse%20Neuss"
+        }
+      ],
+      "status": "planned",
+      "optional": false,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-30-obertor",
+      "dayId": "day-2026-09-30",
+      "placeId": "city-neuss",
+      "title": "Обертор · по желанию",
+      "start": null,
+      "end": null,
+      "category": "sight",
+      "description": "Obertor, Am Obertor, 41460 Neuss. От Markt по Oberstraße около 10–15 минут пешком. Средневековые городские ворота, осмотр снаружи 10–15 минут. Если устали, пропустить и вернуться к вокзалу прямо из центра.",
+      "links": [
+        {
+          "text": "Обертор · Am Obertor",
+          "url": "https://www.google.com/maps/search/?api=1&query=Obertor%20Am%20Obertor%20Neuss"
+        }
+      ],
+      "status": "planned",
+      "optional": true,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-09-30-return",
+      "dayId": "day-2026-09-30",
+      "placeId": "city-neuss",
+      "title": "Возвращение в Дормаген",
+      "start": null,
+      "end": null,
+      "category": "station",
+      "description": "От Obertor до Neuss Hbf около 25–35 минут пешком, от Markt около 15–20 минут. Затем прямой поезд до Dormagen Bahnhof: ориентир 11–25 минут плюс ожидание. Вечер и ночёвка в Дормагене; время возвращения выбираем по самочувствию. Расписание и платформу проверить перед отправлением.",
+      "links": [
+        {
+          "text": "Возвращение пешком к вокзалу",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Obertor%20Neuss&destination=Neuss%20Hbf&travelmode=walking"
+        },
+        {
+          "text": "Нойс → Дормаген · поезд",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Neuss%20Hbf&destination=Dormagen%20Bahnhof&travelmode=transit"
+        }
+      ],
+      "status": "planned",
+      "optional": false,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-10-01-zons-out",
+      "dayId": "day-2026-10-01",
+      "placeId": "zons-old-town",
+      "title": "Цонз при сухой погоде · выезд утром",
+      "start": "10:00",
+      "end": "10:45",
+      "category": "station",
+      "description": "Утром проверить почасовой прогноз и дождь на месте. Если сухо — выезд ориентировочно после 10:00; при дожде всю прогулку отменяем. Прямой городской автобус 886 идёт от Dormagen Bahnhof через Zons. Ориентир на дорогу между вокзалом и Zons 15–25 минут, на ожидание и подход 15–20 минут; путь от дома до остановки добавить отдельно. Конкретный рейс и ближайшую остановку выхода проверить в VRR или Stadtbus перед выездом. Оплату/действительность имеющегося билета проверить до посадки; бесплатный проезд в Москве не означает бесплатный проезд в Германии. Альтернатива — машина с родственниками, если договоритесь.",
+      "links": [
+        {
+          "text": "Dormagen Bahnhof → Zons · автобус",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Dormagen%20Bahnhof&destination=Zons%20Schlossstrasse&travelmode=transit"
+        },
+        {
+          "text": "Dormagen Bahnhof · Willy-Brandt-Platz, 41539 Dormagen",
+          "url": "https://www.google.com/maps/search/?api=1&query=Dormagen%20Bahnhof%20Willy-Brandt-Platz"
+        },
+        {
+          "text": "Stadtbus · действующие расписания",
+          "url": "https://stadtbus-dormagen.de/de/fahrplaene"
+        }
+      ],
+      "status": "planned",
+      "optional": true,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-10-01-zons-walk",
+      "dayId": "day-2026-10-01",
+      "placeId": "zons-old-town",
+      "title": "Цонз · старый город и берег Рейна",
+      "start": "10:45",
+      "end": "12:30",
+      "category": "sight",
+      "description": "Спокойная прогулка: Rheintor (Rheinstraße, 41541 Dormagen-Zons) → Schloßstraße → Tourist-Info (Schloßstraße 2–4) → Schloss Friedestrom (Schloßstraße 1) → берег Рейна → Rheintor. Осматриваем улицы, ворота и крепость снаружи; платные музеи, экскурсии и подъём на башню не обязательны. Ориентир 1,5–2 часа и 2–3 км пешком с паузами. К воде выходим только при сухой погоде и удобном проходе; при начавшемся дожде сокращаем прогулку.",
+      "links": [
+        {
+          "text": "Цонз · прогулка по старому городу и к Рейну",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Rheintor%20Zons&destination=Rheintor%20Zons&travelmode=walking&waypoints=Tourist%20Information%20Schlossstrasse%202-4%20Zons%7CSchloss%20Friedestrom%20Zons%7CRheinufer%20Zons"
+        },
+        {
+          "text": "Rheintor · Rheinstraße, Zons",
+          "url": "https://www.google.com/maps/search/?api=1&query=Rheintor%20Zons"
+        },
+        {
+          "text": "Tourist-Info · Schloßstraße 2–4",
+          "url": "https://www.google.com/maps/search/?api=1&query=Tourist%20Information%20Schlossstrasse%202-4%20Zons"
+        },
+        {
+          "text": "Schloss Friedestrom · Schloßstraße 1",
+          "url": "https://www.google.com/maps/search/?api=1&query=Schloss%20Friedestrom%20Schlossstrasse%201%20Zons"
+        },
+        {
+          "text": "Берег Рейна · Zons",
+          "url": "https://www.google.com/maps/search/?api=1&query=Rheinufer%20Zons"
+        },
+        {
+          "text": "Цонз · официальный путеводитель",
+          "url": "https://www.dormagen.de/tourismus-freizeit/stadtportraet/stadtteile/zons/"
+        }
+      ],
+      "status": "planned",
+      "optional": true,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-10-01-zons-lunch",
+      "dayId": "day-2026-10-01",
+      "placeId": "zons-old-town",
+      "title": "Кофе или обед в Цонзе · по желанию",
+      "start": "12:30",
+      "end": "13:15",
+      "category": "food",
+      "description": "Выбрать кафе на Schloßstraße или Rheinstraße по свободным столикам и меню. Заложить 30–45 минут. Можно вместо этого пообедать дома; конкретное заведение не забронировано.",
+      "links": [
+        {
+          "text": "Кафе · Schloßstraße / Rheinstraße, Zons",
+          "url": "https://www.google.com/maps/search/?api=1&query=Restaurants%20Schlossstrasse%20Zons"
+        }
+      ],
+      "status": "planned",
+      "optional": true,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-10-01-zons-return",
+      "dayId": "day-2026-10-01",
+      "placeId": "zons-old-town",
+      "title": "Возвращение в Дормаген",
+      "start": "13:15",
+      "end": "14:15",
+      "category": "station",
+      "description": "Вернуться к выбранной остановке Zons; автобус 886 в направлении Dormagen Bahnhof. Ориентир 15–25 минут в автобусе плюс ожидание и дорога домой. Конкретный рейс сверить перед выходом из кафе. Вторая половина дня и ночёвка в Дормагене, без обязательного выезда в Кёльн или Дюссельдорф.",
+      "links": [
+        {
+          "text": "Zons → Dormagen Bahnhof · автобус",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Zons%20Schlossstrasse&destination=Dormagen%20Bahnhof&travelmode=transit"
+        }
+      ],
+      "status": "planned",
+      "optional": true,
+      "source": ""
+    },
+    {
+      "id": "visit-2026-10-01-event-1",
+      "dayId": "day-2026-10-01",
+      "placeId": "city-dormagen",
+      "title": "Pegasus: билеты, рюкзаки и документы Tax Free",
+      "start": "15:00",
+      "end": "17:30",
+      "category": "rest",
+      "description": "15:00–17:30 (или утром, если Цонз отменён): Подготовка к купленному Pegasus PC 1012: проверить пять билетов и получение посадочных талонов. В заказе оплачена услуга онлайн-регистрации на всех пятерых, но это ещё не подтверждение выполненной регистрации. Взвесить личные вещи: по одной до 3 кг и 40×30×15 см каждому, включая детей. У Анны и Романа отдельно оплачено по 1×8 кг; квитанция называет услугу «Дополнительный багаж» без уточнения вида — проверить в брони Pegasus, что это cabin baggage, и допустимые размеры. Не распределять эти два места на детей и не считать их сдаваемым багажом без подтверждения. Подготовить транспорт до CGN и встречу в SAW. Проверка Tax Free перед вылетом: собрать покупки, упаковки, загранпаспорт, подтверждение проживания вне ЕС, чеки и формы Global Blue; сверить данные и сохранить копии. Покупки должны помещаться в разрешённые рюкзаки вместе с остальными вещами. Уточнить расположение и часы таможни для ручной клади в CGN, подходящий способ передачи форм Global Blue и выплаты. Дополнительные поездки за покупками сегодня не обязательны: оставить запас времени на сборы и отдых.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "source": ""
+    },
+    {
+      "id": "visit-2026-10-01-event-2",
+      "dayId": "day-2026-10-01",
+      "placeId": "city-dormagen",
+      "title": "Прощальный ужин и отдых в Дормагене",
+      "start": "18:00",
+      "end": "20:00",
+      "category": "food",
+      "description": "Спокойный ужин в Дормагене с родными. Место выбираем на месте; обязательной поездки в Кёльн или Дюссельдорф нет. Затем отдых перед вылетом 2 октября.",
+      "status": "planned",
+      "optional": false,
+      "links": [],
+      "source": ""
     }
   ],
   "transfers": [
@@ -3367,28 +3525,6 @@
       "schematic": true
     },
     {
-      "id": "amsterdam-out",
-      "from": "dormagen",
-      "to": "amsterdam",
-      "date": "2026-09-29",
-      "mode": "train",
-      "departure": null,
-      "arrival": null,
-      "status": "planned",
-      "schematic": true
-    },
-    {
-      "id": "amsterdam-back",
-      "from": "amsterdam",
-      "to": "dormagen",
-      "date": "2026-09-30",
-      "mode": "train",
-      "departure": null,
-      "arrival": null,
-      "status": "planned",
-      "schematic": true
-    },
-    {
       "id": "pegasus",
       "from": "cologne",
       "to": "istanbul",
@@ -3457,5 +3593,11 @@
   ],
   "expenses": [],
   "checks": [],
-  "issues": []
+  "issues": [],
+  "appliedRouteUpdates": [
+    "yerevan-2026-09-19-metro-aznavour-cafe-v3",
+    "dormagen-amsterdam-daytrip-2026-09-29",
+    "germany-neuss-2026-09-30",
+    "zons-weather-option-2026-10-01"
+  ]
 }
