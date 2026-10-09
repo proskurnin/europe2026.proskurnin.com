@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter } from '@/components/ui/alert-dialog';
 import { validateVideoInput, type TripVideo } from '@/lib/videos';
-import plan from '@/data/plan.json';
+import plan from '@/data/public-plan.json';
 
 const dateLabel = (date: string) => new Date(date + 'T12:00:00Z').toLocaleDateString('ru-RU', { day: 'numeric', month: 'short', timeZone: 'UTC' });
 export default function VideoReport() {

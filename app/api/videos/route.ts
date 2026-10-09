@@ -1,6 +1,6 @@
 import { videoDb } from '@/lib/video-db';
 import { validateVideoInput, type TripVideo } from '@/lib/videos';
-import plan from '@/data/plan.json';
+import plan from '@/data/public-plan.json';
 
 const json = (data: unknown, status = 200) => Response.json(data, { status, headers: { 'Cache-Control': 'no-store' } });
 const owner = (request: Request) => request.headers.get('oai-authenticated-user-id');

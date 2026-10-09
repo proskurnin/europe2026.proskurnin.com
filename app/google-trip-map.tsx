@@ -4,6 +4,8 @@ import {useEffect,useRef,useState} from 'react';
 import type {Trip} from '@/lib/trip';
 import {setOptions,importLibrary} from '@googlemaps/js-api-loader';
 import {MarkerClusterer} from '@googlemaps/markerclusterer';
+import GoogleDayRoute from './google-day-route';
+import OsmTripMap from './osm-trip-map';
 let loading:Promise<void>|undefined;
 function loadMaps(){
  return loading??=(async()=>{
@@ -21,7 +23,7 @@ export default function TripMap({plan,visits,day,selected,onSelect,overview=fals
  const [ready,setReady]=useState(false),[error,setError]=useState('');
  useEffect(()=>{
   let live=true;
-  const authError=()=>{if(live)setError('Google Maps не настроена для этого адреса. Выберите OpenStreetMap — все места и переезды сохранены.');};
+  const authError=()=>{if(live)setError('Google Maps временно недоступна. Все места доступны в расписании.');};
   (window as any).gm_authFailure=authError;
   loadMaps().then(()=>{
    if(!live||!node.current)return;
@@ -64,5 +66,6 @@ export default function TripMap({plan,visits,day,selected,onSelect,overview=fals
   else if(day){const c=plan.cities[day.city];if(c){m.panTo({lat:c[1],lng:c[2]});m.setZoom(11);}}
   return()=>{idle?.remove();info.close();cluster.clearMarkers();cluster.setMap(null);markers.forEach(marker=>{google.maps.event.clearInstanceListeners(marker);marker.map=null;});lines.forEach(line=>line.setMap(null));};
  },[ready,plan,visits,day,selected,overview]);
- return <div className="mapwrap"><div ref={node} className="map" aria-label="Интерактивная карта Google Maps"/><div className="map-label"><span className="live-dot"/>{overview?'Весь маршрут':day?.title||'Маршрут'}<small>ЛИНИИ СХЕМАТИЧНЫЕ</small></div><div className="map-legend"><span>✓ Посетили</span><span>◆ В плане</span><span>━ Переезд состоялся</span><span>▰ Жильё</span><span>◉ Еда</span><span>✈ Аэропорт</span><span>▤ Вокзал / переезд</span><span>♧ Отдых</span><span className="air-line">Перелёт</span><span className="rail-line">Поезд</span><span>··· Транспорт уточняется</span></div>{error&&<p className="map-error" role="status">{error}</p>}</div>
+ if(error)return <><p role="status">Google Maps недоступна на этом домене — показываем OpenStreetMap.</p><OsmTripMap plan={plan} visits={visits} day={day} selected={selected} onSelect={onSelect} overview={overview}/></>;
+ return <><div className="mapwrap"><div ref={node} className="map" aria-label="Интерактивная карта Google Maps"/><div className="map-label"><span className="live-dot"/>{overview?'Весь маршрут':day?.title||'Маршрут'}<small>ПЕРЕЕЗДЫ МЕЖДУ ГОРОДАМИ — СХЕМА</small></div><div className="map-legend"><span>✓ Посетили</span><span>◆ В плане</span><span>▰ Жильё</span><span>◉ Еда</span><span>✈ Аэропорт</span><span>▤ Вокзал / переезд</span><span>♧ Отдых</span><span className="air-line">Перелёт</span><span className="rail-line">Поезд</span><span>··· Транспорт уточняется</span></div></div><GoogleDayRoute map={ready?map.current:null} plan={plan} visits={visits} day={day} onSelect={onSelect}/></>
 }

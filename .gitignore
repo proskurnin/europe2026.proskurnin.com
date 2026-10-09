@@ -38,7 +38,13 @@ next-env.d.ts
 /work/
 
 /public/maps-config.json
-
-# local build state
-*.tsbuildinfo
+/data/source-plan.txt
+/data/history/
+/.openai/
 /.sites-runtime/
+*.tsbuildinfo
+
+# Private account storage
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

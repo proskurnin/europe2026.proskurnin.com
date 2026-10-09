@@ -44,13 +44,12 @@ const memory=new Map<string,Cached>(),pending=new Map<string,Promise<Cached>>();
 let active=0;const queue:Array<()=>void>=[];
 async function request(url:string,ttl:number):Promise<Cached>{
  let cached=memory.get(url);
- if(!cached&&typeof localStorage!=='undefined')try{cached=JSON.parse(localStorage.getItem('europe-weather-v1:'+url)||'null')}catch{}
  if(cached&&Date.now()-cached.at<ttl&&cached.at<=Date.now()){memory.set(url,cached);return cached}
  const running=pending.get(url);if(running)return running;
  const task=(async()=>{
   await new Promise<void>(resolve=>{const start=()=>{active++;resolve()};if(active<3)start();else queue.push(start)});
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
-  try{const response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error('Weather unavailable');const data:any=await response.json();if(data.error)throw Error('Weather unavailable');const result={at:Date.now(),data};memory.set(url,result);try{localStorage.setItem('europe-weather-v1:'+url,JSON.stringify(result))}catch{}return result}
+  try{const response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error('Weather unavailable');const data:any=await response.json();if(data.error)throw Error('Weather unavailable');const result={at:Date.now(),data};memory.set(url,result);return result}
   finally{clearTimeout(timer);active--;queue.shift()?.()}
  })();pending.set(url,task);try{return await task}finally{pending.delete(url)}
 }
