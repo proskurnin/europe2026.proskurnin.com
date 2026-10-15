@@ -20,16 +20,13 @@ Type=oneshot
 ExecStart=/usr/local/sbin/europe2026-deploy
 TimeoutStartSec=180
 UNIT
-cat > /etc/systemd/system/europe2026-deploy.timer <<'UNIT'
-[Unit]
-Description=Check Europe 2026 builds every minute
-[Timer]
-OnBootSec=30s
-OnUnitInactiveSec=60s
-Unit=europe2026-deploy.service
-[Install]
-WantedBy=timers.target
-UNIT
+install -d -m 755 /usr/local/libexec
+install -m 755 "$repo/deployment/ci-entry.sh" /usr/local/libexec/europe2026-ci-entry
+install -m 755 "$repo/deployment/ci-deploy.sh" /usr/local/sbin/europe2026-ci-deploy
 systemctl daemon-reload
-systemctl enable --now europe2026-deploy.timer
+# Never recreate polling after the verified CI cutover. Before cutover, leave
+# the already configured fallback timer untouched.
+if [ -f /etc/europe2026-ci-ready ] && [ -f /etc/systemd/system/europe2026-deploy.timer ]; then
+  systemctl disable --now europe2026-deploy.timer
+fi
 systemctl start europe2026-deploy.service
