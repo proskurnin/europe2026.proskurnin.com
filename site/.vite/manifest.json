@@ -51,7 +51,7 @@
     ]
   },
   "app/osm-trip-map.tsx": {
-    "file": "_next/static/chunks/osm-trip-map-aX8suGZm.js",
+    "file": "_next/static/chunks/osm-trip-map-fRWWqXNW.js",
     "name": "osm-trip-map",
     "src": "app/osm-trip-map.tsx",
     "isDynamicEntry": true,
@@ -74,7 +74,7 @@
     ]
   },
   "app/page.tsx": {
-    "file": "_next/static/chunks/page-D2RJxDwl.js",
+    "file": "_next/static/chunks/page-BjHo8gdU.js",
     "name": "page",
     "src": "app/page.tsx",
     "isDynamicEntry": true,
@@ -124,7 +124,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
-    "file": "_next/static/chunks/app-route-prefetch-policy-CGjdRrIJ.js",
+    "file": "_next/static/chunks/app-route-prefetch-policy-D41YHzRo.js",
     "name": "app-route-prefetch-policy",
     "src": "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
     "isDynamicEntry": true,
@@ -133,7 +133,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-DDFWXBX3.js",
+    "file": "_next/static/chunks/layout-segment-context-Dg-T-urP.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -154,7 +154,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-cISvUhKz.js",
+    "file": "_next/static/chunks/index-DeO8AFeH.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
