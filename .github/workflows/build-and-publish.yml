@@ -53,8 +53,35 @@ jobs:
           git -C "$artifact_dir" add -A
           git -C "$artifact_dir" commit --allow-empty -m "Build $GITHUB_SHA"
           git -C "$artifact_dir" push origin HEAD:deploy
-  verify-production:
+  deploy:
     needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - name: Deploy the built commit over restricted SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.EUROPE_DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.EUROPE_DEPLOY_KNOWN_HOSTS }}
+          EXPECTED_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_SSH_KEY"
+          test -n "$DEPLOY_KNOWN_HOSTS"
+          ssh_dir=$(mktemp -d)
+          chmod 700 "$ssh_dir"
+          trap 'rm -rf "$ssh_dir"' EXIT
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$ssh_dir/key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$ssh_dir/known_hosts"
+          chmod 600 "$ssh_dir/key" "$ssh_dir/known_hosts"
+          ssh -T -i "$ssh_dir/key" \
+            -o BatchMode=yes -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$ssh_dir/known_hosts" \
+            -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=4 \
+            deploy-europe@80.87.199.223 "deploy $EXPECTED_COMMIT"
+  verify-production:
+    needs: deploy
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
