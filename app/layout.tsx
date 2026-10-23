@@ -1,4 +1,7 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next';
 import './globals.css';
-export const metadata: Metadata={title:'Европа 2026 — истории путешествия',description:'Семейное путешествие завершено. Фотоальбомы, видео, воспоминания и маршрут поездки 17 сентября — 4 октября 2026.',icons:{icon:'/favicon.svg?v=20260909',shortcut:'/favicon.svg?v=20260909'}};
-export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){return <html lang="ru"><body>{children}</body></html>}
+import {site} from '@/lib/site';
+export const metadata:Metadata={title:site.title,description:site.description,icons:{icon:'/favicon.svg'}};
+export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){
+ return <html lang="ru">{site.fonts?<head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/><link rel="stylesheet" href={site.fonts}/></head>:null}<body>{children}</body></html>;
+}

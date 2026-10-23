@@ -1,13 +1,15 @@
+import {site} from './site.mjs';
 import {publicPlan,applyRouteUpdates} from './public-plan.mjs';
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { openDB,digest,token,emailAddress,passwordHash,passwordMatches,passwordValid,publicUser,transaction,invite,youtubeId } from './core.mjs';
 
-export function createApp({dbPath,planPath,origin,secure=true}) {
+export function createApp({dbPath,planPath,origin,tourPath,secure=true}) {
  const db=openDB(dbPath), plan=applyRouteUpdates(JSON.parse(readFileSync(planPath,'utf8'))), publicData=publicPlan(plan);
+ const tour=tourPath?JSON.parse(readFileSync(tourPath,'utf8')):null;
  const visitIds=new Set(plan.visits.map(x=>x.id)),checkIds=new Set(plan.checks.map(x=>x.id)),dayIds=new Set(plan.days.map(x=>x.id));
- const cookieName=secure?'__Host-europe-session':'europe-test-session'; let hashing=0;
+ const cookieName=secure?`__Host-${site.id}-session`:`${site.id}-test-session`; let hashing=0;
  const hashWork=async task=>{if(hashing>=2)throw problem(503,'Вход занят. Повторите через несколько секунд.');hashing++;try{return await task();}finally{hashing--;}};
  const cookie=(value,age=604800)=>`${cookieName}=${value}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${age}${secure?'; Secure':''}`;
  const session=(userId,res)=>{const value=token();db.prepare('INSERT INTO sessions VALUES(?,?,?)').run(digest(value),userId,Date.now()+604800_000);res.setHeader('Set-Cookie',cookie(value));};
@@ -36,6 +38,7 @@ export function createApp({dbPath,planPath,origin,secure=true}) {
     if(!body||typeof body!=='object'||Array.isArray(body))throw problem(400,'Некорректные данные.');
    }
    const ip=String(req.headers['x-forwarded-for']||req.socket.remoteAddress||'unknown').split(',').at(-1).trim();
+   if(path==='/api/trip/tour'&&method==='GET'){requireMember(user);return send(res,200,{prices:tour?.prices||[],questions:tour?.questions||[],packing:tour?.packing||null,flightCost:tour?.flightCost||null,tourPayment:tour?.tourPayment||null});}
    if(path==='/api/account/me'&&method==='GET')return send(res,200,{user:publicUser(user)});
    if(path==='/api/account/login'&&method==='POST'){
     throttle('login-ip:'+ip,30);const email=emailAddress(body.email);throttle('login-email:'+digest(email),12);
@@ -95,7 +98,7 @@ export function createApp({dbPath,planPath,origin,secure=true}) {
    if(['/api/trip/storage','/api/trip/storage/import','/api/trip/storage/archive'].includes(path)){
     requireMember(user);
     const ownerKeys=['plan','history','base-version','draft'];
-    const permitted=key=>['personal','logistics','map-provider','preferences',...ownerKeys].includes(key)&&(!ownerKeys.includes(key)||user.role==='owner');
+    const permitted=key=>['personal','logistics','map-provider','preferences','packing',...ownerKeys].includes(key)&&(!ownerKeys.includes(key)||user.role==='owner');
     if(path.endsWith('/archive')&&method==='GET')return send(res,200,{archives:db.prepare('SELECT key,value,created_at AS createdAt FROM personal_archive WHERE user_id=?').all(user.id)});
     const read=key=>db.prepare('SELECT value,revision FROM personal_storage WHERE user_id=? AND key=?').get(user.id,key);
     if(method==='GET'&&path==='/api/trip/storage')return send(res,200,{userId:user.id,items:Object.fromEntries(db.prepare('SELECT key,value,revision FROM personal_storage WHERE user_id=?').all(user.id).filter(r=>permitted(r.key)).map(r=>[r.key,{value:r.value,revision:r.revision}]))});
@@ -120,6 +123,12 @@ export function createApp({dbPath,planPath,origin,secure=true}) {
         if(v.price!==undefined&&v.price!==null&&(!Number.isFinite(v.price)||v.price<0))throw problem(400,'Некорректная цена.');
         if(user.role!=='owner'&&['start','end','price','status'].some(k=>k in v))throw problem(403,'Время, цену и общие отметки изменяет владелец.');
        }
+      }
+      if(key==='packing'){
+       if(Array.isArray(parsed)||Object.keys(parsed).some(k=>!['checked','notes'].includes(k)))throw problem(400,'Некорректный список вещей.');
+       const checked=parsed.checked??{};
+       if(!checked||typeof checked!=='object'||Array.isArray(checked)||Object.keys(checked).length>500||Object.entries(checked).some(([id,v])=>id.length>300||typeof v!=='boolean'))throw problem(400,'Некорректные отметки вещей.');
+       if(parsed.notes!==undefined&&(typeof parsed.notes!=='string'||parsed.notes.length>20000))throw problem(400,'Заметка слишком длинная.');
       }
       if(key==='logistics'&&(!parsed.modes||!parsed.addresses))throw problem(400,'Некорректные настройки маршрутов.');
       if(key==='history'&&(!Array.isArray(parsed)||parsed.length>5))throw problem(400,'Допускается пять версий плана.');
