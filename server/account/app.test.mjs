@@ -1,6 +1,7 @@
+import {site} from './site.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtempSync,rmSync,readFileSync} from 'node:fs';
+import {mkdtempSync,rmSync,readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {openDB,invite} from './core.mjs';
@@ -8,13 +9,17 @@ import {createApp} from './app.mjs';
 import {applyRouteUpdates} from './public-plan.mjs';
 
 test('Roles, sessions, invitations, protected data and owner-only writes',async()=>{
- const sourcePlan=applyRouteUpdates(JSON.parse(readFileSync('data/plan.json','utf8')));
- const dir=mkdtempSync(join(tmpdir(),'europe-auth-test-')),dbPath=join(dir,'test.sqlite');
+ const sourcePlan={...JSON.parse(readFileSync('data/plan.json','utf8')),days:[{id:'day-1',sourceText:'Private'}],checks:[{id:'check-1'}],visits:[{id:'visit-1',description:'Public',source:'Private'}],expenses:[{id:'expense-1',amount:100}]};
+ const dir=mkdtempSync(join(tmpdir(),site.id+'-auth-test-')),dbPath=join(dir,'test.sqlite');
+ const planPath=join(dir,'plan.json');writeFileSync(planPath,JSON.stringify(sourcePlan));
+ // Sites without private trip data (Europe) have no data/tour.json; the tour checks are skipped there.
+ const tourPath=existsSync('data/tour.json')?resolve('data/tour.json'):undefined;
  const db=openDB(dbPath);db.prepare("INSERT INTO users(id,email,name,role,created_at) VALUES('owner','owner@example.test','Owner','owner',?)").run(new Date().toISOString());
  const ownerToken=invite(db,'owner');db.close();
- const origin='http://127.0.0.1:18929',app=createApp({dbPath,planPath:resolve('data/plan.json'),origin,secure:false});await new Promise(r=>app.listen(18929,'127.0.0.1',r));
+ const origin='http://127.0.0.1:18929',app=createApp({dbPath,planPath,tourPath,origin,secure:false});await new Promise(r=>app.listen(18929,'127.0.0.1',r));
  const request=async(path,{method='GET',body,cookie='',site=origin}={})=>{const res=await fetch(origin+path,{method,headers:{...(cookie?{Cookie:cookie}:{}),...(body?{'Content-Type':'application/json',Origin:site}:{})},body:body?JSON.stringify(body):undefined});return {status:res.status,data:await res.json(),cookie:res.headers.get('set-cookie')?.split(';')[0]};};
  try {
+  assert.equal((await request('/api/trip/tour')).status,401);
   let r=await request('/api/trip/plan');assert.equal(r.status,200);assert.equal(r.data.plan.expenses.length,0);assert.equal(r.data.plan.checks.length,0);assert.equal(r.data.plan.sourceDocument,'');assert.ok(r.data.plan.days.every(d=>!d.sourceText));assert.equal(r.data.plan.execution?.events,undefined);assert.equal(r.data.plan.execution?.expenses,undefined);
   for(const [path,method,body]of [['/api/trip/state','PATCH',{kind:'check',id:'x',value:true}],['/api/trip/videos','POST',{}],['/api/account/users','POST',{}]])assert.equal((await request(path,{method,body})).status,401);
   r=await request('/api/account/activate',{method:'POST',body:{token:ownerToken,password:'Owner secure phrase 2026'}});assert.equal(r.status,200);const owner=r.cookie;
@@ -29,9 +34,22 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
    r=await request('/api/account/activate',{method:'POST',body:{token:t,password:'Member secure phrase 2026'}});assert.equal(r.status,200);cookies[role]=r.cookie;ids[role]=r.data.user.id;
    for(const [path,method,body]of [['/api/trip/state','PATCH',{kind:'check',id:checkId,value:true}],['/api/trip/videos','POST',{url:'https://youtu.be/M7lc1UVf-VE',title:'Test'}],['/api/account/users','POST',{email:'x@y.test',role:'participant'}],['/api/trip/import-marks','POST',{checks:{}}]])assert.equal((await request(path,{method,body,cookie:r.cookie})).status,403);
   }
+  assert.equal((await request('/api/trip/tour',{cookie:cookies.viewer})).status,403);
+  if(tourPath){
+    assert.deepEqual((await request('/api/trip/tour',{cookie:cookies.participant})).data.prices,JSON.parse(readFileSync(tourPath,'utf8')).prices);
+    assert.deepEqual((await request('/api/trip/tour',{cookie:cookies.participant})).data.packing,JSON.parse(readFileSync(tourPath,'utf8')).packing);
+  }
   // Personal data belongs to the signed-in account and survives service restarts.
   assert.equal((await request('/api/trip/storage')).status,401);
   assert.equal((await request('/api/trip/storage',{cookie:cookies.viewer})).status,403);
+  // Private packing list: per account, members only, validated.
+  {const packing=JSON.stringify({checked:{'Одежда::Пижама':true},notes:'Не забыть зарядку'});
+   assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.viewer,body:{accountId:ids.viewer,key:'packing',value:packing,revision:0}})).status,403);
+   r=await request('/api/trip/storage',{method:'PUT',cookie:cookies.participant,body:{accountId:ids.participant,key:'packing',value:packing,revision:0}});assert.equal(r.status,200);assert.equal(r.data.row.revision,1);
+   assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.participant,body:{accountId:ids.participant,key:'packing',value:JSON.stringify({checked:{x:'yes'}}),revision:1}})).status,400);
+   assert.equal((await request('/api/trip/storage',{method:'PUT',cookie:cookies.participant,body:{accountId:ids.participant,key:'packing',value:JSON.stringify({checked:{},extra:1}),revision:1}})).status,400);
+   r=await request('/api/trip/storage',{cookie:cookies.participant});assert.equal(r.data.items.packing.value,packing);
+   r=await request('/api/trip/storage',{cookie:owner});assert.equal(r.data.items.packing,undefined);}
   const personal=JSON.stringify({visits:{[visitId]:{note:'Owner note',favorite:true}},checks:{}});
   let saved=await request('/api/trip/storage',{method:'PUT',cookie:owner,body:{key:'personal',value:personal,revision:0,accountId:'owner'}});
   assert.equal(saved.status,200);assert.equal(saved.data.row.revision,1);
@@ -52,7 +70,7 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
   await request('/api/trip/storage/import',{method:'POST',cookie:owner,body:{key:'personal',value:legacy,accountId:'owner'}});
   assert.equal((await request('/api/trip/storage/archive',{cookie:owner})).data.archives.length,1);
   assert.equal((await request('/api/trip/storage/archive',{cookie:cookies.participant})).data.archives.length,0);
-  const second=createApp({dbPath,planPath:resolve('data/plan.json'),origin,secure:false});
+  const second=createApp({dbPath,planPath,tourPath,origin,secure:false});
   await new Promise(r=>second.listen(18930,'127.0.0.1',r));
   try{const data=await(await fetch('http://127.0.0.1:18930/api/trip/storage',{headers:{Cookie:owner}})).json();assert.equal(data.items.personal.value,personal);}finally{await new Promise(r=>second.close(r));}
   assert.equal((await request('/api/trip/plan',{cookie:cookies.participant})).data.plan.expenses.length,sourcePlan.expenses.length);
@@ -81,4 +99,30 @@ test('Roles, sessions, invitations, protected data and owner-only writes',async(
   assert.equal((await request('/api/account/me',{cookie:newOwner})).data.user,null);
   assert.equal((await request('/api/account/login',{method:'POST',body:{email:'owner@example.test',password:'bad'}})).status,401);
  }finally{await new Promise(r=>app.close(r));rmSync(dir,{recursive:true,force:true});}
+});
+
+test('Secure cookies, expiry, revocation and login throttling',async()=>{
+ const dir=mkdtempSync(join(tmpdir(),site.id+'-auth-security-')),dbPath=join(dir,'test.sqlite');
+ const db=openDB(dbPath);db.prepare("INSERT INTO users(id,email,name,role,created_at) VALUES('owner','owner@example.test','Owner','owner',?)").run(new Date().toISOString());
+ let token=invite(db,'owner');
+ const siteOrigin=site.origin;
+ const app=createApp({dbPath,planPath:resolve('data/plan.json'),origin:siteOrigin,secure:true});
+ await new Promise(r=>app.listen(0,'127.0.0.1',r));
+ const base='http://127.0.0.1:'+app.address().port;
+ const post=async(path,body,cookie='')=>fetch(base+path,{method:'POST',headers:{Origin:siteOrigin,'Content-Type':'application/json',Cookie:cookie},body:JSON.stringify(body)});
+ try{
+  db.prepare('UPDATE invitations SET expires=0').run();
+  assert.equal((await post('/api/account/activate',{token,password:'Owner secure phrase 2026'})).status,400);
+  token=invite(db,'owner');
+  const activated=await post('/api/account/activate',{token,password:'Owner secure phrase 2026'});
+  assert.equal(activated.status,200);
+  const cookie=activated.headers.get('set-cookie');
+  assert.ok(cookie.startsWith(`__Host-${site.id}-session=`));assert.match(cookie,/; Secure/);assert.match(cookie,/; HttpOnly/);assert.match(cookie,/; SameSite=Lax/);assert.match(cookie,/; Path=\//);assert.doesNotMatch(cookie,/Domain=/i);
+  const getMe=()=>fetch(base+'/api/account/me',{headers:{Cookie:cookie.split(';')[0]}}).then(r=>r.json());
+  assert.equal((await getMe()).user.id,'owner');
+  db.prepare('UPDATE users SET active=0').run();assert.equal((await getMe()).user,null);
+  db.prepare('UPDATE users SET active=1').run();db.prepare('UPDATE sessions SET expires=0').run();assert.equal((await getMe()).user,null);
+  for(let i=0;i<12;i++)assert.equal((await post('/api/account/login',{email:'nobody@example.test',password:'bad'})).status,401);
+  assert.equal((await post('/api/account/login',{email:'nobody@example.test',password:'bad'})).status,429);
+ }finally{db.close();await new Promise(r=>app.close(r));rmSync(dir,{recursive:true,force:true});}
 });
