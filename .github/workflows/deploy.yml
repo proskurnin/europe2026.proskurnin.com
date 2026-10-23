@@ -1,0 +1,98 @@
+# Shared travel-site pipeline. Keep this file IDENTICAL in china2026, europe2026 and turkey2027
+# (see AGENTS.md, «Стандарт сайтов путешествий»). Site-specific steps live in package.json:
+#   npm run assets (optional) -> npm run check -> npm run build -> dist/client
+# Pull requests run the checks and the build; a push to main also deploys.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  DOMAIN: ${{ github.event.repository.name }}
+  DEPLOY_HOST: ${{ vars.DEPLOY_HOST || '80.87.199.223' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Google Maps configuration
+        env:
+          GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+          GOOGLE_MAPS_MAP_ID: ${{ vars.GOOGLE_MAPS_MAP_ID }}
+        run: |
+          test -n "$GOOGLE_MAPS_KEY" || { echo '::error::Set the GOOGLE_MAPS_KEY repository secret'; exit 1; }
+          node -e 'const c={key:process.env.GOOGLE_MAPS_KEY}; if(process.env.GOOGLE_MAPS_MAP_ID) c.mapId=process.env.GOOGLE_MAPS_MAP_ID;
+            require("fs").writeFileSync("public/maps-config.json", JSON.stringify(c)+"\n")'
+      - run: npm run assets --if-present
+      - run: npm run check
+      - run: npm run build
+      - name: Bundle site and account service
+        run: |
+          test -s dist/client/index.html
+          test -s dist/client/account/index.html
+          test -s dist/client/maps-config.json
+          printf '%s\n' "$GITHUB_SHA" > dist/client/release.txt
+          mkdir -p bundle/account
+          cp -a dist/client bundle/site
+          cp server/account/*.mjs bundle/account/
+          rm -f bundle/account/*.test.mjs
+          tar -czf bundle.tgz -C bundle site account
+      - uses: actions/upload-artifact@v7
+        with:
+          name: bundle-${{ github.sha }}
+          path: bundle.tgz
+          retention-days: 14
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: production-${{ github.repository }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: bundle-${{ github.sha }}
+      - name: Deploy over the restricted SSH command
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_SSH_KEY" && test -n "$DEPLOY_KNOWN_HOSTS"
+          ssh_dir=$(mktemp -d); trap 'rm -rf "$ssh_dir"' EXIT
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$ssh_dir/key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$ssh_dir/known_hosts"
+          chmod 600 "$ssh_dir/key" "$ssh_dir/known_hosts"
+          ssh -T -i "$ssh_dir/key" -o BatchMode=yes -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$ssh_dir/known_hosts" -o ConnectTimeout=20 \
+            "${DOMAIN%%.*}-deploy@$DEPLOY_HOST" "deploy $GITHUB_SHA $GITHUB_RUN_ID" < bundle.tgz
+      - name: Verify the public release
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            if [ "$(curl --fail --silent --max-time 15 "https://$DOMAIN/release.txt")" = "$GITHUB_SHA" ]; then
+              echo "Published $GITHUB_SHA on https://$DOMAIN"; exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::https://$DOMAIN/release.txt does not show $GITHUB_SHA"; exit 1

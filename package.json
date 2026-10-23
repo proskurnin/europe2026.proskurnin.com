@@ -7,11 +7,12 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "build": "vinext build",
+    "check": "tsc --noEmit --pretty false && node --test server/account/app.test.mjs && node scripts/storage-client-check.mjs",
+    "prebuild": "node scripts/export-public-plan.mjs",
+    "build": "EUROPE_STATIC=1 vinext build && node scripts/prepare-apache-export.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
-    "format": "oxfmt",
-    "prebuild": "node scripts/export-public-plan.mjs"
+    "format": "oxfmt"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
